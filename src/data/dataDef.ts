@@ -41,11 +41,25 @@ export interface About {
   profileImageSrc?: string;
   description: string;
   aboutItems: AboutItem[];
+  strengths?: Strength[];
+  values?: Value[];
 }
 
 export interface AboutItem {
   label: string;
   text: string;
+  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+}
+
+export interface Strength {
+  title: string;
+  description: string;
+  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+}
+
+export interface Value {
+  title: string;
+  description: string;
   Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
 }
 

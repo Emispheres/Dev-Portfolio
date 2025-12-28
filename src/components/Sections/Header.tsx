@@ -10,7 +10,14 @@ export const headerID = 'headerNav';
 
 const Header: FC<{currentSection: SectionId | null}> = memo(({currentSection}) => {
   const navSections = useMemo(
-    () => [SectionId.Hero, SectionId.About, SectionId.Resume, SectionId.Portfolio, SectionId.Testimonials, SectionId.Contact],
+    () => [
+      SectionId.Hero,
+      SectionId.About,
+      SectionId.Resume,
+      SectionId.Portfolio,
+      SectionId.Testimonials,
+      SectionId.Contact,
+    ],
     [],
   );
 
@@ -118,21 +125,17 @@ const NavItem: FC<{
 }> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
   // Mappe les vraies valeurs de sections aux routes
   const sectionToRoute: Record<string, string> = {
-    'Profil': '/about',
-    'cv': '/resume',
-    'portfolio': '/portfolio',
-    'temoignages': '/testimonials',
-    'contact': '/contact',
+    Profil: '/about',
+    cv: '/resume',
+    portfolio: '/portfolio',
+    temoignages: '/testimonials',
+    contact: '/contact',
   };
 
   const route = sectionToRoute[section] || '/';
 
   return (
-    <Link
-      className={classNames(current ? activeClass : inactiveClass)}
-      href={route}
-      key={section}
-      onClick={onClick}>
+    <Link className={classNames(current ? activeClass : inactiveClass)} href={route} key={section} onClick={onClick}>
       {section === 'cv' ? 'CV' : section}
     </Link>
   );

@@ -6,7 +6,7 @@ import Contact from '../components/Sections/Contact';
 // Crée la page Contact
 export default function ContactPage() {
   return (
-    <Page title="Contact" description="Contact me">
+    <Page description="Contact me" title="Contact">
       <Contact />
     </Page>
   );
