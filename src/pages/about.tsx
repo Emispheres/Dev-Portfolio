@@ -6,7 +6,7 @@ import About from '../components/Sections/About';
 // Crée la page About
 export default function AboutPage() {
   return (
-    <Page title="About" description="About me">
+    <Page description="About me" title="About">
       <About />
     </Page>
   );

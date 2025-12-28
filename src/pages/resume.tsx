@@ -6,7 +6,7 @@ import Resume from '../components/Sections/Resume';
 // Crée la page Resume
 export default function ResumePage() {
   return (
-    <Page title="Resume" description="My resume">
+    <Page description="My resume" title="Resume">
       <Resume />
     </Page>
   );

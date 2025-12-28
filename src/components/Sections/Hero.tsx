@@ -45,10 +45,7 @@ const Hero: FC = memo(() => {
           </div>
         </div>
         <div className="absolute inset-x-0 bottom-6 flex justify-center">
-          <a
-            href={`/#${SectionId.About}`}>
-            
-          </a>
+          <a href={`/#${SectionId.About}`}></a>
         </div>
       </div>
     </Section>

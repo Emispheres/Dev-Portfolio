@@ -1,4 +1,4 @@
-import {BoltIcon, } from '@heroicons/react/24/solid';
+import {BoltIcon} from '@heroicons/react/24/solid';
 import {FC, memo} from 'react';
 
 import Socials from '../Socials';
@@ -7,9 +7,7 @@ const currentYear = new Date().getFullYear();
 
 const Footer: FC = memo(() => (
   <div className="relative bg-neutral-900 px-4 pb-6 pt-12 sm:px-8 sm:pb-8 sm:pt-14">
-    <div className="absolute inset-x-0 -top-4 flex justify-center sm:-top-6">
-      
-    </div>
+    <div className="absolute inset-x-0 -top-4 flex justify-center sm:-top-6"></div>
     <div className="flex flex-col items-center gap-y-6">
       <div className="flex gap-x-4 text-neutral-500">
         <Socials />

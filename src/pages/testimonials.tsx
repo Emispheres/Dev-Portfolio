@@ -6,9 +6,8 @@ import Testimonials from '../components/Sections/Testimonials';
 // Crée la page Testimonials
 export default function TestimonialsPage() {
   return (
-    <Page title="Testimonials" description="Testimonials">
+    <Page description="Testimonials" title="Testimonials">
       <Testimonials />
     </Page>
   );
 }
-
