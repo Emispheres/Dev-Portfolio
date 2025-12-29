@@ -1,19 +1,5 @@
-import {
-  AcademicCapIcon,
-  ArrowDownTrayIcon,
-  CalendarIcon,
-  CommandLineIcon,
-  FlagIcon,
-  LightBulbIcon,
-  MapIcon,
-  SparklesIcon,
-} from '@heroicons/react/24/outline';
+import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon} from '@heroicons/react/24/outline';
 
-import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
-import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/blue.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
@@ -26,8 +12,14 @@ import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
 import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
-import profilepic from '../images/laclasse.png';
+import profilepic from '../images/1000004076.jpg';
 import testimonialImage from '../images/testimonial.webp';
+import GithubIcon from '../components/Icon/GithubIcon';
+import InstagramIcon from '../components/Icon/InstagramIcon';
+import LinkedInIcon from '../components/Icon/LinkedInIcon';
+import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
+import TwitterIcon from '../components/Icon/TwitterIcon';
+
 import {
   About,
   ContactSection,
@@ -61,7 +53,6 @@ export const SectionId = {
   Skills: 'compétences',
   Stats: 'stats',
   Testimonials: 'temoignages',
-  NextSteps: 'nextsteps',
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
@@ -75,14 +66,15 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+
         Je suis un <strong className="text-stone-100">développeur web junior</strong>, passionné par la création
-        d'interfaces modernes, claires et efficaces. Je développe des applications web en utilisant
+        d’interfaces modernes, claires et efficaces. Je développe des applications web en utilisant
         <strong className="text-stone-100"> HTML, CSS, JavaScript et React</strong>.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         Actuellement en montée en compétences, je travaille sur des
-        <strong className="text-stone-100"> projets concrets</strong> pour renforcer mes bases techniques, améliorer la
-        qualité de mon code et construire un
+        <strong className="text-stone-100"> projets concrets</strong> pour renforcer mes bases techniques,
+        améliorer la qualité de mon code et construire un
         <strong className="text-stone-100"> portfolio professionnel</strong>.
       </p>
     </>
@@ -109,54 +101,25 @@ export const aboutData: About = {
   profileImageSrc: profilepic,
   description: `Technicien / développeur, 
   avec une forte appétence pour le développement et les technologies web modernes. Je conçois des sites web modernes en utilisant HTML, CSS, JavaScript et React.
-  Je travaille avec des API, la gestion d’état et des composants réutilisables.`,
+  Je travaille avec des API, la gestion d’état et des composants réutilisables. Je profite aujourd’hui du temps dont je dispose pour continuer d’apprendre de nouvelles technologies 
+        et notamment enrichir mes connaissances en développement mobile avec Angular et Ionic.
+        Après avoir obtenu une licence en langue anglaise et culture anglophone, 
+        j’ai choisi de me reconvertir dans le métier de développeur web. Touche à tout, 
+        je m’intéresse également au web design et aux arts graphiques en général, 
+        ce qui me permet d’aborder le développement front-end avec sérénité, 
+        même lorsque je ne dispose pas de maquette ou de directives précises.
+        Autonome de nature, je peux travailler seule ou en groupe, 
+        étant également capable de m’adapter à un environnement que je ne connais pas. 
+        Je sais faire preuve de force de proposition lorsque l’on m’en donne la liberté, 
+        cherchant toujours à améliorer et optimiser les projets au maximum pour satisfaire au mieux 
+        la demande du client. L’optimisation du code fait partie de mes priorités.`,
   aboutItems: [
     {label: 'Localisation', text: 'Toulouse', Icon: MapIcon},
     {label: 'Âge', text: '24', Icon: CalendarIcon},
-    {label: 'Nationalité', text: 'Française', Icon: FlagIcon},
-    /*{label: 'Intérêts', text: 'Motos, Muay Thai, Banjos', Icon: SparklesIcon},*/
-    /*{label: 'Études', text: 'Université de Victoria', Icon: AcademicCapIcon},
+    {label: 'Nationalité', text: 'Français', Icon: FlagIcon},
+    /*{label: 'Intérêts', text: 'Motos, Muay Thai, Banjos', Icon: SparklesIcon},
+    {label: 'Études', text: 'Université de Victoria', Icon: AcademicCapIcon},
     {label: 'Emploi', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},*/
-  ],
-  strengths: [
-    {
-      title: 'Apprentissage rapide',
-      description: 'Capacité à assimiler rapidement de nouveaux concepts et technologies pour rester à jour.',
-      Icon: LightBulbIcon,
-    },
-    {
-      title: 'Code de qualité',
-      description: 'Engagement envers la rédaction de code propre, maintenable et bien documenté.',
-      Icon: CommandLineIcon,
-    },
-    {
-      title: 'Créativité',
-      description: 'Approche créative pour résoudre les problèmes et créer des interfaces modernes.',
-      Icon: SparklesIcon,
-    },
-    {
-      title: 'Collaboration',
-      description: "Travail d'équipe efficace et communication claire pour atteindre les objectifs communs.",
-      Icon: AcademicCapIcon,
-    },
-  ],
-  values: [
-    {
-      title: '🎯 Excellence',
-      description: 'Viser l\'excellence dans chaque projet et ne jamais se contenter du "bon assez".',
-    },
-    {
-      title: '🚀 Innovation',
-      description: 'Chercher constamment des solutions innovantes et des approches créatives.',
-    },
-    {
-      title: '📚 Apprentissage continu',
-      description: "Croire en l'amélioration continue et à la croissance personnelle et professionnelle.",
-    },
-    {
-      title: '🤝 Intégrité',
-      description: 'Travailler avec honnêteté et responsabilité dans tous les aspects du travail.',
-    },
   ],
 };
 

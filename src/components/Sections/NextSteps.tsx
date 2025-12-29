@@ -11,7 +11,7 @@ interface NextStepsProps {
 // Section "Découvrez plus" avec des liens vers les autres pages
 const NextSteps: FC<NextStepsProps> = memo(({links}) => {
   return (
-    <Section className="bg-neutral-900" sectionId="nextsteps">
+    <Section className="bg-neutral-900" sectionId="contact">
       <div className="flex flex-col items-center gap-y-8">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-white">Découvrez plus</h2>

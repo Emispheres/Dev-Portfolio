@@ -5,9 +5,9 @@ import {Skill as SkillType, SkillGroup as SkillGroupType} from '../../../data/da
 export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = memo(({skillGroup}) => {
   const {name, skills} = skillGroup;
   return (
-    <div className="rounded-lg bg-neutral-700/50 border border-neutral-600 p-6 transition-all hover:border-cyan-500 hover:bg-neutral-700">
-      <h3 className="text-lg font-bold text-white mb-4 pb-2 border-b border-cyan-500/30">{name}</h3>
-      <div className="flex flex-col gap-y-4">
+    <div className="flex flex-col">
+      <span className="text-center text-lg font-bold">{name}</span>
+      <div className="flex flex-col gap-y-2">
         {skills.map((skill, index) => (
           <Skill key={`${skill.name}-${index}`} skill={skill} />
         ))}
@@ -23,18 +23,16 @@ export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
   const percentage = useMemo(() => Math.round((level / max) * 100), [level, max]);
 
   return (
-    <div className="flex flex-col gap-y-2">
-      <div className="flex items-center justify-between">
-        <span className="text-sm font-semibold text-gray-200">{name}</span>
-        <span className="text-xs font-bold text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded">
-          {level}/{max}
-        </span>
-      </div>
-      <div className="h-2 w-full overflow-hidden rounded-full bg-neutral-600 shadow-inner">
+    <div className="flex flex-col">
+      <span className="ml-2 text-sm font-medium">{name}</span>
+      <div className="h-6 w-full overflow-hidden rounded-full bg-neutral-300 shadow-inner">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 transition-all duration-1000 ease-out shadow-lg shadow-cyan-500/50"
+          className="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-1000 ease-out shadow-sm"
           style={{width: `${percentage}%`}}
         />
+        <span className="absolute right-2 top-1 text-xs font-semibold text-gray-700">
+          {level}/{max}
+        </span>
       </div>
     </div>
   );
