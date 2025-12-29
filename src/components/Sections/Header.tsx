@@ -5,21 +5,22 @@ import Link from 'next/link';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
 
 import {SectionId} from '../../data/data';
+import {useNavObserver} from '../../hooks/useNavObserver';
 
 export const headerID = 'headerNav';
 
-const Header: FC<{currentSection: SectionId | null}> = memo(({currentSection}) => {
+const Header: FC = memo(() => {
+  const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
   const navSections = useMemo(
-    () => [
-      SectionId.Hero,
-      SectionId.About,
-      SectionId.Resume,
-      SectionId.Portfolio,
-      SectionId.Testimonials,
-      SectionId.Contact,
-    ],
+    () => [SectionId.About, SectionId.Resume, SectionId.Portfolio, SectionId.Testimonials, SectionId.Contact],
     [],
   );
+
+  const intersectionHandler = useCallback((section: SectionId | null) => {
+    section && setCurrentSection(section);
+  }, []);
+
+  useNavObserver(navSections.map(section => `#${section}`).join(','), intersectionHandler);
 
   return (
     <>
@@ -123,19 +124,12 @@ const NavItem: FC<{
   inactiveClass: string;
   onClick?: () => void;
 }> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
-  // Mappe les vraies valeurs de sections aux routes
-  const sectionToRoute: Record<string, string> = {
-    Profil: '/about',
-    cv: '/resume',
-    portfolio: '/portfolio',
-    temoignages: '/testimonials',
-    contact: '/contact',
-  };
-
-  const route = sectionToRoute[section] || '/';
-
   return (
-    <Link className={classNames(current ? activeClass : inactiveClass)} href={route} key={section} onClick={onClick}>
+    <Link
+      className={classNames(current ? activeClass : inactiveClass)}
+      href={`/#${section}`}
+      key={section}
+      onClick={onClick}>
       {section === 'cv' ? 'CV' : section}
     </Link>
   );
