@@ -1,5 +1,4 @@
-import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon} from '@heroicons/react/24/outline';
-
+import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon,SparklesIcon, AcademicCapIcon, BuildingOffice2Icon} from '@heroicons/react/24/outline';
 import heroImage from '../images/blue.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
@@ -99,27 +98,23 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Technicien / développeur, 
-  avec une forte appétence pour le développement et les technologies web modernes. Je conçois des sites web modernes en utilisant HTML, CSS, JavaScript et React.
-  Je travaille avec des API, la gestion d’état et des composants réutilisables. Je profite aujourd’hui du temps dont je dispose pour continuer d’apprendre de nouvelles technologies 
-        et notamment enrichir mes connaissances en développement mobile avec Angular et Ionic.
-        Après avoir obtenu une licence en langue anglaise et culture anglophone, 
-        j’ai choisi de me reconvertir dans le métier de développeur web. Touche à tout, 
-        je m’intéresse également au web design et aux arts graphiques en général, 
-        ce qui me permet d’aborder le développement front-end avec sérénité, 
-        même lorsque je ne dispose pas de maquette ou de directives précises.
-        Autonome de nature, je peux travailler seule ou en groupe, 
-        étant également capable de m’adapter à un environnement que je ne connais pas. 
-        Je sais faire preuve de force de proposition lorsque l’on m’en donne la liberté, 
-        cherchant toujours à améliorer et optimiser les projets au maximum pour satisfaire au mieux 
-        la demande du client. L’optimisation du code fait partie de mes priorités.`,
+  description: `Technicien / développeur, avec une forte appétence pour le développement et les technologies web modernes. Je conçois des sites web modernes en utilisant HTML, CSS, JavaScript et React.\n
+Je travaille avec des API, la gestion d’état et des composants réutilisables. Je profite aujourd’hui du temps dont je dispose pour continuer d’apprendre de nouvelles technologies et notamment enrichir mes connaissances en développement mobile avec Angular et Ionic.\n
+Après avoir obtenu une licence en langue anglaise et culture anglophone, 
+j’ai choisi de me reconvertir dans le métier de développeur web. Touche à tout, 
+je m’intéresse également au web design et aux arts graphiques en général, 
+ce qui me permet d’aborder le développement front-end avec sérénité, 
+même lorsque je ne dispose pas de maquette ou de directives précises.\n
+Autonome de nature, je peux travailler seule ou en groupe, 
+étant également capable de m’adapter à un environnement que je ne connais pas.\n
+Je sais faire preuve de force de proposition lorsque l’on m’en donne la liberté, cherchant toujours à améliorer et optimiser les projets au maximum pour satisfaire au mieux la demande du client. L’optimisation du code fait partie de mes priorités.`,
   aboutItems: [
     {label: 'Localisation', text: 'Toulouse', Icon: MapIcon},
     {label: 'Âge', text: '24', Icon: CalendarIcon},
     {label: 'Nationalité', text: 'Français', Icon: FlagIcon},
-    /*{label: 'Intérêts', text: 'Motos, Muay Thai, Banjos', Icon: SparklesIcon},
+    {label: 'Intérêts', text: 'Motos, Muay Thai, Banjos', Icon: SparklesIcon},
     {label: 'Études', text: 'Université de Victoria', Icon: AcademicCapIcon},
-    {label: 'Emploi', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},*/
+    {label: 'Emploi', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
   ],
 };
 
