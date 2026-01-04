@@ -8,7 +8,7 @@ import Section from '../Layout/Section';
 const About: FC = memo(() => {
   const {profileImageSrc, description, aboutItems} = aboutData;
   return (
-    <Section className="bg-white " sectionId={SectionId.About}>
+    <Section className="bg-white " sectionId={SectionId.About} maxWidth="max-w-[1260px]">
       {/* Grille principale: image + contenu (profil + infos) */}
       <div className={classNames('grid grid-cols-1 gap-x-10', {'md:grid-cols-5': !!profileImageSrc})}>
       {!!profileImageSrc && (
