@@ -36,8 +36,9 @@ const About: FC = memo(() => {
         <div className={classNames('col-span-1 flex flex-col gap-y-6', {'md:col-span-3': !!profileImageSrc})}>
           <div className="flex flex-col gap-y-2">
             {/* Description principale */}
-            <h2 className="text-4xl font-bold text-black" style={{fontFamily: 'Montserrat, sans-serif'}}>À propos de moi</h2>
-            <p className="prose prose-sm text-black sm:prose-base whitespace-pre-wrap" style={{fontFamily: 'Robotto, sans-serif'}}>{description}</p>
+            <h2 className="text-4xl font-bold text-black mb-6" style={{fontFamily: 'Montserrat, sans-serif'}}>À propos de moi</h2>
+            <p className="prose prose-sm text-black text-justify sm:prose-base whitespace-pre-wrap" 
+            style={{fontFamily: 'Robotto, sans-serif'}}>{description}</p>
           </div>
         </div>
       </div>
