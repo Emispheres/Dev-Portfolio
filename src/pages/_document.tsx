@@ -7,7 +7,7 @@ import {Head, Html, Main, NextScript} from 'next/document';
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html className="scroll-smooth" lang="en">
       <Head>
         <link as="image" href="/images/blue.webp" rel="preload" />
         <meta charSet="utf-8" />
@@ -16,7 +16,7 @@ export default function Document() {
           - https://bugs.chromium.org/p/chromium/issues/detail?id=872770 */}
         <meta content="notranslate" name="google" />
       </Head>
-      <body className="bg-black">
+      <body className="scroll-smooth bg-black">
         <Main />
         <NextScript />
       </body>

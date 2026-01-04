@@ -48,7 +48,7 @@ export const SectionId = {
   About: 'Profil',
   Contact: 'contact',
   Portfolio: 'portfolio',
-  Resume: 'cv',
+  Resume: 'expériences',
   Skills: 'compétences',
   Stats: 'stats',
   Testimonials: 'temoignages',
@@ -361,7 +361,7 @@ export const testimonial: TestimonialSection = {
 export const contact: ContactSection = {
   headerText: 'Entrez en contact.',
   description:
-    'Voici un bon endroit pour un message à vos lecteurs pour leur faire savoir comment vous contacter au mieux.',
+    "Actuellement à la recherche d'un nouvel emploi, je suis intéressée par les postes de :",
   items: [
     {
       type: ContactType.Email,
