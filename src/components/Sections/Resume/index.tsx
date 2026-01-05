@@ -22,10 +22,10 @@ const Resume: FC = memo(() => {
                 ))}
               </ResumeSection>
             </div>
-            
+
             {/* Expérience */}
             <div>
-              <ResumeSection title="Expérience">
+              <ResumeSection title="Expériences">
                 {experience.map((item, index) => (
                   <TimelineItem item={item} key={`${item.title}-${index}`} />
                 ))}
@@ -36,7 +36,7 @@ const Resume: FC = memo(() => {
       </Section>
 
       {/* Section Compétences séparée */}
-      <Section className="bg-white" sectionId={SectionId.Skills} >
+      <Section className="bg-white" sectionId={SectionId.Skills}>
         <ResumeSection title="Compétences">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {skills.map((skillgroup, index) => (
