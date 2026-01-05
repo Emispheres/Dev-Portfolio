@@ -5,6 +5,78 @@ Restructurer la section Education/Experience du site pour correspondre au design
 
 ---
 
+## 🎓 Explication Simple : Comment la Boîte Survole la Ligne ?
+
+### **Le "Trick" Expliqué comme à un Enfant :**
+
+Imagine une page avec une **ligne verticale** et du **texte** à côté.
+
+```
+█ │ Titre
+█ │ Description
+█ │ Autre texte
+```
+
+Tu veux ajouter une **boîte (date)** qui survole sur la ligne, comme ça :
+
+```
+  ┌───┐
+  │2020│
+█ │ │ Titre
+█ │ │ Description
+  └───┘
+```
+
+**Le secret ? 3 étapes :**
+
+#### **1️⃣ Créer une div avec `absolute`**
+```tsx
+<div className="absolute -left-2 top-3">
+  <span>2020-2022</span>
+</div>
+```
+- `absolute` = "Je vais FLOTTER en dehors du flux normal"
+- `-left-2` = "Décale-moi 8px vers la GAUCHE pour que je sorte de la boîte"
+- `top-3` = "Place-moi à 12px du haut"
+
+**Résultat :** La boîte flotte à gauche, en dehors du flux. C'est comme si je la soulevais de la page avec un hélicoptère ! 🚁
+
+#### **2️⃣ Le Problème : Le Titre Remonte**
+Quand tu utilises `absolute`, la boîte sort du flux. Le titre ne le voit pas et **remonte vers le haut** :
+
+```
+❌ AVANT - Titre et boîte se chevauchent
+  ┌───┐
+  │2020│ Titre  ← Remonte trop haut !
+  
+```
+
+#### **3️⃣ La Solution : `pt-6` (Padding-Top)**
+```tsx
+<div className="flex flex-col pt-6">  ← PT-6 = 24px d'espace en haut
+  <h3>Titre</h3>
+</div>
+```
+
+- `pt-6` = "Ajoute 24px d'espace BLANC au-dessus du titre"
+- Ça crée de la place pour la boîte qui flotte
+
+**Résultat :** 
+```
+✅ APRÈS - Parfait !
+  ┌───┐
+  │2020│
+  └───┘ Titre  ← Descend d'espace pour la boîte
+       Description
+```
+
+**En résumé :**
+- **`absolute` = boîte flottante** (sorties du flux)
+- **`pt-6` = espace vide en haut du titre** (pour que la boîte ait de la place)
+- Ensemble = boîte qui survole la ligne SANS écraser le titre ! ✨
+
+---
+
 ## 📋 Changements Effectués
 
 ### 1️⃣ **Structure HTML - Passage à une Grille 2 Colonnes**
