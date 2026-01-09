@@ -119,6 +119,7 @@ Autonome de nature, je peux travailler seule ou en groupe,
 export const skills: SkillGroup[] = [
   {
     name: 'Langues',
+    description: 'Compétences linguistiques en anglais et français.',
     skills: [
       {
         name: 'Anglais',
@@ -132,6 +133,7 @@ export const skills: SkillGroup[] = [
   },
   {
     name: 'Développement frontend',
+    description: 'Compétences en développement frontend avec divers frameworks et bibliothèques.',
     skills: [
       {
         name: 'React',
@@ -149,6 +151,7 @@ export const skills: SkillGroup[] = [
   },
   {
     name: 'Développement backend',
+    description: 'Compétences en développement backend avec plusieurs technologies.',
     skills: [
       {
         name: 'Node.js',
@@ -166,6 +169,7 @@ export const skills: SkillGroup[] = [
   },
   {
     name: 'Outils & Technologies',
+    description: "Compétences avec divers outils et technologies de développement.",
     skills: [
       {
         name: 'Git',

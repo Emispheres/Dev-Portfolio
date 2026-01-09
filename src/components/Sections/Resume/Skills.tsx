@@ -8,13 +8,15 @@ import {Skill as SkillType, SkillGroup as SkillGroupType} from '../../../data/da
  */
 export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = memo(({skillGroup}) => {
   // Récupère le nom du groupe et la liste des compétences
-  const {name, skills} = skillGroup;
+  const {name, skills, description} = skillGroup;
   
   return (
     <div className="flex flex-col bg-white rounded-xl mb-4 p-8 shadow-x">
       {/* Titre du groupe en gras et centré */}
       <span className="text-start text-lg font-bold ">{name}</span>
-      
+
+      <span className="text-sm text-neutral-700 prose prose-sm max-w-none pt-2">{description}</span>
+
       {/* Affiche chaque compétence avec une barre de niveau */}
       <div className="flex flex-col gap-y-2">
         {skills.map((skill, index) => (
