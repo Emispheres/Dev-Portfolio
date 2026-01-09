@@ -4,9 +4,10 @@ import type {TimelineItem} from '../../../data/dataDef';
 
 const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
   const {title, date, location, content} = item;
+  
   return (
-    <div className="relative border-b border-l border-gray-400 py-4 pl-4 last:border-b-0">
-      {/* Date et Lieu - Positionnés absolument pour dépasser de la ligne gauche */}
+    <div className="relative bg-gray-100 rounded-md mb-4 py-4 pl-4 shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out">
+      {/* Date et Lieu - Positionnés absolument pour dépasser de la ligne gauche border-b border-l border-gray-400*/}
       <div className="absolute -left-2 top-3 flex items-center space-x-2 md:-left-4">
         <span className="whitespace-nowrap rounded-full border border-orange-400 bg-white px-2 py-1 text-xs font-bold text-orange-700">
           {date}

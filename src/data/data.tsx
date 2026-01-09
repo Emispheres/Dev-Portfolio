@@ -265,7 +265,7 @@ export const portfolioItems: PortfolioItem[] = [
 export const education: TimelineItem[] = [
   {
     date: '2020 - 2022',
-    location: 'Lycée Général et Technologique International Victor Hugo - Colomiers',
+    location: 'Lycée International Victor Hugo',
     title: 'BTS Système numérique - informatique et réseaux ',
     content: (
       <p>
@@ -287,7 +287,7 @@ export const education: TimelineItem[] = [
   },
   {
     date: '2016 - 2019',
-    location: 'Lycée Polyvalent Déodat de Séverac - Toulouse',
+    location: 'Lycée Polyvalent Déodat de Séverac',
     title: "Bac STI2D spécialité Système d'information et numérique ",
     content: (
       <p>
@@ -301,7 +301,7 @@ export const education: TimelineItem[] = [
 export const experience: TimelineItem[] = [
   {
     date: 'Septembre 2021 - Juin 2022',
-    location: 'Lycée Général et Technologique International Victor Hugo - Colomiers',
+    location: 'Lycée International Victor Hugo',
     title: "Projet de fin d'année",
     content: (
       <p>
@@ -316,7 +316,7 @@ export const experience: TimelineItem[] = [
   },
   {
     date: 'Juin 2021 - Septembre 2021',
-    location: 'Maintronic - Labège',
+    location: 'Maintronic',
     title: "Stagiaire en maintenance d'appareil électronique",
     content: (
       <p>
