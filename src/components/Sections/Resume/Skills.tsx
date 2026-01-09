@@ -11,9 +11,9 @@ export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = m
   const {name, skills} = skillGroup;
   
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-white rounded-xl mb-4 p-8 shadow-x">
       {/* Titre du groupe en gras et centré */}
-      <span className="text-center text-lg font-bold">{name}</span>
+      <span className="text-start text-lg font-bold ">{name}</span>
       
       {/* Affiche chaque compétence avec une barre de niveau */}
       <div className="flex flex-col gap-y-2">

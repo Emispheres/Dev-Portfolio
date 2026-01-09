@@ -16,8 +16,8 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
       </div>
 
       {/* Titre et Description */}
-      <div className="flex flex-col pt-9">
-        <h3 className="text-lg font-bold text-neutral-800">{title}</h3>
+      <div className="flex flex-col pt-9 ">
+        <h3 className="text-lg font-bold text-neutral-800 ">{title}</h3>
       </div>
       <div className="text-sm text-neutral-700 prose prose-sm max-w-none pt-2">{content}</div>
     </div>

@@ -6,11 +6,11 @@ const ResumeSection: FC<PropsWithChildren<{title: string; icon?: ComponentType<a
       <div className="flex justify-center pb-4 md:justify-start">
         <div className="relative h-max flex items-center gap-x-3">
           {Icon && <Icon className="h-6 w-6 text-orange-500 hover:animate-pulse" />}
-          <h2 className="text-2xl font-bold uppercase text-neutral-800">{title}</h2>
+          <h2 className="text-2xl font-bold uppercase text-neutral-800 ">{title}</h2>
           {/*<span className="absolute inset-x-0 -bottom-1 border-b-2 border-orange-400" />*/}
         </div>
       </div>
-      <div className="flex flex-col">{children}</div>
+      <div className="flex flex-col ">{children}</div>
     </div>
   );
 });

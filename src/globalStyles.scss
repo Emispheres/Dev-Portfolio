@@ -48,3 +48,9 @@ th {
 th {
   font-weight: 600;
 }
+
+.shadow-x {
+  box-shadow: 
+    5px 0 5px -3px rgba(0,0,0,0.2),
+    0 5px 5px -3px rgba(0,0,0,0.2);
+}

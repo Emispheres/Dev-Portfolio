@@ -1,5 +1,5 @@
 import {FC, memo} from 'react';
-import {AcademicCapIcon, BriefcaseIcon} from '@heroicons/react/24/solid';
+import {AcademicCapIcon, BriefcaseIcon, BoltIcon} from '@heroicons/react/24/solid';
 
 import {education, experience, SectionId, skills} from '../../../data/data';
 import Section from '../../Layout/Section';
@@ -12,8 +12,8 @@ const Resume: FC = memo(() => {
     <>
       {/* Section Compétences séparée */}
       <Section className="bg-gray-100" sectionId={SectionId.Skills}>
-        <ResumeSection title="Compétences">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <ResumeSection title="Compétences" icon={BoltIcon}>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-1 ">
             {skills.map((skillgroup, index) => (
               <SkillGroup key={`${skillgroup.name}-${index}`} skillGroup={skillgroup} />
             ))}
