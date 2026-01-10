@@ -1,24 +1,21 @@
-import {FC, memo, PropsWithChildren, useMemo} from 'react';
+import {FC, memo, PropsWithChildren} from 'react';
 
 import {Skill as SkillType, SkillGroup as SkillGroupType} from '../../../data/dataDef';
 
-/**
- * SkillGroup : Affiche un groupe de compétences avec un titre
- * Par exemple : "Langages de programmation" avec React, TypeScript, etc.
- */
+// Conteneur principal d'un groupe de compétences (ex: "Langues", "Frontend", etc.)
 export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = memo(({skillGroup}) => {
-  // Récupère le nom du groupe et la liste des compétences
   const {name, skills, description} = skillGroup;
   
   return (
     <div className="flex flex-col bg-white rounded-xl mb-4 p-8 shadow-x">
-      {/* Titre du groupe en gras et centré */}
-      <span className="text-start text-lg font-bold ">{name}</span>
-
-      <span className="text-sm text-neutral-700 prose prose-sm max-w-none pt-2">{description}</span>
-
-      {/* Affiche chaque compétence avec une barre de niveau */}
-      <div className="flex flex-col gap-y-2">
+      {/* Titre du groupe */}
+      <span className="text-start text-lg font-bold">{name}</span>
+      
+      {/* Description du groupe */}
+      <div className="text-sm text-neutral-700 max-w-none my-4">{description}</div>
+      
+      {/* Grille : 1 colonne mobile, 2 colonnes desktop */}
+      <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
         {skills.map((skill, index) => (
           <Skill key={`${skill.name}-${index}`} skill={skill} />
         ))}
@@ -29,38 +26,46 @@ export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = m
 
 SkillGroup.displayName = 'SkillGroup';
 
-/**
- * Skill : Affiche une compétence individuelle avec une barre de progression
- * Par exemple : "React" avec une barre remplie à 90%
- */
+// Composant d'une compétence individuelle avec notation en étoiles
 export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
-  // Récupère le nom, le niveau et le max (défaut 10)
-  const {name, level, max = 10} = skill;
+  const {name, level} = skill;
   
-  // Calcule le pourcentage pour la barre (ex: 9/10 = 90%)
-  // useMemo optimise le calcul pour ne pas le refaire à chaque rendu
-  const percentage = useMemo(() => Math.round((level / max) * 100), [level, max]);
-
+  // Convertir le niveau (1-10) en nombre d'étoiles (0.5-5)
+  const fillAmount = level / 2;
+  
+  // ID unique pour les gradients SVG (évite les conflits entre compétences)
+  const skillId = name.replace(/\s+/g, '-').toLowerCase();
+  
   return (
-    <div className="flex flex-col">
-      {/* Nom de la compétence */}
-      <span className="ml-2 text-sm font-medium">{name}</span>
-      
-      {/* Conteneur de la barre de progression */}
-      <div className="h-6 w-full overflow-hidden rounded-full bg-neutral-300 shadow-inner">
-        {/* Barre remplie avec gradient bleu-violet, remplissage dépend du percentage */}
-        <div
-          className="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-1000 ease-out shadow-sm"
-          style={{width: `${percentage}%`}}
-        />
+    <div className="flex flex-col gap-2">
+      {/* Nom + Étoiles alignés horizontalement */}
+      <div className="flex items-center gap-2">
+        <span className="text-sm font-medium">{name}</span>
         
-        {/* Affiche le ratio (ex: 9/10) */}
-        <span className="absolute right-2 top-1 text-xs font-semibold text-gray-700">
-          {level}/{max}
-        </span>
+        {/* Affichage des 5 étoiles avec remplissage progressif */}
+        <div className="flex gap-0 -space-x-1">
+          {[...Array(5)].map((_, i) => {
+            // Calculer le pourcentage de remplissage pour cette étoile (0-100%)
+            const fillPercentage = Math.min(Math.max(fillAmount - i, 0), 1) * 100;
+            const gradId = `grad-${skillId}-${i}`;
+            
+            return (
+              <svg key={i} width="20" height="20" viewBox="0 0 24 24" className="flex-shrink-0">
+                <defs>
+                  <linearGradient id={gradId} x1="0%" x2="100%">
+                    <stop offset={`${fillPercentage}%`} stopColor="#f59e0b" />
+                    <stop offset={`${fillPercentage}%`} stopColor="#e5e7eb" />
+                  </linearGradient>
+                </defs>
+                <path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" fill={`url(#${gradId})`} />
+              </svg>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
 });
 
 Skill.displayName = 'Skill';
+//<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill={`url(#${gradId})`} stroke="#f59e0b" strokeWidth="2" />
