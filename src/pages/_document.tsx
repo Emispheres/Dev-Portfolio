@@ -7,7 +7,7 @@ import {Head, Html, Main, NextScript} from 'next/document';
 
 export default function Document() {
   return (
-    <Html className="scroll-smooth" lang="en">
+    <Html className="scroll-smooth" lang="fr">
       <Head>
         <link as="image" href="/images/blue.webp" rel="preload" />
         <meta charSet="utf-8" />
