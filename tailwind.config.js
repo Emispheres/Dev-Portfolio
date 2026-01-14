@@ -4,6 +4,10 @@ module.exports = {
   // darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        'apercu-mono': ['Courier Prime', 'monospace'],
+        'apercu': ['system-ui', 'sans-serif'],
+      },
       colors: {
         yellow: '#efc603',
       },

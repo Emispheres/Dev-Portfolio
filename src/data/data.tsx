@@ -1,5 +1,5 @@
-import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon,SparklesIcon, AcademicCapIcon, BuildingOffice2Icon} from '@heroicons/react/24/outline';
-import heroImage from '../images/blue.webp';
+import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon, SparklesIcon, AcademicCapIcon, BuildingOffice2Icon, CodeBracketIcon, DevicePhoneMobileIcon} from '@heroicons/react/24/outline';
+import heroImage from '../images/bg.jpg';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
@@ -31,6 +31,7 @@ import {
   TestimonialSection,
   TimelineItem,
 } from './dataDef';
+import { CircleStackIcon, ServerStackIcon } from '@heroicons/react/24/solid';
 
 /**
  * Page meta data
@@ -61,21 +62,22 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `Bienvenue`,
+  name: `Bienvenue sur mon portfolio`,
   description: (
     <>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-
-        Je suis un <strong className="text-stone-100">développeur web junior</strong>, passionné par la création
-        d’interfaces modernes, claires et efficaces. Je développe des applications web en utilisant
-        <strong className="text-stone-100"> HTML, CSS, JavaScript et React</strong>.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        Actuellement en montée en compétences, je travaille sur des
-        <strong className="text-stone-100"> projets concrets</strong> pour renforcer mes bases techniques,
-        améliorer la qualité de mon code et construire un
-        <strong className="text-stone-100"> portfolio professionnel</strong>.
-      </p>
+      <div className="space-y-2" style={{fontFamily: 'Robotto, sans-serif'}}>
+        <p className="prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
+          Je suis un <strong className="text-stone-100">développeur web junior</strong>, passionné par la création
+          d'interfaces modernes, claires et efficaces. Je développe des applications web en utilisant
+          <strong className="text-stone-100"> HTML, CSS, JavaScript et React</strong>.
+        </p>
+        
+        <p className="prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
+          Actuellement en montée en compétences, je travaille sur des
+          <strong className="text-stone-100"> projets concrets</strong> pour renforcer mes bases techniques,
+          améliorer la qualité de mon code.
+        </p>
+      </div>
     </>
   ),
   actions: [
@@ -94,15 +96,26 @@ export const heroData: Hero = {
 };
 
 /**
+ * Skills Icons section
+ */
+export const skillsIcons = [
+  { icon: CodeBracketIcon, label: 'Front-end', hoverColor: 'hover:text-blue-500' },
+  { icon: CircleStackIcon, label: 'Back-end', hoverColor: 'hover:text-green-500' },
+  { icon: DevicePhoneMobileIcon, label: 'Mobile', hoverColor: 'hover:text-purple-500' },
+  { icon: SparklesIcon, label: 'Web-design', hoverColor: 'hover:text-pink-500' },
+  { icon: ServerStackIcon, label: 'Réseaux', hoverColor: 'hover:text-amber-400' },
+];
+
+/**
  * About section
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Technicien / développeur, avec une forte appétence pour le développement et les technologies web modernes. Je conçois des sites web modernes en utilisant HTML, CSS, JavaScript et React.\n
-Je travaille avec des API, la gestion d’état et des composants réutilisables. Je profite aujourd’hui du temps dont je dispose pour continuer d’apprendre de nouvelles technologies et notamment enrichir mes connaissances en développement mobile avec Angular et Ionic.\n
-Après avoir obtenu une licence en langue anglaise et culture anglophone, j’ai choisi de me reconvertir dans le métier de développeur web. Touche à tout, je m’intéresse également au web design et aux arts graphiques en général, ce qui me permet d’aborder le développement front-end avec sérénité, même lorsque je ne dispose pas de maquette ou de directives précises.\n
-Autonome de nature, je peux travailler seule ou en groupe, 
-étant également capable de m’adapter à un environnement que je ne connais pas. Je sais faire preuve de force de proposition lorsque l’on m’en donne la liberté, cherchant toujours à améliorer et optimiser les projets au maximum pour satisfaire au mieux la demande du client. L’optimisation du code fait partie de mes priorités.`,
+  description: `Je suis en reconversion dans le développement informatique. J’apprends actuellement les bases de la programmation, en particulier avec Python, ainsi que les principes généraux du fonctionnement des systèmes informatiques.\n
+Je travaille sur des exercices, des projets d’apprentissage et des expérimentations personnelles afin de comprendre la logique du code, la structure des programmes et la manière dont les applications interagissent avec leur environnement.\n
+En parallèle, je découvre les bases des réseaux et des systèmes (Linux, notions de TCP/IP, fonctionnement des machines et des connexions), dans l’objectif de construire progressivement un profil technique plus complet.\n
+Curieux et persévérant, je cherche à acquérir des bases solides plutôt qu’à me limiter à des connaissances superficielles, afin de pouvoir évoluer vers des rôles techniques plus avancés.\n
+Autonome de nature, je peux travailler seule ou en groupe, étant également capable de m’adapter à un environnement que je ne connais pas. Je sais faire preuve de force de proposition lorsque l’on m’en donne la liberté,`,
   aboutItems: [
     {label: 'Localisation', text: 'Toulouse', Icon: MapIcon},
     {label: 'Âge', text: '24', Icon: CalendarIcon},
