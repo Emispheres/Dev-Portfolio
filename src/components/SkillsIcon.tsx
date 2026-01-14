@@ -12,13 +12,15 @@ interface SkillsIconProps {
 
 const SkillsIcon: FC<SkillsIconProps> = ({skills}) => {
   return (
-    <div className="flex flex-row flex-wrap gap-6 justify-center items-start">
+    // Conteneur qui prend toute la largeur avec icones espacées et margin top
+    <div className="flex flex-row flex-wrap gap-x-32 gap-y-6 justify-between items-start w-full mt-8">
       {skills.map((skill) => {
         const Icon = skill.icon;
         return (
           <div key={skill.label} className="flex flex-col items-center gap-3">
-            <Icon className={`h-12 w-12 text-stone-300 transition-colors ${skill.hoverColor}`} />
-            <p className="text-sm font-medium text-stone-300">{skill.label}</p>
+            {/* Icones agrandies: h-16 w-16 au lieu de h-12 w-12 */}
+            <Icon className={`text-white h-24 w-24 text-stone-300 transition-colors ${skill.hoverColor}`} />
+            <p className="text-sm text-white font-medium text-stone-300">{skill.label}</p>
           </div>
         );
       })}
