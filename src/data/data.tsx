@@ -1,4 +1,5 @@
-import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon, SparklesIcon, AcademicCapIcon, BuildingOffice2Icon, CodeBracketIcon, DevicePhoneMobileIcon} from '@heroicons/react/24/outline';
+import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon, SparklesIcon, AcademicCapIcon, BuildingOffice2Icon, DevicePhoneMobileIcon} from '@heroicons/react/24/outline';
+import { CircleStackIcon, CodeBracketSquareIcon, EnvelopeIcon, GlobeAsiaAustraliaIcon, ServerStackIcon } from '@heroicons/react/24/solid';
 import heroImage from '../images/bg.jpg';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
@@ -31,7 +32,6 @@ import {
   TestimonialSection,
   TimelineItem,
 } from './dataDef';
-import { CircleStackIcon, ServerStackIcon } from '@heroicons/react/24/solid';
 
 /**
  * Page meta data
@@ -62,35 +62,36 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `Bienvenue sur mon portfolio`,
+  name: `Bienvenue sur mon Portfolio !`,
   description: (
     <>
       <div className="space-y-2" style={{fontFamily: 'Robotto, sans-serif'}}>
         <p className="prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
           Je suis un <strong className="text-stone-100">développeur web junior</strong>, passionné par la création
           d'interfaces modernes, claires et efficaces. Je développe des applications web en utilisant
-          <strong className="text-stone-100"> HTML, CSS, JavaScript et React</strong>.
+          <strong className="text-stone-100"> HTML, TailwindCSS, JavaScript et React</strong>.
         </p>
         
-        <p className="prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
+        {/*<p className="prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
           Actuellement en montée en compétences, je travaille sur des
           <strong className="text-stone-100"> projets concrets</strong> pour renforcer mes bases techniques,
           améliorer la qualité de mon code.
-        </p>
+        </p>*/}
       </div>
     </>
   ),
   actions: [
     {
       href: '/assets/resume.pdf',
-      text: 'CV',
-      primary: true,
+      text: 'Télécharger mon CV',
+      primary: false,
       Icon: ArrowDownTrayIcon,
     },
     {
       href: `#${SectionId.Contact}`,
-      text: 'Contact',
+      text: 'Formulaire de Contact',
       primary: false,
+      Icon: EnvelopeIcon,
     },
   ],
 };
@@ -99,10 +100,10 @@ export const heroData: Hero = {
  * Skills Icons section
  */
 export const skillsIcons = [
-  { icon: CodeBracketIcon, label: 'Front-end', hoverColor: 'hover:text-blue-500' },
+  { icon: CodeBracketSquareIcon, label: 'Front-end', hoverColor: 'hover:text-blue-500' },
   { icon: CircleStackIcon, label: 'Back-end', hoverColor: 'hover:text-green-500' },
   { icon: DevicePhoneMobileIcon, label: 'Mobile', hoverColor: 'hover:text-purple-500' },
-  { icon: SparklesIcon, label: 'Web-design', hoverColor: 'hover:text-pink-500' },
+  { icon: GlobeAsiaAustraliaIcon, label: 'Langues', hoverColor: 'hover:text-pink-500' },
   { icon: ServerStackIcon, label: 'Réseaux', hoverColor: 'hover:text-amber-400' },
 ];
 
