@@ -31,6 +31,39 @@ module.exports = {
             strokeDashoffset: '-360%',
           },
         },
+        slideInRight: {
+          '0%': {
+            transform: 'scaleX(0)',
+            transformOrigin: 'right',
+          },
+          '100%': {
+            transform: 'scaleX(1)',
+            transformOrigin: 'right',
+          },
+        },
+        slideOutRight: {
+          '0%': {
+            transform: 'scaleX(1)',
+            transformOrigin: 'left',
+          },
+          '100%': {
+            transform: 'scaleX(0)',
+            transformOrigin: 'left',
+          },
+        },
+        fadeIn: {
+          '0%': {
+            opacity: 0,
+          },
+          '100%': {
+            opacity: 1,
+          },
+        },
+      },
+      animation: {
+        slideInRight: 'slideInRight 1s ease-in-out',
+        slideOutRight: 'slideOutRight 1s ease-in-out',
+        fadeIn: 'fadeIn 2.5s ease-in-out',
       },
       screens: {
         touch: {raw: 'only screen and (pointer: coarse)'},

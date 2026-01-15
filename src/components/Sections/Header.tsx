@@ -1,5 +1,5 @@
 import {Dialog, Transition} from '@headlessui/react';
-import {Bars3BottomRightIcon} from '@heroicons/react/24/outline';
+import {Bars2Icon, Bars3BottomRightIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Link from 'next/link';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
@@ -32,28 +32,43 @@ const Header: FC = memo(() => {
 
 const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
   ({navSections, currentSection}) => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     const baseClass =
       '-m-1.5 p-1.5 rounded-md font-semibold first-letter:uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 text-neutral-100';
     const activeClass = classNames(baseClass, 'text-orange-500');
     const inactiveClass = classNames(baseClass, 'text-neutral-100');
     return (
-      <header className="fixed top-0 z-50 hidden w-full bg-neutral-900/50 p-4 backdrop-blur sm:block" id={headerID}>
-        <div className="flex items-center justify-between mx-auto max-w-screen-lg px-4 lg:px-0">
-          <a href="/">
-            <img src="/favicon-96x96.png" alt="logo" className="w-10 h-10 sm:w-20 sm:h-20 " />
+      <header className="fixed top-0 z-50 hidden w-full p-4 sm:block " id={headerID}>
+        {/** container */}
+        <div className="relative flex items-center justify-between mx-auto max-w-full px-4">
+          {/** animated background */}
+          <div className={classNames("absolute inset-0 z-0", isOpen ? "bg-neutral-900/50 animate-slideInRight" : "animate-slideOutRight")}></div>
+          
+          <a href="/" className="relative z-10">
+            <img src="/favicon-96x96.png" alt="logo" className="w-14 h-14" />
           </a>
-          <nav className="flex justify-center item-center flex-1 gap-x-8">
-            {navSections.map(section => (
+          <nav className={classNames("absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center gap-x-8 z-10", !isOpen && "hidden")}>
+            {navSections.map((section, index) => (
               <NavItem
                 activeClass={activeClass}
                 current={section === currentSection}
                 inactiveClass={inactiveClass}
                 key={section}
                 section={section}
+                // Passe l'index pour créer un délai différent pour chaque élément
+                index={index}
+                // Passe isOpen pour savoir si le menu est ouvert ou fermé
+                isOpen={isOpen}
               />
             ))}
           </nav>
+          <button className="relative z-10 p-6" aria-label="Menu Button" onClick={() => setIsOpen(!isOpen)}>
+            <div>
+              <Bars2Icon className="h-6 w-6 text-white" />
+            </div>
+          </button>
         </div>
+
       </header>
     );
   },
@@ -128,13 +143,30 @@ const NavItem: FC<{
   activeClass: string;
   inactiveClass: string;
   onClick?: () => void;
-}> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
+  index?: number;
+  isOpen?: boolean;
+}> = memo(({section, current, inactiveClass, activeClass, onClick, index = 0, isOpen = false}) => {
+  // Calcule le délai pour que chaque élément s'affiche petit à petit (0.1s entre chaque)
+  const delay = index * 0.2;
+  
   return (
     <Link
-      className={classNames(current ? activeClass : inactiveClass)}
+      className={classNames(
+        current ? activeClass : inactiveClass,
+        // Ajoute l'animation fadeIn seulement quand le menu est ouvert
+        isOpen && "animate-fadeIn"
+      )}
       href={`/#${section}`}
       key={section}
-      onClick={onClick}>
+      onClick={onClick}
+      // Le style applique le délai d'animation pour que les éléments apparaissent un par un
+      style={{
+        animationDelay: `${delay}s`,
+        // Démarre les éléments transparents et l'animation les rend visibles progressivement
+        opacity: 0,
+        // forwards: l'élément reste visible après l'animation (ne revient pas à opacity 0)
+        animationFillMode: isOpen ? 'forwards' : 'none',
+      }}>
       {section}
     </Link>
   );
