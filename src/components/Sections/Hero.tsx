@@ -11,13 +11,13 @@ const Hero: FC = memo(() => {
   return (
     <Section noPadding sectionId={SectionId.Hero}>
       {/* Conteneur principal background avec effet parallax */}
-      <div className="relative flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-center bg-fixed"
+      <div className="relative flex h-screen w-screen items-center justify-center overflow-hidden bg-gray-900 bg-cover bg-center bg-fixed"
         style={{backgroundImage: `url('${(imageSrc as any).src}')`}}
       >
       <div className="absolute inset-0 z-[5] bg-black/50"></div>
 
         {/* Contenu principal - descendre davantage */}
-        <div className="z-10 max-w-screen-xl px-4 lg:px-0 mt-56">
+        <div className="z-10 w-full max-w-screen-xl px-4 lg:px-0 mt-40">
           <div className="flex flex-col  gap-y-6 rounded-xl p-8 text-center items-center ">
             <h1 className="text-4xl font-medium text-white  sm:text-5xl lg:text-6xl">{name}</h1>
             <div className="mt-8">
@@ -27,17 +27,17 @@ const Hero: FC = memo(() => {
               <Socials />
             </div>*/}
             {/* Boutons "CV" et "Contact" - générés depuis heroData.actions */}
-            <div className="flex w-full justify-center gap-x-4">
+            <div className="flex w-full justify-center gap-x-4 flex-wrap">
               {actions.map(({href, text, primary, Icon}) => (
                 <a
                   className={classNames(
-                    'flex mt-4 gap-x-4 rounded-lg border-2 bg-none px-24 py-3 text-base font-medium text-white ring-offset-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-lg transition-colors',
+                    'flex mt-4 gap-x-2 sm:gap-x-4 rounded-lg border-2 bg-none px-6 py-2 sm:px-24 sm:py-3 text-sm sm:text-base font-medium text-white ring-offset-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-lg transition-colors',
                     primary ? 'border-orange-500 ring-orange-500 hover:border-orange-300' : 'border-white ring-white hover:border-orange-500',
                   )}
                   href={href}
                   key={text}>
                   {text}
-                  {Icon && <Icon className="h-6 w-6 text-white sm:h-7 sm:w-7" />}
+                  {Icon && <Icon className="h-4 w-4 sm:h-6 sm:w-6 text-white sm:h-7 sm:w-7" />}
                 </a>
               ))}
             </div>

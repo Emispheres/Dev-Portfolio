@@ -37,9 +37,9 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'Modèle de CV React',
-  description: "Site d'exemple construit avec le modèle de CV React de Tim Baker",
-};
+  title: "Portfolio d'Émile Dzawa - Développeur Web Junior",
+  description: "Portfolio d'Émile Dzawa - Développeur Web Junior",
+}; 
 
 /**
  * Section definition

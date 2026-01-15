@@ -33,22 +33,27 @@ const Header: FC = memo(() => {
 const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
   ({navSections, currentSection}) => {
     const baseClass =
-      '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 text-neutral-100';
+      '-m-1.5 p-1.5 rounded-md font-semibold first-letter:uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 text-neutral-100';
     const activeClass = classNames(baseClass, 'text-orange-500');
     const inactiveClass = classNames(baseClass, 'text-neutral-100');
     return (
       <header className="fixed top-0 z-50 hidden w-full bg-neutral-900/50 p-4 backdrop-blur sm:block" id={headerID}>
-        <nav className="flex justify-center gap-x-8">
-          {navSections.map(section => (
-            <NavItem
-              activeClass={activeClass}
-              current={section === currentSection}
-              inactiveClass={inactiveClass}
-              key={section}
-              section={section}
-            />
-          ))}
-        </nav>
+        <div className="flex items-center justify-between mx-auto max-w-screen-lg px-4 lg:px-0">
+          <a href="/">
+            <img src="/favicon-96x96.png" alt="logo" className="w-10 h-10 sm:w-20 sm:h-20 " />
+          </a>
+          <nav className="flex justify-center item-center flex-1 gap-x-8">
+            {navSections.map(section => (
+              <NavItem
+                activeClass={activeClass}
+                current={section === currentSection}
+                inactiveClass={inactiveClass}
+                key={section}
+                section={section}
+              />
+            ))}
+          </nav>
+        </div>
       </header>
     );
   },
