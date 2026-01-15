@@ -10,16 +10,21 @@ import {useNavObserver} from '../../hooks/useNavObserver';
 export const headerID = 'headerNav';
 
 const Header: FC = memo(() => {
+  // Suivi de la section actuellement visible en fonction de la position du défilement
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
+  
+  // Définir toutes les sections de navigation disponibles
   const navSections = useMemo(
     () => [SectionId.About, SectionId.Skills, SectionId.Resume, SectionId.Portfolio, SectionId.Testimonials, SectionId.Contact],
     [],
   );
 
+  // Mettre à jour la section active quand l'utilisateur fait défiler vers différentes parties de la page
   const intersectionHandler = useCallback((section: SectionId | null) => {
     section && setCurrentSection(section);
   }, []);
 
+  // Observer les intersections de défilement pour surligner l'élément de navigation actif
   useNavObserver(navSections.map(section => `#${section}`).join(','), intersectionHandler);
 
   return (
@@ -32,46 +37,73 @@ const Header: FC = memo(() => {
 
 const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
   ({navSections, currentSection}) => {
+    // Contrôler l'état d'ouverture/fermeture du menu
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const baseClass =
-      '-m-1.5 p-1.5 rounded-md font-semibold first-letter:uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 text-neutral-100';
+    // Suivi si le menu a été fermé une fois (prévient les animations au chargement de la page)
+    const [hasBeenOpened, setHasBeenOpened] = useState<boolean>(false);
+    
+    // Gérer le basculement du menu et suivre le premier événement de fermeture
+    const handleClick = () => {
+      const newIsOpen = !isOpen;
+      setIsOpen(newIsOpen);
+      // Définir hasBeenOpened à la première fermeture pour activer les animations
+      if (!newIsOpen && !hasBeenOpened) {
+        setHasBeenOpened(true);
+      }
+    };
+    
+    const baseClass = '-m-1.5 p-1.5 rounded-md font-semibold first-letter:uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 text-neutral-100';
+    // Classes de base pour l'élément de navigation actif (surligné en orange)
     const activeClass = classNames(baseClass, 'text-orange-500');
+    // Classes de base pour les éléments de navigation inactifs
     const inactiveClass = classNames(baseClass, 'text-neutral-100');
+    
     return (
-      <header className="fixed top-0 z-50 hidden w-full p-4 sm:block " id={headerID}>
-        {/** container */}
+      <header className="fixed top-0 z-50 hidden w-full p-4 sm:block" id={headerID}>
         <div className="relative flex items-center justify-between mx-auto max-w-full px-4">
-          {/** animated background */}
-          <div className={classNames("absolute inset-0 z-0", isOpen ? "bg-neutral-900/50 animate-slideInRight" : "animate-slideOutRight")}></div>
+          {/* Superposition de fond qui glisse vers l'intérieur/l'extérieur du menu - visible uniquement sur le bureau (point d'arrêt sm) */}
+          <div 
+            className={classNames(
+              "absolute inset-0 z-0",
+              // Glisser depuis la droite quand le menu s'ouvre
+              isOpen && "bg-neutral-900/50 animate-slideInRight",
+              // Glisser vers la droite quand le menu se ferme (après que les éléments de nav disparaissent)
+              !isOpen && hasBeenOpened && "bg-neutral-900/50 animate-slideOutRight"
+            )}
+            // Retarder la sortie du fond de 0.6s pour permettre aux éléments de nav de s'estomper d'abord, puis persister l'état caché
+            style={!isOpen && hasBeenOpened ? {animationDelay: '0.6s', animationFillMode: 'forwards'} : {}}
+          />
           
-          <a href="/" className="relative z-10">
+          {/* Logo - côté gauche, toujours visible */}
+          <a href="/" className="relative z-10 p-2">
             <img src="/favicon-96x96.png" alt="logo" className="w-14 h-14" />
           </a>
-          <nav className={classNames("absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center gap-x-8 z-10", !isOpen && "hidden")}>
+          
+          {/* Éléments de navigation - centrés, avec animations d'apparition/disparition échelonnées, désactivés à la fermeture */}
+          <nav className={classNames("absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center gap-x-8 z-10", !isOpen && "pointer-events-none")}>
             {navSections.map((section, index) => (
               <NavItem
-                activeClass={activeClass}
-                current={section === currentSection}
-                inactiveClass={inactiveClass}
                 key={section}
                 section={section}
-                // Passe l'index pour créer un délai différent pour chaque élément
+                current={section === currentSection}
+                activeClass={activeClass}
+                inactiveClass={inactiveClass}
+                // Passer l'index pour les délais d'animation échelonnés (0s, 0.1s, 0.2s...)
                 index={index}
-                // Passe isOpen pour savoir si le menu est ouvert ou fermé
                 isOpen={isOpen}
+                hasBeenOpened={hasBeenOpened}
               />
             ))}
           </nav>
-          <button className="relative z-10 p-6" aria-label="Menu Button" onClick={() => setIsOpen(!isOpen)}>
-            <div>
-              <Bars2Icon className="h-6 w-6 text-white" />
-            </div>
+          
+          {/* Bouton de basculement du menu - côté droit */}
+          <button className="relative rounded-md z-10 p-3 bg-neutral-900" aria-label="Menu" onClick={handleClick}>
+            <Bars2Icon className="h-6 w-6 text-white" />
           </button>
         </div>
-
       </header>
     );
-  },
+  }
 );
 
 const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
@@ -145,27 +177,28 @@ const NavItem: FC<{
   onClick?: () => void;
   index?: number;
   isOpen?: boolean;
-}> = memo(({section, current, inactiveClass, activeClass, onClick, index = 0, isOpen = false}) => {
-  // Calcule le délai pour que chaque élément s'affiche petit à petit (0.1s entre chaque)
-  const delay = index * 0.2;
+  hasBeenOpened?: boolean;
+}> = memo(({section, current, inactiveClass, activeClass, onClick, index = 0, isOpen = false, hasBeenOpened = false}) => {
+  // Délais d'animation pour l'effet échelonné : premier élément 0s, deuxième 0.1s, troisième 0.2s, etc.
+  const delayOpen = index * 0.1;
+  const delayClose = index * 0.1;
   
   return (
     <Link
       className={classNames(
         current ? activeClass : inactiveClass,
-        // Ajoute l'animation fadeIn seulement quand le menu est ouvert
-        isOpen && "animate-fadeIn"
+        // Une seule animation s'applique : fadeIn à l'ouverture, fadeOut à la fermeture (après la première fermeture)
+        isOpen ? "animate-fadeIn" : hasBeenOpened ? "animate-fadeOut" : ""
       )}
       href={`/#${section}`}
-      key={section}
       onClick={onClick}
-      // Le style applique le délai d'animation pour que les éléments apparaissent un par un
       style={{
-        animationDelay: `${delay}s`,
-        // Démarre les éléments transparents et l'animation les rend visibles progressivement
-        opacity: 0,
-        // forwards: l'élément reste visible après l'animation (ne revient pas à opacity 0)
-        animationFillMode: isOpen ? 'forwards' : 'none',
+        // Échelonner les animations en fonction de l'index de l'élément de navigation
+        animationDelay: isOpen ? `${delayOpen}s` : `${delayClose}s`,
+        // Garder les éléments cachés jusqu'à ce qu'ils s'estompent, visibles pendant la disparition
+        opacity: !isOpen && hasBeenOpened ? 1 : 0,
+        // Persister l'état final de l'animation (prévient le scintillement)
+        animationFillMode: 'forwards',
       }}>
       {section}
     </Link>

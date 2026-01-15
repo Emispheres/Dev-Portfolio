@@ -59,11 +59,22 @@ module.exports = {
             opacity: 1,
           },
         },
+        // Animation pour faire disparaître les éléments (opacité 1 à 0)
+        fadeOut: {
+          '0%': {
+            opacity: 1,
+          },
+          '100%': {
+            opacity: 0,
+          },
+        },
       },
       animation: {
         slideInRight: 'slideInRight 1s ease-in-out',
         slideOutRight: 'slideOutRight 1s ease-in-out',
-        fadeIn: 'fadeIn 2.5s ease-in-out',
+        fadeIn: 'fadeIn 1s ease-in-out',
+        // Animation pour faire disparaître progressivement
+        fadeOut: 'fadeOut 1s ease-in-out',
       },
       screens: {
         touch: {raw: 'only screen and (pointer: coarse)'},
