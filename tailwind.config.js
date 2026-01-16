@@ -7,6 +7,8 @@ module.exports = {
       fontFamily: {
         'apercu-mono': ['Courier Prime', 'monospace'],
         'apercu': ['system-ui', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
+        'noto-sd': ['Noto SD 500', 'sans-serif'],
       },
       colors: {
         yellow: '#efc603',
@@ -70,8 +72,8 @@ module.exports = {
         },
       },
       animation: {
-        slideInRight: 'slideInRight 1s ease-in-out',
-        slideOutRight: 'slideOutRight 1s ease-in-out',
+        slideInRight: 'slideInRight 1.8s ease-in-out',
+        slideOutRight: 'slideOutRight 1.8s ease-in-out',
         fadeIn: 'fadeIn 1s ease-in-out',
         // Animation pour faire disparaître progressivement
         fadeOut: 'fadeOut 1s ease-in-out',

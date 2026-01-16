@@ -66,7 +66,7 @@ export const heroData: Hero = {
   description: (
     <>
       <div className="space-y-2" style={{fontFamily: 'Robotto, sans-serif'}}>
-        <p className="prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
+        <p className="text-stone-100 prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
           Je suis un <strong className="text-stone-100">développeur web junior</strong>, passionné par la création
           d'interfaces modernes, claires et efficaces. Je développe des applications web en utilisant
           <strong className="text-stone-100"> HTML, TailwindCSS, JavaScript et React</strong>.
@@ -84,14 +84,14 @@ export const heroData: Hero = {
     {
       href: '/assets/resume.pdf',
       text: 'Télécharger mon CV',
-      primary: false,
       Icon: ArrowDownTrayIcon,
+      color:'bg-green-600',
     },
     {
       href: `#${SectionId.Contact}`,
       text: 'Formulaire de Contact',
-      primary: false,
       Icon: EnvelopeIcon,
+      color:'bg-blue-600',
     },
   ],
 };
@@ -131,24 +131,31 @@ Autonome de nature, je peux travailler seule ou en groupe, étant également cap
  * Skills section
  */
 export const skills: SkillGroup[] = [
-  {
-    name: 'Langues',
-    description: 'Compétences linguistiques en anglais et français.',
-    skills: [
-      {
-        name: 'Anglais',
-        level: 7,
-      },
-      {
-        name: 'Français',
-        level: 10,
-      },
-    ],
-  },
+
   {
     name: 'Développement frontend',
     description: 'Compétences en développement frontend avec divers frameworks et bibliothèques.',
     skills: [
+            {
+        name: 'HTML',
+        level: 8,
+      },
+            {
+        name: 'CSS',
+        level: 8,
+      },
+      {
+        name: 'Javascript',
+        level: 7,
+      },
+      {
+        name: 'JQuery',
+        level: 6,
+      },
+      {
+        name: 'Ajax',
+        level: 6,
+      },
       {
         name: 'React',
         level: 6,
@@ -160,6 +167,14 @@ export const skills: SkillGroup[] = [
       {
         name: 'GraphQL',
         level: 6,
+      },
+      {
+        name: 'JSON',
+        level: 6,
+      },
+      {
+        name: 'ChartJS',
+        level: 5,
       },
     ],
   },
@@ -200,6 +215,20 @@ export const skills: SkillGroup[] = [
       {
         name: 'MongoDB',
         level: 8,
+      },
+    ],
+  },
+    {
+    name: 'Langues',
+    description: 'Compétences linguistiques en anglais et français.',
+    skills: [
+      {
+        name: 'Anglais',
+        level: 7,
+      },
+      {
+        name: 'Français',
+        level: 10,
       },
     ],
   },

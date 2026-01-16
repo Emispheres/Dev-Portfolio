@@ -37,22 +37,20 @@ const Header: FC = memo(() => {
 
 const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
   ({navSections, currentSection}) => {
-    // Contrôler l'état d'ouverture/fermeture du menu
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+    // Contrôler l'état d'ouverture/fermeture du menu (ouvert par défaut au chargement)
+    const [isOpen, setIsOpen] = useState<boolean>(true);
     // Suivi si le menu a été fermé une fois (prévient les animations au chargement de la page)
-    const [hasBeenOpened, setHasBeenOpened] = useState<boolean>(false);
+    //const [hasBeenOpened, setHasBeenOpened] = useState<boolean>(true);
+    const [hasBeenOpened] = useState<boolean>(true);
     
     // Gérer le basculement du menu et suivre le premier événement de fermeture
     const handleClick = () => {
       const newIsOpen = !isOpen;
       setIsOpen(newIsOpen);
-      // Définir hasBeenOpened à la première fermeture pour activer les animations
-      if (!newIsOpen && !hasBeenOpened) {
-        setHasBeenOpened(true);
-      }
+      // Aucune logique supplémentaire nécessaire puisque hasBeenOpened est déjà true
     };
     
-    const baseClass = '-m-1.5 p-1.5 rounded-md font-semibold first-letter:uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 text-neutral-100';
+    const baseClass = '-m-1.5 p-1.5 rounded-md font-semibold uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 text-neutral-100';
     // Classes de base pour l'élément de navigation actif (surligné en orange)
     const activeClass = classNames(baseClass, 'text-orange-500');
     // Classes de base pour les éléments de navigation inactifs
@@ -66,21 +64,21 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
             className={classNames(
               "absolute inset-0 z-0",
               // Glisser depuis la droite quand le menu s'ouvre
-              isOpen && "bg-neutral-900/50 animate-slideInRight",
+              isOpen && "bg-neutral-900/70 animate-slideInRight",
               // Glisser vers la droite quand le menu se ferme (après que les éléments de nav disparaissent)
-              !isOpen && hasBeenOpened && "bg-neutral-900/50 animate-slideOutRight"
+              !isOpen && hasBeenOpened && "bg-neutral-900/70 animate-slideOutRight"
             )}
             // Retarder la sortie du fond de 0.6s pour permettre aux éléments de nav de s'estomper d'abord, puis persister l'état caché
             style={!isOpen && hasBeenOpened ? {animationDelay: '0.6s', animationFillMode: 'forwards'} : {}}
           />
           
           {/* Logo - côté gauche, toujours visible */}
-          <a href="/" className="relative z-10 p-2">
-            <img src="/favicon-96x96.png" alt="logo" className="w-14 h-14" />
+          <a href="/" className="relative z-10 p-2 ml-4">
+            <img src="/favicon-96x96.png" alt="logo" className="w-16 h-16" />
           </a>
           
           {/* Éléments de navigation - centrés, avec animations d'apparition/disparition échelonnées, désactivés à la fermeture */}
-          <nav className={classNames("absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center gap-x-8 z-10", !isOpen && "pointer-events-none")}>
+          <nav className={classNames("absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center gap-x-12 z-10", !isOpen && "pointer-events-none")}>
             {navSections.map((section, index) => (
               <NavItem
                 key={section}
@@ -97,7 +95,7 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
           </nav>
           
           {/* Bouton de basculement du menu - côté droit */}
-          <button className="relative rounded-md z-10 p-3 bg-neutral-900" aria-label="Menu" onClick={handleClick}>
+          <button className="relative rounded-md z-10 p-3 bg-[#0B0A0D] mr-4" aria-label="Menu" onClick={handleClick}>
             <Bars2Icon className="h-6 w-6 text-white" />
           </button>
         </div>
