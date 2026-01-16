@@ -30,7 +30,7 @@ const Hero: FC = memo(() => {
             <div className="flex w-full justify-center gap-x-4 flex-wrap">
               {actions.map(({href, text, Icon, color}) => (
                 <a className={classNames(
-                    'flex mt-4 gap-x-2 sm:gap-x-4 ' + color + ' px-6 py-2 sm:px-24 sm:py-3 text-sm sm:text-base font-medium text-white sm:text-lg transition-colors'
+                    'flex mt-4 gap-x-2 sm:gap-x-4 ' + color + ' px-6 py-2 sm:px-24 sm:py-3 text-sm sm:text-base font-medium text-white sm:text-lg transition-colors hover-pulsate'
                   )}
                   href={href}
                   key={text}>

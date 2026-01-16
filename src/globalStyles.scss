@@ -21,6 +21,12 @@
     height: -webkit-fill-available;
   }
 }
+@keyframes pulsate {
+  50% {
+    transform: scale(1.03);
+
+  }
+}
 
 /* Global styles */
 * {
@@ -57,4 +63,8 @@ th {
   box-shadow: 
     5px 0 5px -3px rgba(0,0,0,0.2),
     0 5px 5px -3px rgba(0,0,0,0.2);
+}
+
+.hover-pulsate:hover {
+  animation: pulsate 1s ease-in-out infinite alternate;
 }
