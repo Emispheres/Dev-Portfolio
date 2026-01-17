@@ -1,5 +1,5 @@
-import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon, SparklesIcon, AcademicCapIcon, BuildingOffice2Icon, DevicePhoneMobileIcon} from '@heroicons/react/24/outline';
-import { CircleStackIcon, CodeBracketSquareIcon, EnvelopeIcon, GlobeAsiaAustraliaIcon, ServerStackIcon } from '@heroicons/react/24/solid';
+import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon, SparklesIcon, AcademicCapIcon, BuildingOffice2Icon} from '@heroicons/react/24/outline';
+import { BookOpenIcon, CircleStackIcon, CodeBracketSquareIcon, EnvelopeIcon, GlobeAsiaAustraliaIcon, ServerStackIcon } from '@heroicons/react/24/solid';
 import heroImage from '../images/bg.jpg';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
@@ -102,7 +102,7 @@ export const heroData: Hero = {
 export const skillsIcons = [
   { icon: CodeBracketSquareIcon, label: 'Front-end', hoverColor: 'hover:text-blue-500' },
   { icon: CircleStackIcon, label: 'Back-end', hoverColor: 'hover:text-green-500' },
-  { icon: DevicePhoneMobileIcon, label: 'Mobile', hoverColor: 'hover:text-purple-500' },
+  { icon: BookOpenIcon, label: 'Apprentissage', hoverColor: 'hover:text-pink-500' },
   { icon: GlobeAsiaAustraliaIcon, label: 'Langues', hoverColor: 'hover:text-pink-500' },
   { icon: ServerStackIcon, label: 'Réseaux', hoverColor: 'hover:text-amber-400' },
 ];

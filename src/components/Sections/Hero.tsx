@@ -19,7 +19,7 @@ const Hero: FC = memo(() => {
         {/* Contenu principal - descendre davantage */}
         <div className="z-10 w-full max-w-screen-xl px-4 lg:px-0 mt-40">
           <div className="flex flex-col  gap-y-6 rounded-xl p-8 text-center items-center ">
-            <h1 className="text-4xl font-medium text-white  sm:text-5xl lg:text-6xl" style={{fontFamily: '"Noto SD 500", sans-serif'}}>{name}</h1>
+            <h1 className="text-4xl font-medium text-white  sm:text-5xl lg:text-6xl" style={{fontFamily: '"Noto SD 500", Arial, sans-serif'}}>{name}</h1>
             <div className="mt-8">
             {description}
             </div>

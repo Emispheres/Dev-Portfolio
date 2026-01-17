@@ -50,7 +50,7 @@ export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
             const gradId = `grad-${skillId}-${i}`;
             
             return (
-              <svg key={i} width="20" height="20" viewBox="0 0 24 24" className="flex-shrink-0">
+              <svg key={i} width="24" height="24" viewBox="0 0 24 24" className="flex-shrink-0">
                 <defs>
                   <linearGradient id={gradId} x1="0%" x2="100%">
                     <stop offset={`${fillPercentage}%`} stopColor="#f59e0b" />

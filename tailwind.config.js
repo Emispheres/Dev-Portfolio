@@ -72,8 +72,8 @@ module.exports = {
         },
       },
       animation: {
-        slideInRight: 'slideInRight 1.8s ease-in-out',
-        slideOutRight: 'slideOutRight 1.8s ease-in-out',
+        slideInRight: 'slideInRight 1.1s ease-in-out',
+        slideOutRight: 'slideOutRight 1.1s ease-in-out',
         fadeIn: 'fadeIn 1s ease-in-out',
         // Animation pour faire disparaître progressivement
         fadeOut: 'fadeOut 1s ease-in-out',
