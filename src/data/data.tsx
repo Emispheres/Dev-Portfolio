@@ -1,5 +1,5 @@
 import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon, SparklesIcon, AcademicCapIcon, BuildingOffice2Icon} from '@heroicons/react/24/outline';
-import { BookOpenIcon, CircleStackIcon, CodeBracketIcon, EnvelopeIcon, GlobeAsiaAustraliaIcon, ServerStackIcon } from '@heroicons/react/24/solid';
+import { BookOpenIcon, CircleStackIcon, CodeBracketIcon, EnvelopeIcon, ServerStackIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
 import heroImage from '../images/bg.jpg';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
@@ -12,7 +12,7 @@ import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
 import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
-import profilepic from '../images/1000004076.jpg';
+import profilepic from '../images/1000004136.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
@@ -101,9 +101,9 @@ export const heroData: Hero = {
  */
 export const skillsIcons = [
   { icon: CodeBracketIcon, label: 'Front-end', hoverColor: 'hover:text-blue-500' },
-  { icon: CircleStackIcon, label: 'Back-end', hoverColor: 'hover:text-green-500' },
-  { icon: BookOpenIcon, label: 'Apprentissage', hoverColor: 'hover:text-pink-500' },
-  { icon: GlobeAsiaAustraliaIcon, label: 'Langues', hoverColor: 'hover:text-pink-500' },
+  { icon: CircleStackIcon, label: 'Back-end', hoverColor: 'hover:text-green-400' },
+  { icon: BookOpenIcon, label: 'Apprentissage', hoverColor: 'hover:text-red-400' },
+  { icon: WrenchScrewdriverIcon, label: 'Outils & Technologies', hoverColor: 'hover:text-pink-400' },
   { icon: ServerStackIcon, label: 'Réseaux', hoverColor: 'hover:text-amber-400' },
 ];
 
@@ -135,6 +135,9 @@ export const skills: SkillGroup[] = [
   {
     name: 'Développement frontend',
     description: 'Compétences en développement frontend avec divers frameworks et bibliothèques.',
+    Icon: CodeBracketIcon,
+    iconColor: 'text-blue-500',
+    iconPosition: 'right',
     skills: [
             {
         name: 'HTML',
@@ -181,54 +184,87 @@ export const skills: SkillGroup[] = [
   {
     name: 'Développement backend',
     description: 'Compétences en développement backend avec plusieurs technologies.',
+    Icon: CircleStackIcon,
+    iconColor: 'text-green-400',
+    iconPosition: 'left',
     skills: [
       {
         name: 'Node.js',
-        level: 8,
-      },
-      {
-        name: 'Rust',
         level: 5,
       },
       {
-        name: 'Golang',
+        name: 'MySQL',
+        level: 6,
+      },
+      {
+        name: 'PHP',
         level: 4,
+      },
+      {
+        name: 'C++',
+        level: 6,
+      },
+      {
+        name: 'Java',
+        level: 6,
       },
     ],
   },
   {
+    Icon: ServerStackIcon,
+    iconPosition: 'right',
+    iconColor: 'text-amber-400',
+    name: 'Réseaux',
+    description: 'Compétences en réseaux informatiques.',
+    skills: [
+      {
+        name: 'VLAN',
+        level: 7,
+      },
+      {
+        name: 'TCP/IP',
+        level: 10,
+      },
+      {
+        name: 'DNS',
+        level: 8,
+      },
+      {
+        name: 'DHCP',
+        level: 8,
+      },
+      {
+        name: 'HTTP/HTTPS',
+        level: 9,
+      },  
+    ],
+  },
+  {
+    Icon: WrenchScrewdriverIcon,
+    iconPosition: 'left',
     name: 'Outils & Technologies',
     description: "Compétences avec divers outils et technologies de développement.",
+    iconColor: 'text-pink-400',
     skills: [
       {
         name: 'Git',
-        level: 9,
-      },
-      {
-        name: 'Docker',
         level: 7,
       },
       {
-        name: 'AWS',
+        name: 'VS Code',
         level: 6,
       },
       {
-        name: 'MongoDB',
+        name: 'WordPress',
+        level: 3,
+      },
+      {
+        name: 'Linux',
         level: 8,
       },
-    ],
-  },
-    {
-    name: 'Langues',
-    description: 'Compétences linguistiques en anglais et français.',
-    skills: [
       {
-        name: 'Anglais',
-        level: 7,
-      },
-      {
-        name: 'Français',
-        level: 10,
+        name: 'Windows',
+        level: 8,
       },
     ],
   },

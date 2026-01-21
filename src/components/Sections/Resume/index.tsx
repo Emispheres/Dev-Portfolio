@@ -11,9 +11,9 @@ const Resume: FC = memo(() => {
   return (
     <>
       {/* Section Compétences séparée */}
-      <Section className="bg-gray-100" sectionId={SectionId.Skills}>
+      <Section className="bg-gray-100" sectionId={SectionId.Skills} maxWidth="max-w-[1260px]"> 
         <ResumeSection title="Compétences" icon={BoltIcon}>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-1 ">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-1">
             {skills.map((skillgroup, index) => (
               <SkillGroup key={`${skillgroup.name}-${index}`} skillGroup={skillgroup} />
             ))}

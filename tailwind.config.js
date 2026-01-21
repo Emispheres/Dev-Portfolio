@@ -119,8 +119,8 @@ module.exports = {
         fadeInUp: 'fadeInUp 1s ease-in-out',
         // Animation pour faire disparaître progressivement
         fadeOut: 'fadeOut 1s ease-in-out',
-        slideFromLeft: 'slideFromLeft 1s ease-in-out',
-        slideFromRight: 'slideFromRight 1s ease-in-out',
+        slideFromLeft: 'slideFromLeft 1.7s ease-in-out',
+        slideFromRight: 'slideFromRight 1.7s ease-in-out',
       },
       screens: {
         touch: {raw: 'only screen and (pointer: coarse)'},

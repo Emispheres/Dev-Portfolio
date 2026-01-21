@@ -1,24 +1,38 @@
 import {FC, memo, PropsWithChildren} from 'react';
 
 import {Skill as SkillType, SkillGroup as SkillGroupType} from '../../../data/dataDef';
+import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
 
 // Conteneur principal d'un groupe de compétences (ex: "Langues", "Frontend", etc.)
 export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = memo(({skillGroup}) => {
-  const {name, skills, description} = skillGroup;
+  const {name, skills, description, Icon, iconPosition = 'left', iconColor} = skillGroup;
+  const { ref, isVisible } = useIntersectionObserver();
+  
+  // Choisir l'animation selon la position de l'icône
+  const animationClass = isVisible 
+    ? (iconPosition === 'right' ? 'animate-slideFromLeft' : 'animate-slideFromRight')
+    : 'opacity-0';
   
   return (
-    <div className="flex flex-col bg-white rounded-xl mb-4 p-8 shadow-x animate-slideFromRight">
-      {/* Titre du groupe */}
-      <span className="text-start text-lg font-bold">{name}</span>
-      
-      {/* Description du groupe */}
-      <div className="text-sm text-neutral-700 max-w-none my-4">{description}</div>
-      
-      {/* Grille : 1 colonne mobile, 2 colonnes desktop */}
-      <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-        {skills.map((skill, index) => (
-          <Skill key={`${skill.name}-${index}`} skill={skill} />
-        ))}
+    <div ref={ref} className={`flex items-stretch gap-24 mb-4  ${animationClass} ${iconPosition === 'right' ? 'flex-row-reverse' : 'flex-row'}`}>
+      {/* Icône en dehors de la boite */}
+      <div className="flex items-center justify-center">
+        {Icon && <Icon className={`h-32 w-32 flex-shrink-0 hover:animate-bounce ${iconColor}`} />}
+      </div>
+      {/* Boite blanche du contenu */}
+      <div className="flex flex-col bg-white rounded-xl p-8 shadow-x flex-1 shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out">
+        {/* Titre du groupe */}
+        <span className={`text-start text-xl font-bold ${iconColor}`} style={{fontFamily: '"Montserrat", Arial, sans-serif'}} >{name}</span>
+        
+        {/* Description du groupe */}
+        <div className="text-medium text-neutral-700 max-w-none my-4 ">{description}</div>
+        
+        {/* Grille : 1 colonne mobile, 2 colonnes desktop */}
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 text-medium ">
+          {skills.map((skill, index) => (
+            <Skill key={`${skill.name}-${index}`} skill={skill} />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -40,7 +54,7 @@ export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
     <div className="flex flex-col gap-2">
       {/* Nom + Étoiles alignés horizontalement */}
       <div className="flex items-center gap-2">
-        <span className="text-sm font-medium">{name}</span>
+        <span className="text-sm font-bold">{name}</span>
         
         {/* Affichage des 5 étoiles avec remplissage progressif */}
         <div className="flex gap-0 -space-x-1">

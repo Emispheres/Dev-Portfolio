@@ -72,6 +72,9 @@ export interface SkillGroup {
   name: string;
   description: string;
   skills: Skill[];
+  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+  iconPosition?: 'left' | 'right';
+  iconColor?: string;
 }
 
 /**
