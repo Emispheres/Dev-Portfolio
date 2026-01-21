@@ -16,7 +16,7 @@ const Hero: FC = memo(() => {
       >
       <div className="absolute inset-0 z-[5] bg-black/40"></div>
 
-        {/* Contenu principal - descendre davantage */}
+        {/* Contenu principal */}
         <div className="z-10 w-full max-w-screen-xl px-4 lg:px-0 mt-40">
           <div className="flex flex-col  gap-y-6 rounded-xl p-8 text-center items-center ">
             <h1 className="text-4xl font-medium text-white  sm:text-5xl lg:text-6xl" style={{fontFamily: '"Noto SD 500", Arial, sans-serif'}}>{name}</h1>
@@ -42,7 +42,7 @@ const Hero: FC = memo(() => {
             </div>
           </div>
           {/* Icones des compétences - EN DESSOUS DE TOUT */}
-        <div className="flex flex-col gap-y-4 w-full">
+        <div className="flex flex-col gap-y-4 w-full animate-fadeInUp">
           <SkillsIcon skills={skillsIcons} />
         </div>
         </div>

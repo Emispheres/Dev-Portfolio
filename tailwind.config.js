@@ -53,12 +53,52 @@ module.exports = {
             transformOrigin: 'left',
           },
         },
+        slideOutLeft: {
+          '0%': {
+            transform: 'scaleX(1)',
+            transformOrigin: 'right',
+          },
+          '100%': {
+            transform: 'scaleX(0)',
+            transformOrigin: 'right',
+          },
+        },
         fadeIn: {
           '0%': {
             opacity: 0,
           },
           '100%': {
             opacity: 1,
+          },
+        },
+        fadeInUp: {
+          '0%': {
+            opacity: 0,
+            transform: 'translateY(10px)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateY(0)',
+          },
+        },
+        slideFromLeft: {
+          '0%' : {
+            opacity: 0,
+            transform: 'translateX(-1800px)',
+          },
+          '100%' : {
+            opacity: 1,
+            transform: 'translateX(0)',
+          },
+        },
+        slideFromRight: {
+          '0%' : {
+            opacity: 0,
+            transform: 'translateX(1800px)',
+          },
+          '100%' : {
+            opacity: 1,
+            transform: 'translateX(0)',
           },
         },
         // Animation pour faire disparaître les éléments (opacité 1 à 0)
@@ -74,9 +114,13 @@ module.exports = {
       animation: {
         slideInRight: 'slideInRight 1.1s ease-in-out',
         slideOutRight: 'slideOutRight 1.1s ease-in-out',
+        slideOutLeft: 'slideOutLeft 1.1s ease-in-out',
         fadeIn: 'fadeIn 1s ease-in-out',
+        fadeInUp: 'fadeInUp 1s ease-in-out',
         // Animation pour faire disparaître progressivement
         fadeOut: 'fadeOut 1s ease-in-out',
+        slideFromLeft: 'slideFromLeft 1s ease-in-out',
+        slideFromRight: 'slideFromRight 1s ease-in-out',
       },
       screens: {
         touch: {raw: 'only screen and (pointer: coarse)'},

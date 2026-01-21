@@ -1,5 +1,5 @@
 import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon, SparklesIcon, AcademicCapIcon, BuildingOffice2Icon} from '@heroicons/react/24/outline';
-import { BookOpenIcon, CircleStackIcon, CodeBracketSquareIcon, EnvelopeIcon, GlobeAsiaAustraliaIcon, ServerStackIcon } from '@heroicons/react/24/solid';
+import { BookOpenIcon, CircleStackIcon, CodeBracketIcon, EnvelopeIcon, GlobeAsiaAustraliaIcon, ServerStackIcon } from '@heroicons/react/24/solid';
 import heroImage from '../images/bg.jpg';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
@@ -100,7 +100,7 @@ export const heroData: Hero = {
  * Skills Icons section
  */
 export const skillsIcons = [
-  { icon: CodeBracketSquareIcon, label: 'Front-end', hoverColor: 'hover:text-blue-500' },
+  { icon: CodeBracketIcon, label: 'Front-end', hoverColor: 'hover:text-blue-500' },
   { icon: CircleStackIcon, label: 'Back-end', hoverColor: 'hover:text-green-500' },
   { icon: BookOpenIcon, label: 'Apprentissage', hoverColor: 'hover:text-pink-500' },
   { icon: GlobeAsiaAustraliaIcon, label: 'Langues', hoverColor: 'hover:text-pink-500' },

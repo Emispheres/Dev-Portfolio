@@ -7,7 +7,7 @@ export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = m
   const {name, skills, description} = skillGroup;
   
   return (
-    <div className="flex flex-col bg-white rounded-xl mb-4 p-8 shadow-x">
+    <div className="flex flex-col bg-white rounded-xl mb-4 p-8 shadow-x animate-slideFromRight">
       {/* Titre du groupe */}
       <span className="text-start text-lg font-bold">{name}</span>
       
