@@ -66,7 +66,7 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
               // Glisser depuis la droite quand le menu s'ouvre
               isOpen && "bg-neutral-900/70 animate-slideInRight",
               // Glisser vers la droite quand le menu se ferme (après que les éléments de nav disparaissent)
-              !isOpen && hasBeenOpened && "bg-neutral-900/70 animate-slideOutRight"
+              !isOpen && hasBeenOpened && "bg-neutral-900/70 animate-slideOutLeft",
             )}
             // Retarder la sortie du fond de 0.6s pour permettre aux éléments de nav de s'estomper d'abord, puis persister l'état caché
             style={!isOpen && hasBeenOpened ? {animationDelay: '0.6s', animationFillMode: 'forwards'} : {}}
@@ -178,7 +178,7 @@ const NavItem: FC<{
   hasBeenOpened?: boolean;
 }> = memo(({section, current, inactiveClass, activeClass, onClick, index = 0, isOpen = false, hasBeenOpened = false}) => {
   // Délais d'animation pour l'effet échelonné : premier élément 0s, deuxième 0.1s, troisième 0.2s, etc.
-  const delayOpen = index * 0.1;
+  const delayOpen = 0.7 + index * 0.1;
   const delayClose = index * 0.1;
   
   return (
