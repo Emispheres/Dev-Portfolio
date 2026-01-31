@@ -1,24 +1,24 @@
 import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon, SparklesIcon, AcademicCapIcon, BuildingOffice2Icon} from '@heroicons/react/24/outline';
 import { BookOpenIcon, CircleStackIcon, CodeBracketIcon, EnvelopeIcon, ServerStackIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
-import heroImage from '../images/bg.jpg';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
+import heroImage from '../images/notbad.jpg';
+import porfolioImage1 from '../images/portfolio/FabLab.png';
+import porfolioImage2 from '../images/portfolio/WhatSonV2.png';
 import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
+import porfolioImage4 from '../images/portfolio/DevPortfolio.png';
+import porfolioImage5 from '../images/portfolio/Robot-fouineur.jpg';
+/*import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
 import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
 import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
 import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
+import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';*/
 import profilepic from '../images/1000004136.jpg';
 import testimonialImage from '../images/testimonial.webp';
-import GithubIcon from '../components/Icon/GithubIcon';
+/*import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
+import TwitterIcon from '../components/Icon/TwitterIcon';*/
 
 import {
   About,
@@ -264,7 +264,11 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'Windows',
-        level: 8,
+        level: 10,
+      },
+      {
+        name: 'NetBeas',
+        level: 6,
       },
     ],
   },
@@ -275,70 +279,59 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Titre du projet 1',
-    description: 'Donnez une courte description de votre projet ici.',
-    url: 'https://reactresume.com',
+    title: 'TRS FabLab',
+    description: `- Application web permettant de suivre et analyser la production d'imprimantes 3D dans un FabLab.
+- Suivi en temps réel des conditions de production (température, hygrométrie) avec alertes.
+- Visualisation de la production par ordre de fabrication et estimation des coûts.
+- Affichage du TRS (Taux de Rendement Synthétique) par imprimante.
+- Gestion des utilisateurs (invité, utilisateur, administrateur).
+- Stack: GraphQL, Chart.js
+- Développement frontend et intégration de données capteurs`,
+    url: 'https://emispheres.github.io/TRS-FabLab/',
     image: porfolioImage1,
   },
   {
-    title: 'Titre du projet 2',
-    description: 'Donnez une courte description de votre projet ici.',
+    title: `What's On`,
+    description: `- Application web centralisant informations utiles pour étudiants : météo, horaires tram T1, agenda événements
+- Projet collaboratif en gestion de projet durant DUT Informatique (IUT Blagnac)
+- Refonte complète d'un code obsolète : suppression jQuery Mobile → CSS3 moderne
+- Mode sombre avec détection préférences système (variables CSS)
+- Intégration API Open-Meteo (HTTPS, temps réel)
+- SPA JavaScript vanilla avec navigation fluide
+- Design responsive card-based avec animations
+- Stack: HTML5, CSS3, JavaScript vanilla, Font Awesome 6.5, API REST`,
     url: 'https://reactresume.com',
     image: porfolioImage2,
   },
   {
-    title: 'Titre du projet 3',
-    description: 'Donnez une courte description de votre projet ici.',
+    title: 'DessinApp',
+    description: '- Donnez une courte description de votre projet ici.',
     url: 'https://reactresume.com',
     image: porfolioImage3,
   },
   {
-    title: 'Titre du projet 4',
-    description: 'Donnez une courte description de votre projet ici.',
-    url: 'https://reactresume.com',
+    title: 'Mon Portfolio',
+    description: `- Site sur lequel vous êtes actuellement !😊 Il présente mon parcours, mes compétences et mes projets en développement web.
+- Portfolio personnel créé avec Next.js et React
+- Présentation de mes projets, formations et expériences professionnelles
+- Design moderne et responsive avec TailwindCSS
+- Intégration de GraphQL pour l'affichage des projets
+- Section contact fonctionnelle
+- Mise en avant des compétences techniques en frontend`,
+    url: 'https://github.com/Emispheres/TRS-FabLab',
     image: porfolioImage4,
   },
-  {
-    title: 'Titre du projet 5',
-    description: 'Donnez une courte description de votre projet ici.',
-    url: 'https://reactresume.com',
+    {
+    title: 'Robot Fouineur',
+    description: `- Projet Arduino de récupération et traitement de données environnementales
+- Robot autonome équipé de capteurs de température et d'humidité
+- Transmission des données du robot vers un serveur via carte Arduino
+- Traitement et stockage des données captées
+- Interface de visualisation des mesures en temps réel
+- Démonstration vidéo de l'application complète disponible`,
+    url: '',
     image: porfolioImage5,
-  },
-  {
-    title: 'Titre du projet 6',
-    description: 'Donnez une courte description de votre projet ici.',
-    url: 'https://reactresume.com',
-    image: porfolioImage6,
-  },
-  {
-    title: 'Titre du projet 7',
-    description: 'Donnez une courte description de votre projet ici.',
-    url: 'https://reactresume.com',
-    image: porfolioImage7,
-  },
-  {
-    title: 'Titre du projet 8',
-    description: 'Donnez une courte description de votre projet ici.',
-    url: 'https://reactresume.com',
-    image: porfolioImage8,
-  },
-  {
-    title: 'Titre du projet 9',
-    description: 'Donnez une courte description de votre projet ici.',
-    url: 'https://reactresume.com',
-    image: porfolioImage9,
-  },
-  {
-    title: 'Titre du projet 10',
-    description: 'Donnez une courte description de votre projet ici.',
-    url: 'https://reactresume.com',
-    image: porfolioImage10,
-  },
-  {
-    title: 'Titre du projet 11',
-    description: 'Donnez une courte description de votre projet ici.',
-    url: 'https://reactresume.com',
-    image: porfolioImage11,
+    videoUrl: '/video/video-demo.mp4',
   },
 ];
 
@@ -448,23 +441,18 @@ export const contact: ContactSection = {
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: 'DzawaEmile@gmail.com',
+      href: 'mailto:DzawaEmile@gmail.com',
     },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
-    },
-    {
-      type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
+      text: 'Fenouillet, France',
+      href: 'https://www.google.ca/maps/place/Fenouillet,+France',
     },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'Emispheres',
+      href: 'https://github.com/Emispheres',
     },
   ],
 };
@@ -473,9 +461,9 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
+  /*{label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
   {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
   {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},*/
 ];

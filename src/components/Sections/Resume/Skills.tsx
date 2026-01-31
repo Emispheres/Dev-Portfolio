@@ -20,7 +20,7 @@ export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = m
         {Icon && <Icon className={`h-32 w-32 flex-shrink-0 hover:animate-bounce ${iconColor}`} />}
       </div>
       {/* Boite blanche du contenu */}
-      <div className="flex flex-col bg-white rounded-xl p-8 shadow-x flex-1 shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out">
+      <div className="flex flex-col mt-4 bg-white rounded-xl p-8 shadow-x flex-1 shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out">
         {/* Titre du groupe */}
         <span className={`text-start text-xl font-bold ${iconColor}`} style={{fontFamily: '"Montserrat", Arial, sans-serif'}} >{name}</span>
         

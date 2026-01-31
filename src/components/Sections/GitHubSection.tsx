@@ -41,8 +41,8 @@ const GitHubSection: FC = memo(() => {
   return (
     <Section className="bg-neutral-900" sectionId={SectionId.Portfolio}>
       <div className="flex flex-col gap-y-8">
-        <h2 className="self-center text-xl font-bold text-white">Mes projets GitHub</h2>
-
+         <h2 className="self-center text-2xl font-bold text-white  " style={{fontFamily: '"Noto SD 500", Arial, sans-serif', letterSpacing: '0.02em'}}>Mes projets Github</h2>
+          <h2 className="self-center text-lg text-white mb-8" >Quelques exemples de projets réalisés sur GitHub :</h2>
         {loading && <div className="text-center text-gray-400">Chargement des projets...</div>}
         {error && <div className="text-center text-red-500">Erreur: {error}</div>}
         {!loading && !error && <GitHubProjects repos={repos} />}
