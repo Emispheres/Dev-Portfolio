@@ -14,7 +14,7 @@ const Hero: FC = memo(() => {
       <div className="relative flex h-screen w-screen items-center justify-center overflow-hidden bg-gray-900 bg-cover bg-center bg-fixed"
         style={{backgroundImage: `url('${(imageSrc as any).src}')`}}
       >
-      <div className="absolute inset-0 z-[5] bg-black/40"></div>
+      <div className="absolute inset-0 z-[5] bg-black/30"></div>
 
         {/* Contenu principal */}
         <div className="z-10 w-full max-w-screen-xl px-4 lg:px-0 mt-40">
