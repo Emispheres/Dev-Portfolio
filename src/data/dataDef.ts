@@ -41,12 +41,18 @@ export interface About {
   profileImageSrc?: string;
   description: string;
   aboutItems: AboutItem[];
+  softSkills?: SoftSkill[];
 }
 
 export interface AboutItem {
   label: string;
   text: string;
   Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+}
+
+export interface SoftSkill {
+  title: string;
+  description?: string;
 }
 
 /**

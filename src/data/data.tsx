@@ -1,4 +1,4 @@
-import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon, SparklesIcon, AcademicCapIcon, BuildingOffice2Icon} from '@heroicons/react/24/outline';
+import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon} from '@heroicons/react/24/outline';
 import { BookOpenIcon, CircleStackIcon, CodeBracketIcon, EnvelopeIcon, ServerStackIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
 import heroImage from '../images/notbad.jpg';
 import porfolioImage1 from '../images/portfolio/FabLabV2.png';
@@ -116,12 +116,15 @@ En parallèle, je découvre les bases des réseaux et des systèmes (Linux, noti
 Curieux et persévérant, je cherche à acquérir des bases solides plutôt qu’à me limiter à des connaissances superficielles, afin de pouvoir évoluer vers des rôles techniques plus avancés.\n
 Autonome de nature, je peux travailler seule ou en groupe, étant également capable de m’adapter à un environnement que je ne connais pas. Je sais faire preuve de force de proposition lorsque l’on m’en donne la liberté,`,
   aboutItems: [
-    {label: 'Localisation', text: 'Toulouse', Icon: MapIcon},
+    {label: 'Localisation', text: 'France, Lespinasse', Icon: MapIcon},
     {label: 'Âge', text: '24', Icon: CalendarIcon},
     {label: 'Nationalité', text: 'Français', Icon: FlagIcon},
-    {label: 'Intérêts', text: 'Motos, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Études', text: 'Université de Victoria', Icon: AcademicCapIcon},
-    {label: 'Emploi', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+  ],
+  softSkills: [
+    {title: 'Apprentissage continu'},
+    {title: 'Collaboration'},
+    {title: 'Esprit d\'équipe & réactif'},
+    {title: 'Autonomie'},
   ],
 };
 
@@ -293,7 +296,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     title: `What's On`,
-    shortDescription: 'Application web centralisant des informations utiles pour étudiants du DUT de Blagnac.',
+    shortDescription: 'Application mobile centralisant des informations utiles pour étudiants du DUT de Blagnac.',
     stack: ['2019 | Formation','HTML', 'CSS', 'JavaScript', 'Font Awesome', 'API REST', ],
     description: `- Météo, horaires tram T1, agenda événements
 - Projet collaboratif en gestion de projet
@@ -425,11 +428,6 @@ export const contact: ContactSection = {
       type: ContactType.Email,
       text: 'DzawaEmile@gmail.com',
       href: 'mailto:DzawaEmile@gmail.com',
-    },
-    {
-      type: ContactType.Location,
-      text: 'Lespinasse, France',
-      href: 'https://www.google.ca/maps/place/Lespinasse,+France',
     },
     {
       type: ContactType.Github,

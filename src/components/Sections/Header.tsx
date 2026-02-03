@@ -64,9 +64,9 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
             className={classNames(
               "absolute inset-0 z-0",
               // Glisser depuis la droite quand le menu s'ouvre
-              isOpen && "bg-neutral-900/70 animate-slideInRight",
+              isOpen && "bg-neutral-900/80 animate-slideInRight",
               // Glisser vers la droite quand le menu se ferme (après que les éléments de nav disparaissent)
-              !isOpen && hasBeenOpened && "bg-neutral-900/70 animate-slideOutLeft",
+              !isOpen && hasBeenOpened && "bg-neutral-900/80 animate-slideOutLeft",
             )}
             // Retarder la sortie du fond de 0.6s pour permettre aux éléments de nav de s'estomper d'abord, puis persister l'état caché
             style={!isOpen && hasBeenOpened ? {animationDelay: '0.6s', animationFillMode: 'forwards'} : {}}
@@ -74,7 +74,7 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
           
           {/* Logo - côté gauche, toujours visible */}
           <a href="/" className="relative z-10 p-2 ml-4">
-            <img src="/favicon-96x96.png" alt="logo" className="w-16 h-16" />
+            <img src="/favicon-96x96.png" alt="logo" className="w-20 h-20" />
           </a>
           
           {/* Éléments de navigation - centrés, avec animations d'apparition/disparition échelonnées, désactivés à la fermeture */}
@@ -95,8 +95,8 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
           </nav>
           
           {/* Bouton de basculement du menu - côté droit */}
-          <button className="relative rounded-md z-10 p-3 bg-[#0B0A0D] mr-4" aria-label="Menu" onClick={handleClick}>
-            <Bars2Icon className="h-6 w-6 text-white" />
+          <button className="relative rounded-full z-10 p-3 bg-white/90 mr-4" aria-label="Menu" onClick={handleClick}>
+            <Bars2Icon className="h-6 w-6 text-neutral-900" />
           </button>
         </div>
       </header>

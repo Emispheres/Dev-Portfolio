@@ -6,7 +6,7 @@ import {aboutData, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
 
 const About: FC = memo(() => {
-  const {profileImageSrc, description, aboutItems,} = aboutData;
+  const {profileImageSrc, description, aboutItems, softSkills} = aboutData;
   return (
     <Section className="bg-white " sectionId={SectionId.About} maxWidth="max-w-[1260px]">
       {/* Wrapper pour la grille et les skills */}
@@ -17,8 +17,8 @@ const About: FC = memo(() => {
           <div className="col-span-1 md:col-span-2 flex flex-col justify-between">
             {/* Image */}
             <div className="flex justify-center">
-              <div className="relative h-32 w-32 overflow-hidden md:h-[30rem] md:w-[30rem]">
-                <Image alt="about-me-image" className="h-full w-full object-contain rounded-lg" src={profileImageSrc} />
+              <div className="relative h-32 w-32 rounded-md overflow-hidden md:h-[30rem] md:w-[30rem]">
+                <Image alt="about-me-image" className="h-full w-full object-contain  rounded-full" src={profileImageSrc} />
               </div>
             </div>
             {/* Infos sous l'image */}
@@ -45,7 +45,16 @@ const About: FC = memo(() => {
           </div>
         </div>
 
-
+        {/* Section Savoir-faire */}
+        {softSkills && softSkills.length > 0 && (
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {softSkills.map((skill, idx) => (
+              <div key={idx} className="bg-gray-100 border border-gray-300 rounded-md p-4 text-center">
+                <span className="text-sm font-semibold text-black" style={{fontFamily: 'Noto SD 500, sans-serif'}}>{skill.title}</span>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </Section>
   );
