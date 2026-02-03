@@ -83,6 +83,8 @@ export interface SkillGroup {
 export interface PortfolioItem {
   title: string;
   description: string;
+  shortDescription: string;
+  stack: string[];
   url: string;
   image: string | StaticImageData;
   videoUrl?: string;

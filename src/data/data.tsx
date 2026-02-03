@@ -1,19 +1,19 @@
 import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon, SparklesIcon, AcademicCapIcon, BuildingOffice2Icon} from '@heroicons/react/24/outline';
 import { BookOpenIcon, CircleStackIcon, CodeBracketIcon, EnvelopeIcon, ServerStackIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
 import heroImage from '../images/notbad.jpg';
-import porfolioImage1 from '../images/portfolio/FabLab.png';
+import porfolioImage1 from '../images/portfolio/FabLabV2.png';
 import porfolioImage2 from '../images/portfolio/WhatSonV2.png';
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
+/*import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';*/
 import porfolioImage4 from '../images/portfolio/DevPortfolio.png';
-import porfolioImage5 from '../images/portfolio/Robot-fouineur.jpg';
+import porfolioImage5 from '../images/portfolio/Ron.jpg';
 /*import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
 import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
 import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
 import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';*/
-import profilepic from '../images/1000004136.jpg';
-import testimonialImage from '../images/testimonial.webp';
+import profilepic from '../images/1000004076.jpg';
+
 /*import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
@@ -29,7 +29,6 @@ import {
   PortfolioItem,
   SkillGroup,
   Social,
-  TestimonialSection,
   TimelineItem,
 } from './dataDef';
 
@@ -52,7 +51,6 @@ export const SectionId = {
   Resume: 'expériences',
   Skills: 'compétences',
   Stats: 'stats',
-  Testimonials: 'temoignages',
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
@@ -85,13 +83,13 @@ export const heroData: Hero = {
       href: '/assets/resume.pdf',
       text: 'Télécharger mon CV',
       Icon: ArrowDownTrayIcon,
-      color:'bg-green-600',
+      color:'bg-blue-600/75',
     },
     {
       href: `#${SectionId.Contact}`,
       text: 'Formulaire de Contact',
       Icon: EnvelopeIcon,
-      color:'bg-blue-600',
+      color:'bg-green-700/75',
     },
   ],
 };
@@ -100,11 +98,11 @@ export const heroData: Hero = {
  * Skills Icons section
  */
 export const skillsIcons = [
-  { icon: CodeBracketIcon, label: 'Front-end', hoverColor: 'hover:text-blue-500' },
-  { icon: CircleStackIcon, label: 'Back-end', hoverColor: 'hover:text-green-400' },
-  { icon: BookOpenIcon, label: 'Apprentissage', hoverColor: 'hover:text-red-400' },
-  { icon: WrenchScrewdriverIcon, label: 'Outils & Technologies', hoverColor: 'hover:text-pink-400' },
-  { icon: ServerStackIcon, label: 'Réseaux', hoverColor: 'hover:text-amber-400' },
+  { icon: CodeBracketIcon, label: 'Front-end', hoverColor: 'hover:text-blue-500/75' },
+  { icon: CircleStackIcon, label: 'Back-end', hoverColor: 'hover:text-green-500/75' },
+  { icon: BookOpenIcon, label: 'Apprentissage', hoverColor: 'hover:text-red-400/75' },
+  { icon: WrenchScrewdriverIcon, label: 'Outils & Technologies', hoverColor: 'hover:text-pink-400/75' },
+  { icon: ServerStackIcon, label: 'Réseaux', hoverColor: 'hover:text-amber-400/75' },
 ];
 
 /**
@@ -280,55 +278,58 @@ export const skills: SkillGroup[] = [
 export const portfolioItems: PortfolioItem[] = [
   {
     title: 'TRS FabLab',
-    description: `- Application web permettant de suivre et analyser la production d'imprimantes 3D dans un FabLab.
-- Suivi en temps réel des conditions de production (température, hygrométrie) avec alertes.
+    shortDescription: "Application web de suivi et d'analyse de la production d'imprimantes 3D. Le projet n'a jamais été terminé mais une version fonctionnelle est disponible en ligne.",
+    stack: ['2022 | Formation','HTML', 'CSS', 'JavaScript', 'GraphQL', 'Chart.js', 'PHP', 'MySQL'],
+    description: `- Suivi en temps réel des conditions de production (température, hygrométrie) avec alertes.
 - Visualisation de la production par ordre de fabrication et estimation des coûts.
 - Affichage du TRS (Taux de Rendement Synthétique) par imprimante.
 - Gestion des utilisateurs (invité, utilisateur, administrateur).
-- Stack: GraphQL, Chart.js
-- Développement frontend et intégration de données capteurs`,
+- Développement frontend et intégration de données capteurs
+- Rédaction de cahier des charges et création de maquettes
+- Travail en équipe
+- Projet Agile avec gestion des tâches avec TimePerformance`,
     url: 'https://emispheres.github.io/TRS-FabLab/',
     image: porfolioImage1,
   },
   {
     title: `What's On`,
-    description: `- Application web centralisant informations utiles pour étudiants : météo, horaires tram T1, agenda événements
-- Projet collaboratif en gestion de projet durant DUT Informatique (IUT Blagnac)
-- Refonte complète d'un code obsolète : suppression jQuery Mobile → CSS3 moderne
+    shortDescription: 'Application web centralisant des informations utiles pour étudiants du DUT de Blagnac.',
+    stack: ['2019 | Formation','HTML', 'CSS', 'JavaScript', 'Font Awesome', 'API REST', ],
+    description: `- Météo, horaires tram T1, agenda événements
+- Projet collaboratif en gestion de projet
 - Mode sombre avec détection préférences système (variables CSS)
-- Intégration API Open-Meteo (HTTPS, temps réel)
-- SPA JavaScript vanilla avec navigation fluide
-- Design responsive card-based avec animations
-- Stack: HTML5, CSS3, JavaScript vanilla, Font Awesome 6.5, API REST`,
-    url: 'https://reactresume.com',
+- Intégration Open-Meteo (HTTPS, temps réel)
+- JavaScript vanilla avec navigation fluide`,
+    url: 'https://emispheres.github.io/Whatson/',
     image: porfolioImage2,
   },
-  {
-    title: 'DessinApp',
-    description: '- Donnez une courte description de votre projet ici.',
-    url: 'https://reactresume.com',
-    image: porfolioImage3,
-  },
+
   {
     title: 'Mon Portfolio',
-    description: `- Site sur lequel vous êtes actuellement !😊 Il présente mon parcours, mes compétences et mes projets en développement web.
-- Portfolio personnel créé avec Next.js et React
+    shortDescription: 'Site sur lequel vous êtes actuellement ! 😊',
+    stack: ['2025 | Personnel','Next.js', 'React', 'TypeScript', 'TailwindCSS', 'GraphQL'],
+    description: `- Portfolio personnel présentant mon parcours, mes compétences et mes projets
 - Présentation de mes projets, formations et expériences professionnelles
-- Design moderne et responsive avec TailwindCSS
+- Design avec TailwindCSS
 - Intégration de GraphQL pour l'affichage des projets
-- Section contact fonctionnelle
+- Section de contact fonctionnelle
 - Mise en avant des compétences techniques en frontend`,
-    url: 'https://github.com/Emispheres/TRS-FabLab',
+    url: 'https://github.com/Emispheres/Dev-Portfolio',
     image: porfolioImage4,
   },
-    {
+  {
     title: 'Robot Fouineur',
+    shortDescription: 'Robot autonome de récupération de données environnementales. Le but de ce projet était de concevoir un robot contrôler par application mobile, capable de se déplacer de manière autonome dans des environnements inaccessible tout en collectant des données sur la température et l\'humidité ambiantes à l\'aide de capteurs et d\'une caméra intégrés.',
+    stack: ['2018 | Formation','Arduino', 'C++', 'Capteurs Température/Humidité', 'Communication Bluetooth', 'Mit App inventor'],
     description: `- Projet Arduino de récupération et traitement de données environnementales
 - Robot autonome équipé de capteurs de température et d'humidité
-- Transmission des données du robot vers un serveur via carte Arduino
+- Transmission des données du robot Arduino vers application mobile
 - Traitement et stockage des données captées
 - Interface de visualisation des mesures en temps réel
-- Démonstration vidéo de l'application complète disponible`,
+- Caméra embarquée pour navigation autonome
+- Démonstration vidéo de l'application complète disponible
+- Intégration de données capteurs
+- Travail en équipe`,
     url: '',
     image: porfolioImage5,
     videoUrl: '/video/video-demo.mp4',
@@ -344,10 +345,12 @@ export const education: TimelineItem[] = [
     location: 'Lycée International Victor Hugo',
     title: 'BTS Système numérique - informatique et réseaux ',
     content: (
-      <p>
-        Décrivez votre expérience à l'école, ce que vous avez appris, les compétences utiles que vous avez acquises,
-        etc.
-      </p>
+      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+        <li> Mise en place, configuration et maintenance de systèmes informatiques et réseaux.</li>
+        <li> Compétences en administration de réseaux (LAN, routage, VLAN).</li>
+        <li> Gestion de systèmes Windows et Linux. </li>
+        <li> Programmation en Python, C, C++, HTML/CSS et JavaScript.</li>
+      </ul>
     ),
   },
   {
@@ -355,10 +358,12 @@ export const education: TimelineItem[] = [
     location: 'IUT - Blagnac',
     title: 'DUT Informatique ',
     content: (
-      <p>
-        Décrivez votre expérience à l'école, ce que vous avez appris, les compétences utiles que vous avez acquises,
-        etc.
-      </p>
+      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+        <li>Conception, développement et maintenance d’applications informatiques.</li>
+        <li>Compétences en algorithmique, bases de données, réseaux et systèmes.</li>
+        <li>Programmation en Java, Python, C, SQL, HTML/CSS et JavaScript.</li>
+        <li>Travail en équipe et gestion de projets logiciels.</li>
+      </ul>
     ),
   },
   {
@@ -366,10 +371,12 @@ export const education: TimelineItem[] = [
     location: 'Lycée Polyvalent Déodat de Séverac',
     title: "Bac STI2D spécialité Système d'information et numérique ",
     content: (
-      <p>
-        Décrivez votre expérience à l'école, ce que vous avez appris, les compétences utiles que vous avez acquises,
-        etc.
-      </p>
+      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+        <li>Découverte et mise en œuvre de systèmes informatiques et électroniques.</li>
+        <li>Apprentissage des bases de la programmation et des réseaux.</li>
+        <li>Réalisation de projets intégrant matériel, capteurs et interfaces logicielles.</li>
+        <li>Utilisation d’outils de modélisation et d’analyse de signaux.</li>
+      </ul>
     ),
   },
 ];
@@ -380,14 +387,14 @@ export const experience: TimelineItem[] = [
     location: 'Lycée International Victor Hugo',
     title: "Projet de fin d'année",
     content: (
-      <p>
-        Création de site web avec base de données afin de suivre l'utilisation et l'état d'imprimantes 3D dans un
-        FabLab.<br></br>
-        Création de maquettes et d'un cahier des charges.<br></br>
-        Récupération des données de capteurs de température et d'humidité dans le FabLab vers le serveur. Affichage de
-        ces données sur site web.<br></br>
-        Gestion de projet avec TimePerformance.<br></br>
-      </p>
+      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+        <li>Création de site web avec base de données afin de suivre l'utilisation et l'état d'imprimantes 3D dans un
+        FabLab.</li>
+        <li>Création de maquettes et d'un cahier des charges.</li>
+        <li>Récupération des données de capteurs de température et d'humidité dans le FabLab vers le serveur. Affichage de
+        ces données sur site web.</li>
+        <li>Gestion de projet avec TimePerformance.</li>
+      </ul>
     ),
   },
   {
@@ -395,40 +402,15 @@ export const experience: TimelineItem[] = [
     location: 'Maintronic',
     title: "Stagiaire en maintenance d'appareil électronique",
     content: (
-      <p>
-        Prise en charge et réparation d'imprimante à jet d'encre EPSON pour clients particulier et professionnel.
-        <br></br>
-        Accueil des clients en agence.<br></br>
-        Changement d'OS de Windows à Linux.<br></br>
-        Remplacement de composant de PC portable.<br></br>
-      </p>
+      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+        <li>Prise en charge et réparation d'imprimante à jet d'encre EPSON pour clients particulier et professionnel.</li>
+        <li>Accueil des clients en agence.</li>
+        <li>Changement d'OS de Windows à Linux.</li>
+        <li>Remplacement de composant de PC portable.</li>
+      </ul>
     ),
   },
 ];
-
-/**
- * Testimonial section
- */
-export const testimonial: TestimonialSection = {
-  imageSrc: testimonialImage,
-  testimonials: [
-    {
-      name: 'John Doe',
-      text: "Utilisez ceci comme une opportunité pour promouvoir ce que c'est que de travailler avec vous. Les témoignages de haute valeur incluent ceux de collègues actuels ou passés, de managers, ou de clients satisfaits.",
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
-    },
-    {
-      name: 'Jane Doe',
-      text: "Ici, vous devriez écrire des choses gentilles que quelqu'un a dites sur vous. Encouragez-les à être spécifiques et à inclure des détails importants (notes sur un projet sur lequel vous avez travaillé ensemble, qualité impressionnante produite, etc.).",
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
-    },
-    {
-      name: "Quelqu'un d'autre",
-      text: 'Ajoutez-en plusieurs, et gardez-les aussi frais que possible, mais assurez-vous de vous concentrer sur des témoignages de qualité avec des points forts sur vos compétences/éthique de travail.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
-    },
-  ],
-};
 
 /**
  * Contact section
@@ -446,8 +428,8 @@ export const contact: ContactSection = {
     },
     {
       type: ContactType.Location,
-      text: 'Fenouillet, France',
-      href: 'https://www.google.ca/maps/place/Fenouillet,+France',
+      text: 'Lespinasse, France',
+      href: 'https://www.google.ca/maps/place/Lespinasse,+France',
     },
     {
       type: ContactType.Github,

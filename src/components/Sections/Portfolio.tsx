@@ -11,7 +11,7 @@ import Section from '../Layout/Section';
 
 const Portfolio: FC = memo(() => {
   return (
-    <Section className="bg-gray-800" sectionId={SectionId.Portfolio} maxWidth="max-w-[1260px]">
+    <Section className="bg-gray-900" sectionId={SectionId.Portfolio} maxWidth="max-w-[1260px]">
       <div className="flex flex-col gap-y-8">
         <h2 className="self-center text-3xl font-bold text-white  " style={{fontFamily: '"Noto SD 500", Arial, sans-serif', letterSpacing: '0.02em'}}>Portfolio</h2>
         <h2 className="self-center text-lg text-white mb-8" >Ci-dessous, quelques exemples de réalisations effectuées durant mes formations :</h2>
@@ -42,7 +42,7 @@ const Portfolio: FC = memo(() => {
 Portfolio.displayName = 'Portfolio';
 export default Portfolio;
 
-const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {url, title, description, videoUrl}}) => {
+const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {url, title, description, shortDescription, stack, videoUrl}}) => {
   const [mobile, setMobile] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
   const [showVideoPopup, setShowVideoPopup] = useState(false);
@@ -91,8 +91,29 @@ const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {url, title, descrip
         target={videoUrl ? undefined : "_blank"}>
         <div className="relative h-full w-full p-4">
           <div className="flex h-full w-full flex-col gap-y-2 overflow-y-auto overscroll-contain">
+            {/* Titre du projet */}
             <h2 className="text-center font-bold text-white opacity-100">{title}</h2>
-            <ul className="list-disc list-inside text-xs text-white opacity-100 sm:text-sm space-y-1">
+            
+            {/* Tags des technologies utilisées */}
+            {stack && stack.length > 0 && (
+              <div className="flex flex-wrap justify-center gap-1.5 mt-1">
+                {stack.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="px-2 py-0.5 text-xs font-medium bg-blue-600/80 text-white rounded-full">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            )}
+            
+            {/* Description courte */}
+            {shortDescription && (
+              <p className="text-center text-xs text-gray-200 italic mt-1">{shortDescription}</p>
+            )}
+            
+            {/* Liste des missions/tâches */}
+            <ul className="list-disc list-inside text-xs text-white opacity-100 sm:text-sm space-y-1 mt-2">
               {listItems.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}

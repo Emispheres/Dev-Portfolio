@@ -1,4 +1,5 @@
-import {DevicePhoneMobileIcon, EnvelopeIcon, MapPinIcon} from '@heroicons/react/24/outline';
+import {DevicePhoneMobileIcon, MapPinIcon} from '@heroicons/react/24/outline';
+import {EnvelopeIcon} from '@heroicons/react/24/solid';
 import classNames from 'classnames';
 import {FC, memo} from 'react';
 
@@ -30,7 +31,7 @@ const Contact: FC = memo(() => {
       <div className="flex flex-col gap-y-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
           <EnvelopeIcon className="hidden h-16 w-16 text-white md:block" />
-          <h2 className="text-2xl font-bold text-white">{headerText}</h2>
+          <h2 className="self-center text-2xl font-bold text-white  " style={{fontFamily: '"Noto SD 500", Arial, sans-serif', letterSpacing: '0.02em'}}>{headerText}</h2>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="order-2 col-span-1 md:order-1 ">
@@ -47,7 +48,7 @@ const Contact: FC = memo(() => {
                     <dd className="flex items-center">
                       <a
                         className={classNames(
-                          '-m-2 flex rounded-md p-2 text-neutral-300 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500',
+                          '-m-2 flex rounded-md p-2 text-neutral-300  ',
                           {'hover:text-white': href},
                         )}
                         href={href}

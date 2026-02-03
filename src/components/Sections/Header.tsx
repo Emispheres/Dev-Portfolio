@@ -15,7 +15,7 @@ const Header: FC = memo(() => {
   
   // Définir toutes les sections de navigation disponibles
   const navSections = useMemo(
-    () => [SectionId.About, SectionId.Skills, SectionId.Resume, SectionId.Portfolio, SectionId.Testimonials, SectionId.Contact],
+    () => [SectionId.About, SectionId.Skills, SectionId.Resume, SectionId.Portfolio, SectionId.Contact],
     [],
   );
 
@@ -52,12 +52,12 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
     
     const baseClass = '-m-1.5 p-1.5 rounded-md font-semibold uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 text-neutral-100';
     // Classes de base pour l'élément de navigation actif (surligné en orange)
-    const activeClass = classNames(baseClass, 'text-orange-500');
+    const activeClass = classNames(baseClass, 'text-orange-400/90');
     // Classes de base pour les éléments de navigation inactifs
     const inactiveClass = classNames(baseClass, 'text-neutral-100');
     
     return (
-      <header className="fixed top-0 z-50 hidden w-full p-4 sm:block" id={headerID}>
+      <header className="fixed top-0 z-50 w-full hidden sm:block" id={headerID}>
         <div className="relative flex items-center justify-between mx-auto max-w-full px-4">
           {/* Superposition de fond qui glisse vers l'intérieur/l'extérieur du menu - visible uniquement sur le bureau (point d'arrêt sm) */}
           <div 
