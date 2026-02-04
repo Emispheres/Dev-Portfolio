@@ -1,8 +1,8 @@
 import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon} from '@heroicons/react/24/outline';
 import { BookOpenIcon, CircleStackIcon, CodeBracketIcon, EnvelopeIcon, ServerStackIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
 import heroImage from '../images/notbad.jpg';
-import porfolioImage1 from '../images/portfolio/FabLabV2.png';
-import porfolioImage2 from '../images/portfolio/WhatSonV2.png';
+import porfolioImage1 from '../images/portfolio/FabLabV2.PNG';
+import porfolioImage2 from '../images/portfolio/WhatSonV2.PNG';
 /*import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';*/
 import porfolioImage4 from '../images/portfolio/DevPortfolio.png';
 import porfolioImage5 from '../images/portfolio/Ron.jpg';
