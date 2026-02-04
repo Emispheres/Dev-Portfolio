@@ -7,30 +7,25 @@ import {isMobile} from '../../config';
 import {portfolioItems, SectionId} from '../../data/data';
 import {PortfolioItem} from '../../data/dataDef';
 import useDetectOutsideClick from '../../hooks/useDetectOutsideClick';
+import {useScrollAnimation} from '../../hooks/useIntersectionObserver';
 import Section from '../Layout/Section';
 
 const Portfolio: FC = memo(() => {
+  const {ref: titleRef, animationClass: titleAnim} = useScrollAnimation('fadeIn', 100);
+  
   return (
     <Section className="bg-gray-900" sectionId={SectionId.Portfolio} maxWidth="max-w-[1260px]">
       <div className="flex flex-col gap-y-8">
-        <h2 className="self-center text-3xl font-bold text-white  " style={{fontFamily: '"Noto SD 500", Arial, sans-serif', letterSpacing: '0.02em'}}>Portfolio</h2>
-        <h2 className="self-center text-lg text-white mb-8" >Ci-dessous, quelques exemples de réalisations effectuées durant mes formations :</h2>
+        <div ref={titleRef} className={titleAnim}>
+          <h2 className="self-center text-3xl font-bold text-white text-center" style={{fontFamily: '"Noto SD 500", Arial, sans-serif', letterSpacing: '0.02em'}}>Portfolio</h2>
+          <h2 className="self-center text-lg text-white mb-8 text-center mt-4">Ci-dessous, quelques exemples de réalisations effectuées durant mes formations :</h2>
+        </div>
         {/* Conteneur des éléments du portfolio avec mise en page en colonnes */}
         <div className=" w-full columns-2 md:columns-3 lg:columns-2">
           {portfolioItems.map((item, index) => {
             const {title, image} = item;
             return (
-              <div className="pb-6 " key={`${title}-${index}`}>
-                {/* Conteneur de chaque élément avec ombre et coins arrondis */}
-                <div
-                  className={classNames(
-                    'relative h-96 w-full overflow-hidden rounded-lg shadow-lg shadow-black/30 lg:shadow-xl',
-                  )}>
-                  <Image alt={title} className="h-full w-full object-cover" placeholder="blur" src={image} />
-                  <ItemOverlay item={item} />
-                </div>
-                
-              </div>
+              <PortfolioCard key={`${title}-${index}`} item={item} image={image} title={title} index={index} />
             );
           })}
         </div>
@@ -38,6 +33,26 @@ const Portfolio: FC = memo(() => {
     </Section>
   );
 });
+
+// Composant séparé pour chaque carte du portfolio avec animation au scroll
+const PortfolioCard: FC<{item: PortfolioItem; image: any; title: string; index: number}> = memo(({item, image, title, index}) => {
+  const {ref, animationClass} = useScrollAnimation('scale', index * 50);
+  
+  return (
+    <div ref={ref} className={`pb-6 ${animationClass}`}>
+      {/* Conteneur de chaque élément avec ombre et coins arrondis */}
+      <div
+        className={classNames(
+          'relative h-96 w-full overflow-hidden rounded-lg shadow-lg shadow-black/30 lg:shadow-xl transition-all duration-500 hover:shadow-2xl hover:shadow-black/30',
+        )}>
+        <Image alt={title} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" placeholder="blur" src={image} />
+        <ItemOverlay item={item} />
+      </div>
+    </div>
+  );
+});
+
+PortfolioCard.displayName = 'PortfolioCard';
 
 Portfolio.displayName = 'Portfolio';
 export default Portfolio;

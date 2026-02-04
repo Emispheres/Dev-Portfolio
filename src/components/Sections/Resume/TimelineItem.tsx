@@ -2,14 +2,17 @@ import {FC, memo} from 'react';
 
 import type {TimelineItem} from '../../../data/dataDef';
 
-const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
+const TimelineItem: FC<{item: TimelineItem; index?: number}> = memo(({item, index = 0}) => {
   const {title, date, location, content} = item;
   
   return (
-    <div className="relative bg-gray-100 rounded-md mb-4 py-4 pl-4 shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out">
+    <div 
+      className="relative bg-gray-100 rounded-md mb-4 py-4 pl-4 shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out"
+      style={{animationDelay: `${index * 0.9}s`}}
+    >
       {/* Date et Lieu - Positionnés absolument pour dépasser de la ligne gauche border-b border-l border-gray-400*/}
       <div className="absolute -left-2 top-3 flex items-center space-x-2 md:-left-4">
-        <span className="whitespace-nowrap rounded-full border border-orange-400 bg-white px-2 py-1 text-xs font-bold text-orange-700">
+        <span className="whitespace-nowrap rounded-full border border-orange-400 bg-white px-2 py-1 text-xs font-bold text-orange-700 transition-all duration-300 hover:bg-orange-50 ">
           {date}
         </span>
         <span className="text-xs font-medium text-neutral-700">{location}</span>

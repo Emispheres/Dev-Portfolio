@@ -84,7 +84,7 @@ const ContactForm: FC = memo(() => {
   );
 
   const inputClasses =
-    'bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed';
+    'bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-2 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 focus:scale-[1.01] focus:shadow-lg focus:shadow-orange-500/10';
 
   return (
     <>
@@ -126,15 +126,23 @@ const ContactForm: FC = memo(() => {
         />
         <button
           aria-label="Envoyer le formulaire de contact"
-          className="w-max rounded-full border-2 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-max rounded-full border-2 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none btn-interactive focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800 disabled:opacity-50 disabled:cursor-not-allowed ripple-container"
           disabled={isLoading}
           type="submit">
-          {isLoading ? 'Envoi en cours...' : 'Envoyer'}
+          {isLoading ? (
+            <span className="flex items-center gap-2">
+              <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+              </svg>
+              Envoi en cours...
+            </span>
+          ) : 'Envoyer'}
         </button>
       </form>
       {statusMessage && (
         <div
-          className={`mt-4 rounded-md px-4 py-3 text-sm font-medium ${
+          className={`mt-4 rounded-md px-4 py-3 text-sm font-medium animate-scrollFadeIn ${
             status === 'success'
               ? 'bg-green-900/20 text-green-300'
               : 'bg-red-900/20 text-red-300'

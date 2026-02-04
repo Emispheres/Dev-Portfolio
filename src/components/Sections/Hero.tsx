@@ -1,12 +1,32 @@
 import {ChevronDownIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
-import {FC, memo} from 'react';
+import {FC, memo, useCallback} from 'react';
 import {heroData, SectionId, skillsIcons} from '../../data/data';
 import Section from '../Layout/Section';
 import SkillsIcon from '../SkillsIcon';
 
 const Hero: FC = memo(() => {
   const {imageSrc, name, description, actions} = heroData;
+
+  // Fonction pour créer l'effet ripple
+  const handleButtonClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
+    const button = e.currentTarget;
+    const circle = document.createElement('span');
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+    const rect = button.getBoundingClientRect();
+    
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${e.clientX - rect.left - radius}px`;
+    circle.style.top = `${e.clientY - rect.top - radius}px`;
+    circle.classList.add('ripple-effect');
+    
+    const existingRipple = button.querySelector('.ripple-effect');
+    if (existingRipple) existingRipple.remove();
+    
+    button.appendChild(circle);
+    setTimeout(() => circle.remove(), 600);
+  }, []);
 
   return (
     <Section noPadding sectionId={SectionId.Hero}>
@@ -17,10 +37,10 @@ const Hero: FC = memo(() => {
       <div className="absolute inset-0 z-[5] bg-black/30"></div>
 
         {/* Contenu principal */}
-        <div className="z-10 w-full max-w-screen-xl px-4 lg:px-0 mt-40">
-          <div className="flex flex-col  gap-y-6 rounded-xl p-8 text-center items-center ">
-            <h1 className="text-4xl font-medium text-white  sm:text-5xl lg:text-6xl" style={{fontFamily: '"Noto SD 500", Arial, sans-serif'}}>{name}</h1>
-            <div className="mt-8">
+        <div className="z-10 w-full max-w-screen-xl px-4 lg:px-0 mt-8 sm:mt-20 lg:mt-40">
+          <div className="flex flex-col gap-y-2 sm:gap-y-6 rounded-xl p-4 sm:p-8 text-center items-center">
+            <h1 className="text-4xl font-medium text-white  sm:text-5xl lg:text-6xl animate-fadeIn" style={{fontFamily: '"Noto SD 500", Arial, sans-serif'}}>{name}</h1>
+            <div className="mt-4 sm:mt-8 animate-fadeIn" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
             {description}
             </div>
            { /*<div className="flex gap-x-4 text-neutral-100">
@@ -28,28 +48,31 @@ const Hero: FC = memo(() => {
             </div>*/}
             {/* Boutons "CV" et "Contact" - générés depuis heroData.actions */}
             <div className="flex w-full justify-center gap-x-4 flex-wrap">
-              {actions.map(({href, text, Icon, color}) => (
+              {actions.map(({href, text, Icon, color}, index) => (
                 <a className={classNames(
-                    'flex mt-4 gap-x-2 sm:gap-x-4 rounded-full ' + color + ' px-6 py-2 sm:px-24 sm:py-3 text-sm sm:text-base font-medium text-white sm:text-lg transition-colors hover-pulsate'
+                    'flex mt-4 gap-x-2 sm:gap-x-4 rounded-full ' + color + ' px-6 py-2 sm:px-24 sm:py-3 text-sm sm:text-base font-medium text-white sm:text-lg btn-interactive ripple-container animate-fadeIn'
                   )}
                   href={href}
-                  key={text}>
+                  key={text}
+                  onClick={handleButtonClick}
+                  download={href.includes('.pdf') ? 'resume.pdf' : undefined}
+                  style={{animationDelay: `${0.4 + index * 0.1}s`, animationFillMode: 'both'}}>
                   {text}
-                  {Icon && <Icon className="h-4 w-4 sm:h-6 sm:w-6 text-white sm:h-7 sm:w-7" />}
+                  {Icon && <Icon className="h-4 w-4 sm:h-6 sm:w-6 text-white sm:h-7 sm:w-7 transition-transform group-hover:translate-x-1" />}
                   
                 </a>
               ))}
             </div>
           </div>
           {/* Icones des compétences - EN DESSOUS DE TOUT */}
-        <div className="flex flex-col gap-y-4 w-full animate-fadeInUp">
+        <div className="flex flex-col gap-y-4 w-full animate-fadeInUp" style={{animationDelay: '0.6s', animationFillMode: 'both'}}>
           <SkillsIcon skills={skillsIcons} />
         </div>
         </div>
 
         <div className="absolute inset-x-0 bottom-6 z-20 flex justify-center ">
           <a
-            className="rounded-full animate-bounce bg-white p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2 sm:mr-14"
+            className="rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-neutral-900  sm:p-2 sm:mr-14 z-10 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-white/20 active:scale-95 "
             href={`/#${SectionId.About}`}>
             <ChevronDownIcon className="h-5 w-5 bg-transparent sm:h-6 sm:w-6" />
           </a>

@@ -54,7 +54,7 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
     // Classes de base pour l'élément de navigation actif (surligné en orange)
     const activeClass = classNames(baseClass, 'text-orange-400/90');
     // Classes de base pour les éléments de navigation inactifs
-    const inactiveClass = classNames(baseClass, 'text-neutral-100');
+    const inactiveClass = classNames(baseClass, 'text-neutral-100 hover:text-orange-200/90');
     
     return (
       <header className="fixed top-0 z-50 w-full hidden sm:block" id={headerID}>
@@ -95,7 +95,7 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
           </nav>
           
           {/* Bouton de basculement du menu - côté droit */}
-          <button className="relative rounded-full z-10 p-3 bg-white/90 mr-4" aria-label="Menu" onClick={handleClick}>
+          <button className="relative rounded-full z-10 p-3 bg-white/90 mr-4 duration-300 hover:scale-110 hover:shadow-lg hover:shadow-white/20 active:scale-95" aria-label="Menu" onClick={handleClick}>
             <Bars2Icon className="h-6 w-6 text-neutral-900" />
           </button>
         </div>
@@ -152,6 +152,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
                       activeClass={activeClass}
                       current={section === currentSection}
                       inactiveClass={inactiveClass}
+                      isMobile={true}
                       key={section}
                       onClick={toggleOpen}
                       section={section}
@@ -176,10 +177,22 @@ const NavItem: FC<{
   index?: number;
   isOpen?: boolean;
   hasBeenOpened?: boolean;
-}> = memo(({section, current, inactiveClass, activeClass, onClick, index = 0, isOpen = false, hasBeenOpened = false}) => {
+  isMobile?: boolean;
+}> = memo(({section, current, inactiveClass, activeClass, onClick, index = 0, isOpen = false, hasBeenOpened = false, isMobile = false}) => {
   // Délais d'animation pour l'effet échelonné : premier élément 0s, deuxième 0.1s, troisième 0.2s, etc.
   const delayOpen = 0.7 + index * 0.1;
   const delayClose = index * 0.1;
+
+  if (isMobile) {
+    return (
+      <Link
+        className={classNames(current ? activeClass : inactiveClass)}
+        href={`/#${section}`}
+        onClick={onClick}>
+        {section}
+      </Link>
+    );
+  }
   
   return (
     <Link

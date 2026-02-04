@@ -125,7 +125,7 @@ export interface Testimonial {
  */
 export interface ContactSection {
   headerText?: string;
-  description: string;
+  description: JSX.Element;
   items: ContactItem[];
 }
 

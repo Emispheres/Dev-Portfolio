@@ -14,21 +14,21 @@ export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = m
     : 'opacity-0';
   
   return (
-    <div ref={ref} className={`flex items-stretch gap-24 mb-4  ${animationClass} ${iconPosition === 'right' ? 'flex-row-reverse' : 'flex-row'}`}>
+    <div ref={ref} className={`flex items-stretch gap-4 md:gap-6 mb-3 ${animationClass} ${iconPosition === 'right' ? 'flex-row-reverse' : 'flex-row'}`}>
       {/* Icône en dehors de la boite */}
-      <div className="flex items-center justify-center">
-        {Icon && <Icon className={`h-32 w-32 flex-shrink-0 hover:animate-bounce ${iconColor}`} />}
+      <div className="flex items-center justify-center flex-shrink-0">
+        {Icon && <Icon className={`h-16 w-16 md:h-20 md:w-20 flex-shrink-0 hover:animate-bounce ${iconColor}`} />}
       </div>
       {/* Boite blanche du contenu */}
-      <div className="flex flex-col mt-4 bg-white rounded-xl p-8 shadow-x flex-1 shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out">
+      <div className="flex flex-col bg-white rounded-xl p-4 md:p-6 shadow-sm flex-1 border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all duration-300 ease-in-out">
         {/* Titre du groupe */}
-        <span className={`text-start text-xl font-bold ${iconColor}`} style={{fontFamily: '"Montserrat", Arial, sans-serif'}} >{name}</span>
+        <span className={`text-start text-base md:text-lg font-bold ${iconColor}`} style={{fontFamily: '"Montserrat", Arial, sans-serif'}}>{name}</span>
         
         {/* Description du groupe */}
-        <div className="text-medium text-neutral-700 max-w-none my-4 ">{description}</div>
+        <div className="text-sm text-neutral-600 max-w-none mt-1 mb-3">{description}</div>
         
-        {/* Grille : 1 colonne mobile, 2 colonnes desktop */}
-        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 text-medium ">
+        {/* Grille : 2 colonnes mobile, 3 colonnes desktop */}
+        <div className="grid grid-cols-2 gap-x-4 gap-y-1 md:grid-cols-3 text-sm">
           {skills.map((skill, index) => (
             <Skill key={`${skill.name}-${index}`} skill={skill} />
           ))}
@@ -51,20 +51,20 @@ export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
   const skillId = name.replace(/\s+/g, '-').toLowerCase();
   
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col py-1">
       {/* Nom + Étoiles alignés horizontalement */}
-      <div className="flex items-center gap-2">
-        <span className="text-sm font-bold">{name}</span>
+      <div className="flex items-center gap-1">
+        <span className="text-xs md:text-sm font-medium text-neutral-800">{name}</span>
         
         {/* Affichage des 5 étoiles avec remplissage progressif */}
-        <div className="flex gap-0 -space-x-1">
+        <div className="flex -space-x-0.5">
           {[...Array(5)].map((_, i) => {
             // Calculer le pourcentage de remplissage pour cette étoile (0-100%)
             const fillPercentage = Math.min(Math.max(fillAmount - i, 0), 1) * 100;
             const gradId = `grad-${skillId}-${i}`;
             
             return (
-              <svg key={i} width="24" height="24" viewBox="0 0 24 24" className="flex-shrink-0">
+              <svg key={i} width="16" height="16" viewBox="0 0 24 24" className="flex-shrink-0">
                 <defs>
                   <linearGradient id={gradId} x1="0%" x2="100%">
                     <stop offset={`${fillPercentage}%`} stopColor="#f59e0b" />

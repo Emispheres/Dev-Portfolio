@@ -110,11 +110,11 @@ export const skillsIcons = [
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Je suis en reconversion dans le développement informatique. J’apprends actuellement les bases de la programmation, en particulier avec Python, ainsi que les principes généraux du fonctionnement des systèmes informatiques.\n
-Je travaille sur des exercices, des projets d’apprentissage et des expérimentations personnelles afin de comprendre la logique du code, la structure des programmes et la manière dont les applications interagissent avec leur environnement.\n
-En parallèle, je découvre les bases des réseaux et des systèmes (Linux, notions de TCP/IP, fonctionnement des machines et des connexions), dans l’objectif de construire progressivement un profil technique plus complet.\n
-Curieux et persévérant, je cherche à acquérir des bases solides plutôt qu’à me limiter à des connaissances superficielles, afin de pouvoir évoluer vers des rôles techniques plus avancés.\n
-Autonome de nature, je peux travailler seule ou en groupe, étant également capable de m’adapter à un environnement que je ne connais pas. Je sais faire preuve de force de proposition lorsque l’on m’en donne la liberté,`,
+  description: `Je suis développeur front-end avec des bases back-end. Je réapprends actuellement les bases de la programmation objet, ainsi que les principes du fonctionnement de systèmes informatiques.\n
+Je travaille les bases de réseaux et des systèmes (Linux, notions de TCP/IP, fonctionnement des différentes machines et des connexions), dans l’objectif de construire progressivement un réseau TCP/IP afin d'avoir un profil technique plus complet.\n
+Par le même temps, je travaille sur des exercices, des projets d’apprentissage et des expérimentations personnelles afin de comprendre la logique du code, la structure des programmes et la manière dont les applications interagissent avec leur environnement.\n
+Curieux et persévérant, je cherche à acquérir des bases solides plutôt que de me limiter à des connaissances théoriques, afin de pouvoir m'orienter vers des rôles plus avancés.\n
+Autonome de nature, je peux travailler seul ou en groupe, étant également capable de m’adapter à un environnement que je ne connais pas. Je sais faire preuve de force de proposition lorsque l’on m’en donne l'occasion.`,
   aboutItems: [
     {label: 'Localisation', text: 'France, Lespinasse', Icon: MapIcon},
     {label: 'Âge', text: '24', Icon: CalendarIcon},
@@ -125,6 +125,7 @@ Autonome de nature, je peux travailler seule ou en groupe, étant également cap
     {title: 'Collaboration'},
     {title: 'Esprit d\'équipe & réactif'},
     {title: 'Autonomie'},
+
   ],
 };
 
@@ -142,19 +143,19 @@ export const skills: SkillGroup[] = [
     skills: [
             {
         name: 'HTML',
-        level: 8,
+        level: 9,
       },
             {
         name: 'CSS',
-        level: 8,
+        level: 10,
       },
       {
         name: 'Javascript',
-        level: 7,
+        level: 8,
       },
       {
         name: 'JQuery',
-        level: 6,
+        level: 7,
       },
       {
         name: 'Ajax',
@@ -220,23 +221,23 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'VLAN',
-        level: 7,
+        level: 5,
       },
       {
         name: 'TCP/IP',
-        level: 10,
+        level: 5,
       },
       {
         name: 'DNS',
-        level: 8,
+        level: 4,
       },
       {
         name: 'DHCP',
-        level: 8,
+        level: 4,
       },
       {
         name: 'HTTP/HTTPS',
-        level: 9,
+        level: 6,
       },  
     ],
   },
@@ -249,15 +250,15 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'Git',
-        level: 7,
+        level: 5,
       },
       {
         name: 'VS Code',
-        level: 6,
+        level: 8,
       },
       {
         name: 'WordPress',
-        level: 3,
+        level: 8,
       },
       {
         name: 'Linux',
@@ -268,7 +269,7 @@ export const skills: SkillGroup[] = [
         level: 10,
       },
       {
-        name: 'NetBeas',
+        name: 'NetBeans',
         level: 6,
       },
     ],
@@ -421,8 +422,11 @@ export const experience: TimelineItem[] = [
 
 export const contact: ContactSection = {
   headerText: 'Entrez en contact.',
-  description:
-    "Actuellement à la recherche d'un nouvel emploi, je suis intéressée par les postes de :",
+  description: (
+  <>
+    Actuellement à la recherche d'un nouvel emploi, je suis intéressée par les postes de : Technicien Réseau, Administrateur Système et Réseau, Développeur Web Junior, Technicien informatique. <br/> N'hésitez pas à me contacter via le formulaire ou par email.
+  </>
+  ),
   items: [
     {
       type: ContactType.Email,

@@ -2,23 +2,30 @@ import {FC, memo} from 'react';
 import {AcademicCapIcon, BriefcaseIcon, BoltIcon} from '@heroicons/react/24/solid';
 
 import {education, experience, SectionId, skills} from '../../../data/data';
+import {useScrollAnimation} from '../../../hooks/useIntersectionObserver';
 import Section from '../../Layout/Section';
 import ResumeSection from './ResumeSection';
 import {SkillGroup} from './Skills';
 import TimelineItem from './TimelineItem';
 
 const Resume: FC = memo(() => {
+  const {ref: skillsRef, animationClass: skillsAnim} = useScrollAnimation('fadeIn', 0);
+  const {ref: eduRef, animationClass: eduAnim} = useScrollAnimation('fadeInLeft', 200);
+  const {ref: expRef, animationClass: expAnim} = useScrollAnimation('fadeInRight', 300);
+  
   return (
     <>
       {/* Section Compétences séparée */}
       <Section className="bg-gray-100" sectionId={SectionId.Skills} maxWidth="max-w-[1260px]"> 
-        <ResumeSection title="Compétences" icon={BoltIcon}>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-1">
-            {skills.map((skillgroup, index) => (
-              <SkillGroup key={`${skillgroup.name}-${index}`} skillGroup={skillgroup} />
-            ))}
-          </div>
-        </ResumeSection>
+        <div ref={skillsRef} className={skillsAnim}>
+          <ResumeSection title="Compétences" icon={BoltIcon}>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-1">
+              {skills.map((skillgroup, index) => (
+                <SkillGroup key={`${skillgroup.name}-${index}`} skillGroup={skillgroup} />
+              ))}
+            </div>
+          </ResumeSection>
+        </div>
       </Section>
 
       {/* Section Formation et Expérience */}
@@ -27,19 +34,19 @@ const Resume: FC = memo(() => {
           {/* Grille avec 2 colonnes : Formations et Expérience côte à côte */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 ">
             {/* Formations */}
-            <div>
+            <div ref={eduRef} className={eduAnim}>
               <ResumeSection title="Formations" icon={AcademicCapIcon}>
                 {education.map((item, index) => (
-                  <TimelineItem item={item} key={`${item.title}-${index}`} />
+                  <TimelineItem item={item} key={`${item.title}-${index}`} index={index} />
                 ))}
               </ResumeSection>
             </div>
 
             {/* Expérience */}
-            <div>
+            <div ref={expRef} className={expAnim}>
               <ResumeSection title="Expériences" icon={BriefcaseIcon}>
                 {experience.map((item, index) => (
-                  <TimelineItem item={item} key={`${item.title}-${index}`} />
+                  <TimelineItem item={item} key={`${item.title}-${index}`} index={index} />
                 ))}
               </ResumeSection>
             </div>

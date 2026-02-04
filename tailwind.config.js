@@ -84,7 +84,7 @@ module.exports = {
         slideFromLeft: {
           '0%' : {
             opacity: 0,
-            transform: 'translateX(-1800px)',
+            transform: 'translateX(-50px)',
           },
           '100%' : {
             opacity: 1,
@@ -94,7 +94,7 @@ module.exports = {
         slideFromRight: {
           '0%' : {
             opacity: 0,
-            transform: 'translateX(1800px)',
+            transform: 'translateX(50px)',
           },
           '100%' : {
             opacity: 1,
@@ -110,6 +110,67 @@ module.exports = {
             opacity: 0,
           },
         },
+        // Nouvelles animations pour le scroll reveal
+        scrollFadeIn: {
+          '0%': {
+            opacity: 0,
+            transform: 'translateY(30px)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateY(0)',
+          },
+        },
+        scrollFadeInLeft: {
+          '0%': {
+            opacity: 0,
+            transform: 'translateX(-40px)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateX(0)',
+          },
+        },
+        scrollFadeInRight: {
+          '0%': {
+            opacity: 0,
+            transform: 'translateX(40px)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateX(0)',
+          },
+        },
+        scrollScale: {
+          '0%': {
+            opacity: 0,
+            transform: 'scale(0.9)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'scale(1)',
+          },
+        },
+        // Animation de pulsation subtile pour les boutons
+        buttonPulse: {
+          '0%, 100%': {
+            boxShadow: '0 0 0 0 rgba(234, 88, 12, 0.4)',
+          },
+          '50%': {
+            boxShadow: '0 0 0 8px rgba(234, 88, 12, 0)',
+          },
+        },
+        // Animation de ripple pour le clic
+        ripple: {
+          '0%': {
+            transform: 'scale(0)',
+            opacity: 0.5,
+          },
+          '100%': {
+            transform: 'scale(4)',
+            opacity: 0,
+          },
+        },
       },
       animation: {
         slideInRight: 'slideInRight 1.1s ease-in-out',
@@ -121,6 +182,13 @@ module.exports = {
         fadeOut: 'fadeOut 1s ease-in-out',
         slideFromLeft: 'slideFromLeft 1.7s ease-in-out',
         slideFromRight: 'slideFromRight 1.7s ease-in-out',
+        // Nouvelles animations scroll
+        scrollFadeIn: 'scrollFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        scrollFadeInLeft: 'scrollFadeInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        scrollFadeInRight: 'scrollFadeInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        scrollScale: 'scrollScale 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        buttonPulse: 'buttonPulse 2s ease-in-out infinite',
+        ripple: 'ripple 0.6s ease-out',
       },
       screens: {
         touch: {raw: 'only screen and (pointer: coarse)'},
