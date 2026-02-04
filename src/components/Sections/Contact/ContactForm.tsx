@@ -84,7 +84,7 @@ const ContactForm: FC = memo(() => {
   );
 
   const inputClasses =
-    'bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-2 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 focus:scale-[1.01] focus:shadow-lg focus:shadow-orange-500/10';
+    'bg-neutral-700 border-0 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm  ';
 
   return (
     <>
@@ -126,7 +126,7 @@ const ContactForm: FC = memo(() => {
         />
         <button
           aria-label="Envoyer le formulaire de contact"
-          className="w-max rounded-full border-2 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none btn-interactive focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800 disabled:opacity-50 disabled:cursor-not-allowed ripple-container"
+          className="w-max rounded-md  bg-stone-900 px-12 py-2 text-sm font-medium text-white shadow-md outline-none btn-interactive focus:ring-offset-stone-800 disabled:opacity-50 disabled:cursor-not-allowed ripple-container"
           disabled={isLoading}
           type="submit">
           {isLoading ? (

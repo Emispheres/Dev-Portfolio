@@ -43,9 +43,9 @@ const PortfolioCard: FC<{item: PortfolioItem; image: any; title: string; index: 
       {/* Conteneur de chaque élément avec ombre et coins arrondis */}
       <div
         className={classNames(
-          'relative h-96 w-full overflow-hidden rounded-lg shadow-lg shadow-black/30 lg:shadow-xl transition-all duration-500 hover:shadow-2xl hover:shadow-black/30',
+          'relative h-96 w-full overflow-hidden rounded-lg shadow-lg shadow-black/30 lg:shadow-xl transition-all duration-500 hover:shadow-2xl hover:shadow-black/30 ',
         )}>
-        <Image alt={title} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" placeholder="blur" src={image} />
+        <Image alt={title} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105 " src={image} />
         <ItemOverlay item={item} />
       </div>
     </div>

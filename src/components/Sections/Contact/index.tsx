@@ -34,16 +34,16 @@ const Contact: FC = memo(() => {
   return (
     <Section className="bg-neutral-800" sectionId={SectionId.Contact}>
       <div className="flex flex-col gap-y-6">
-        <div ref={headerRef} className={`flex flex-col gap-6 md:flex-row md:items-center ${headerAnim}`}>
+        <div ref={headerRef} className={`flex flex-col gap-6 md:flex-row md:items-center md:justify-center ${headerAnim}`}>
           <EnvelopeIcon className="hidden h-16 w-16 text-white md:block" />
-          <h2 className="self-center text-2xl font-bold text-white  " style={{fontFamily: '"Noto SD 500", Arial, sans-serif', letterSpacing: '0.02em'}}>{headerText}</h2>
+          <h2 className="self-center text-center text-2xl font-bold text-white " style={{fontFamily: '"Noto SD 500", Arial, sans-serif', letterSpacing: '0.02em'}}>{headerText}</h2>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div ref={formRef} className={`order-2 col-span-1 md:order-1 ${formAnim}`}>
+        <div className="grid grid-cols-1 gap-14 md:grid-cols-2">
+          <div ref={formRef} className={`order-2 col-span-1 md:order-1 mt-10 ${formAnim}`}>
             <ContactForm />
           </div>
           <div ref={infoRef} className={`order-1 col-span-1 flex flex-col gap-y-4 md:order-2 ${infoAnim}`}>
-            <p className="prose leading-6 text-neutral-300">{description}</p>
+            <div className="prose leading-6 text-neutral-300">{description}</div>
             <dl className="flex flex-col space-y-4 text-base text-neutral-500 sm:space-y-2">
               {items.map(({type, text, href}) => {
                 const {Icon, srLabel} = ContactValueMap[type];

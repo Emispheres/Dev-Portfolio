@@ -12,7 +12,6 @@ import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
 import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';*/
-import profilepic from '../images/1000004076.jpg';
 
 /*import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
@@ -109,12 +108,13 @@ export const skillsIcons = [
  * About section
  */
 export const aboutData: About = {
-  profileImageSrc: profilepic,
+  
   description: `Je suis développeur front-end avec des bases back-end. Je réapprends actuellement les bases de la programmation objet, ainsi que les principes du fonctionnement de systèmes informatiques.\n
 Je travaille les bases de réseaux et des systèmes (Linux, notions de TCP/IP, fonctionnement des différentes machines et des connexions), dans l’objectif de construire progressivement un réseau TCP/IP afin d'avoir un profil technique plus complet.\n
-Par le même temps, je travaille sur des exercices, des projets d’apprentissage et des expérimentations personnelles afin de comprendre la logique du code, la structure des programmes et la manière dont les applications interagissent avec leur environnement.\n
-Curieux et persévérant, je cherche à acquérir des bases solides plutôt que de me limiter à des connaissances théoriques, afin de pouvoir m'orienter vers des rôles plus avancés.\n
-Autonome de nature, je peux travailler seul ou en groupe, étant également capable de m’adapter à un environnement que je ne connais pas. Je sais faire preuve de force de proposition lorsque l’on m’en donne l'occasion.`,
+Par le même temps, je travaille sur des exercices, des projets d’apprentissage et sur des projets personnelles afin de comprendre la structure de programmes et la manière dont les applications interagissent entre elles et leur environnement.\n
+Curieux et persévérant, je cherche à acquérir des bases techniques plus concrètes plutôt que de me limiter à mes connaissances théoriques, afin de pouvoir m'orienter plus tards vers des roles plus avancés.\n
+Autonome de nature, je peux travailler seul ou en groupe, étant aussi capable de m’adapter à un environnement que je ne connais pas ou peu. J’aime apprendre de nouvelles choses et reste ouvert aux critiques afin de m'améliorer toujours davantage.`,
+
   aboutItems: [
     {label: 'Localisation', text: 'France, Lespinasse', Icon: MapIcon},
     {label: 'Âge', text: '24', Icon: CalendarIcon},
@@ -423,9 +423,17 @@ export const experience: TimelineItem[] = [
 export const contact: ContactSection = {
   headerText: 'Entrez en contact.',
   description: (
-  <>
-    Actuellement à la recherche d'un nouvel emploi, je suis intéressée par les postes de : Technicien Réseau, Administrateur Système et Réseau, Développeur Web Junior, Technicien informatique. <br/> N'hésitez pas à me contacter via le formulaire ou par email.
-  </>
+  <div>
+    Actuellement à la recherche d'un nouvel emploi, je suis intéressée par les métiers support, de réseaux et de développement web.
+    <ul >
+      <li>Technicien Réseau</li>
+      <li>Technicien informatique</li>
+      <li>Développeur Web Junior Front/Back-end</li>
+      <li>Administrateur systèmes/réseaux junior</li>
+      <li>Technicien helpdesk</li>
+    </ul> 
+    <br/> N'hésitez pas à me contacter via le formulaire ou par mail.
+  </div>
   ),
   items: [
     {
