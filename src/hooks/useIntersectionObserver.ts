@@ -34,8 +34,8 @@ export const useIntersectionObserver = (options?: IntersectionObserverInit) => {
 export const useScrollAnimation = (
   animationType: 'fadeIn' | 'fadeInLeft' | 'fadeInRight' | 'scale' = 'fadeIn',
   delay: number = 0,
-  threshold: number = 0.15
-) => {
+  threshold: number = 0.15 ) => {
+
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 

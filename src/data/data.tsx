@@ -109,7 +109,7 @@ export const skillsIcons = [
  */
 export const aboutData: About = {
   
-  description: `Je suis développeur front-end avec des bases back-end. Je réapprends actuellement les bases de la programmation objet, ainsi que les principes du fonctionnement de systèmes informatiques.\n
+  description: `Je suis développeur web junior front-end avec des bases back-end. Je réapprends actuellement les bases de la programmation objet, ainsi que les principes du fonctionnement de systèmes informatiques.\n
 Je travaille les bases de réseaux et des systèmes (Linux, notions de TCP/IP, fonctionnement des différentes machines et des connexions), dans l’objectif de construire progressivement un réseau TCP/IP afin d'avoir un profil technique plus complet.\n
 Par le même temps, je travaille sur des exercices, des projets d’apprentissage et sur des projets personnelles afin de comprendre la structure de programmes et la manière dont les applications interagissent entre elles et leur environnement.\n
 Curieux et persévérant, je cherche à acquérir des bases techniques plus concrètes plutôt que de me limiter à mes connaissances théoriques, afin de pouvoir m'orienter plus tards vers des roles plus avancés.\n
@@ -221,23 +221,27 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'VLAN',
-        level: 5,
+        level: 3,
       },
       {
         name: 'TCP/IP',
-        level: 5,
+        level: 2,
       },
       {
         name: 'DNS',
-        level: 4,
+        level: 1,
       },
       {
         name: 'DHCP',
-        level: 4,
+        level: 1,
+      },
+      {
+        name: 'Table de routage',
+        level: 6,
       },
       {
         name: 'HTTP/HTTPS',
-        level: 6,
+        level: 3,
       },  
     ],
   },
@@ -424,13 +428,12 @@ export const contact: ContactSection = {
   headerText: 'Entrez en contact.',
   description: (
   <div>
-    Actuellement à la recherche d'un nouvel emploi, je suis intéressée par les métiers support, de réseaux et de développement web.
+    {/*Actuellement à la recherche d'un nouvel emploi, je suis intéressée par les métiers support, de réseaux et de développement web.*/}
+    Actuellement à la recherche d'un stage d'observation pour confirmer mon orientation vers le développement d'applications, je m'intéresse aux métiers liés au développement logiciel et à la conception d'applications.
     <ul >
-      <li>Technicien Réseau</li>
-      <li>Technicien informatique</li>
+      <li>Développeur concepteur d'application</li>
+      <li>Conception et architecture d'applications</li>
       <li>Développeur Web Junior Front/Back-end</li>
-      <li>Administrateur systèmes/réseaux junior</li>
-      <li>Technicien helpdesk</li>
     </ul> 
     <br/> N'hésitez pas à me contacter via le formulaire ou par mail.
   </div>

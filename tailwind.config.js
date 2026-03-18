@@ -180,8 +180,8 @@ module.exports = {
         fadeInUp: 'fadeInUp 1s ease-in-out',
         // Animation pour faire disparaître progressivement
         fadeOut: 'fadeOut 1s ease-in-out',
-        slideFromLeft: 'slideFromLeft 1.7s ease-in-out',
-        slideFromRight: 'slideFromRight 1.7s ease-in-out',
+        slideFromLeft: 'slideFromLeft 0.7s ease-in-out',
+        slideFromRight: 'slideFromRight 0.7s ease-in-out',
         // Nouvelles animations scroll
         scrollFadeIn: 'scrollFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         scrollFadeInLeft: 'scrollFadeInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
