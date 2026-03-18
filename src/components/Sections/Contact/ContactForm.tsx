@@ -116,7 +116,7 @@ const ContactForm: FC = memo(() => {
         <textarea
           className={inputClasses}
           disabled={isLoading}
-          maxLength={250}
+          maxLength={600}
           name="message"
           onChange={onChange}
           placeholder="Message"
