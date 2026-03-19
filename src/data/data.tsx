@@ -66,7 +66,7 @@ export const heroData: Hero = {
         <p className="text-stone-100 prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
           Je suis un <strong className="text-stone-100">développeur web junior</strong>, passionné par la création
           d'interfaces modernes, claires et efficaces. Je développe des applications web en utilisant
-          <strong className="text-stone-100"> HTML, TailwindCSS, JavaScript et React</strong>.
+          <strong className="text-stone-100"> HTML, TailwindCSS, JavaScript , React et Next.js</strong>.
         </p>
         
         {/*<p className="prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
