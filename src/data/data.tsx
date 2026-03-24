@@ -170,14 +170,6 @@ export const skills: SkillGroup[] = [
         level: 5,
       },
       {
-        name: 'GraphQL',
-        level: 6,
-      },
-      {
-        name: 'JSON',
-        level: 6,
-      },
-      {
         name: 'ChartJS',
         level: 5,
       },
@@ -192,7 +184,7 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'Node.js',
-        level: 5,
+        level: 3,
       },
       {
         name: 'MySQL',
@@ -263,6 +255,10 @@ export const skills: SkillGroup[] = [
       {
         name: 'WordPress',
         level: 8,
+      },
+      {
+        name: 'JSON',
+        level: 2,
       },
       {
         name: 'Linux',
