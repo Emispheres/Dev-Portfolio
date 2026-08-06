@@ -58,7 +58,7 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
     
     return (
       <header className="fixed top-0 z-50 w-full hidden sm:block" id={headerID}>
-        <div className="relative flex items-center justify-between mx-auto max-w-full px-4">
+        <div className="relative flex items-center justify-between mx-auto max-w-full px-4 py-4 sm:px-6 lg:px-8">
           {/* Superposition de fond qui glisse vers l'intérieur/l'extérieur du menu - visible uniquement sur le bureau (point d'arrêt sm) */}
           <div 
             className={classNames(
@@ -71,11 +71,6 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
             // Retarder la sortie du fond de 0.6s pour permettre aux éléments de nav de s'estomper d'abord, puis persister l'état caché
             style={!isOpen && hasBeenOpened ? {animationDelay: '0.6s', animationFillMode: 'forwards'} : {}}
           />
-          
-          {/* Logo - côté gauche, toujours visible */}
-          <a href="/" className="relative z-10 p-2 ml-4">
-            <img src="/favicon-96x96.png" alt="logo" className="w-20 h-20" />
-          </a>
           
           {/* Éléments de navigation - centrés, avec animations d'apparition/disparition échelonnées, désactivés à la fermeture */}
           <nav className={classNames("absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center gap-x-12 z-10", !isOpen && "pointer-events-none")}>
@@ -95,7 +90,7 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
           </nav>
           
           {/* Bouton de basculement du menu - côté droit */}
-          <button className="relative rounded-full z-10 p-3 bg-white/90 mr-4 duration-300 hover:scale-110 hover:shadow-lg hover:shadow-white/20 active:scale-95" aria-label="Menu" onClick={handleClick}>
+          <button className="relative rounded-full z-10 p-3 bg-white/90 ml-auto mr-4 duration-300 hover:scale-110 hover:shadow-lg hover:shadow-white/20 active:scale-95" aria-label="Menu" onClick={handleClick}>
             <Bars2Icon className="h-6 w-6 text-neutral-900" />
           </button>
         </div>

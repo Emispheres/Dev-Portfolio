@@ -109,15 +109,17 @@ export const skillsIcons = [
  */
 export const aboutData: About = {
   
-  description: `Je suis développeur web junior front-end avec des bases back-end. Je réapprends actuellement les bases de la programmation objet, ainsi que les principes du fonctionnement de systèmes informatiques.\n
-Je travaille les bases de réseaux et des systèmes (Linux, notions de TCP/IP, fonctionnement des différentes machines et des connexions), dans l’objectif de construire progressivement un réseau TCP/IP afin d'avoir un profil technique plus complet.\n
-Par le même temps, je travaille sur des exercices, des projets d’apprentissage et sur des projets personnelles afin de comprendre la structure de programmes et la manière dont les applications interagissent entre elles et leur environnement.\n
-Curieux et persévérant, je cherche à acquérir des bases techniques plus concrètes plutôt que de me limiter à mes connaissances théoriques, afin de pouvoir m'orienter plus tards vers des roles plus avancés.\n
-Autonome de nature, je peux travailler seul ou en groupe, étant aussi capable de m’adapter à un environnement que je ne connais pas ou peu. J’aime apprendre de nouvelles choses et reste ouvert aux critiques afin de m'améliorer toujours davantage.`,
+  description: `Actuellement en formation de Concepteur Développeur d'Application, je suis passionné par la création de solutions logicielles et l'ingénierie informatique. 
+Fort d'un BTS Systèmes Numériques (option Informatique et Réseaux), j'ai récemment renforcé mes compétences web à travers la réalisation de projets modernes utilisant Next.js, React et TailwindCSS.
+
+Aujourd'hui, je me concentre sur l'acquisition de compétences techniques avancées pour concevoir des applications robustes. 
+J'approfondis activement l'algorithmie, la gestion des bases de données et la programmation orientée objet, notamment à travers l'étude approfondie de langages exigeants tels que C et C++. Mon but est de comprendre la structure profonde des programmes et les interactions systèmes.
+
+D'un naturel curieux, persévérant et autonome, je sais m'adapter rapidement à des environnements techniques que je découvre. Que ce soit pour travailler en totale autonomie ou collaborer en équipe, j'aime relever de nouveaux défis, apprendre continuellement et m'appuyer sur les retours constructifs pour faire évoluer mes pratiques de développement.`,
 
   aboutItems: [
     {label: 'Localisation', text: 'France, Lespinasse', Icon: MapIcon},
-    {label: 'Âge', text: '24', Icon: CalendarIcon},
+    {label: 'Âge', text: '25', Icon: CalendarIcon},
     {label: 'Nationalité', text: 'Français', Icon: FlagIcon},
   ],
   softSkills: [
@@ -204,7 +206,7 @@ export const skills: SkillGroup[] = [
       },
     ],
   },
-  {
+  /* {
     Icon: ServerStackIcon,
     iconPosition: 'right',
     iconColor: 'text-amber-400',
@@ -236,10 +238,10 @@ export const skills: SkillGroup[] = [
         level: 3,
       },  
     ],
-  },
+  }, */
   {
     Icon: WrenchScrewdriverIcon,
-    iconPosition: 'left',
+    iconPosition: 'right',
     name: 'Outils & Technologies',
     description: "Compétences avec divers outils et technologies de développement.",
     iconColor: 'text-pink-400',
@@ -344,6 +346,19 @@ export const portfolioItems: PortfolioItem[] = [
  * Resume section -- TODO: Standardize resume contact format or offer MDX
  */
 export const education: TimelineItem[] = [
+    {
+    date: '2025 - 2026',
+    location: 'LDNR',
+    title: 'Concepteur Développeur d\'Application',
+    content: (
+      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+        <li>Solidification de bases acquises en programmation</li>
+        <li>Mise en pratique des compétences acquises dans divers projets informatique en équipe</li>
+        <li>Conception d’applications natives Android</li>
+        <li>Acquisition de connaissance en sécurité informatique</li>
+      </ul>
+    ),
+  },
   {
     date: '2020 - 2022',
     location: 'Lycée International Victor Hugo',
@@ -386,8 +401,22 @@ export const education: TimelineItem[] = [
 ];
 
 export const experience: TimelineItem[] = [
-  {
-    date: 'Septembre 2021 - Juin 2022',
+    {
+    date: '2022 - 2025',
+    location: 'Aldi',
+    title: "Agent de rayon",
+    content: (
+      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+        <li>Création de divers projets informatique en parallèle afin de préserver mes compétences en numérique</li>
+        <li>Assistance technique aux collègues sur les outils informatiques.</li>
+        <li>Mise en rayon des produits et gestion des stocks.</li>
+        <li>Service client et assistance aux clients en magasin.</li>
+        <li>Encaissement des produits et gestion de la caisse.</li>
+      </ul>
+    ),
+  },
+  /*{
+    date: '2021 -  2022',
     location: 'Lycée International Victor Hugo',
     title: "Projet de fin d'année",
     content: (
@@ -400,9 +429,9 @@ export const experience: TimelineItem[] = [
         <li>Gestion de projet avec TimePerformance.</li>
       </ul>
     ),
-  },
+  },*/
   {
-    date: 'Juin 2021 - Septembre 2021',
+    date: '2021',
     location: 'Maintronic',
     title: "Stagiaire en maintenance d'appareil électronique",
     content: (
@@ -425,7 +454,9 @@ export const contact: ContactSection = {
   description: (
   <div>
     {/*Actuellement à la recherche d'un nouvel emploi, je suis intéressée par les métiers support, de réseaux et de développement web.*/}
-    Actuellement à la recherche d'un stage d'observation pour confirmer mon orientation vers le développement d'applications, je m'intéresse aux métiers liés au développement logiciel et à la conception d'applications.
+    <p>Dans le cadre de ma formation de Concepteur Développeur d'Application, je suis activement à la recherche d'un stage (non rémunéré) de 300 heures débutant en février.</p>
+    <p>La date de commencement exacte est flexible et s'adaptera aux disponibilités de votre entreprise.</p>
+    <p>Je souhaite mettre en pratique mes connaissances et m'investir dans des projets liés à :</p>
     <ul >
       <li>Développeur concepteur d'application</li>
       <li>Conception et architecture d'applications</li>
