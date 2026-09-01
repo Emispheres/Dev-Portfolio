@@ -6,6 +6,7 @@ import porfolioImage2 from '../images/portfolio/WhatSonV2.PNG';
 /*import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';*/
 import porfolioImage4 from '../images/portfolio/DevPortfolio.png';
 import porfolioImage5 from '../images/portfolio/Ron.jpg';
+import porfolioImage6 from '../images/portfolio/Meteo.png';
 /*import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
 import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
 import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
@@ -282,6 +283,18 @@ export const skills: SkillGroup[] = [
  * Portfolio section
  */
 export const portfolioItems: PortfolioItem[] = [
+  {
+    title: `Web Meteo`,
+    shortDescription: 'Site web fait pour consulter la météo partout en france. Ainsi que la fête et les Saints du jour.',
+    stack: ['2026 | Formation','HTML', 'CSS', 'JavaScript', ],
+    description: `- Intégration de l'API Open-Meteo pour récupérer les données météorologiques en temps réel. 
+    Intégration de l'API Calendrier pour récupérer les fêtes et saints du jour.
+- Projet individuel 
+- Page de contact avec formulaire de contact (non fonctionnel)
+- JavaScript vanilla`,
+    url: 'https://emispheres.github.io/SiteMeteo/',
+    image: porfolioImage6,
+  },
   {
     title: 'TRS FabLab',
     shortDescription: "Application web de suivi et d'analyse de la production d'imprimantes 3D. Le projet n'a jamais été terminé mais une version fonctionnelle est disponible en ligne.",
