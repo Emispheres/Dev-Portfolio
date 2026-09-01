@@ -2,12 +2,12 @@
 
 Bienvenue sur mon portfolio personnel. J'ai crée ce site afin de présenter mon expérience, mes compétences et mes projets.
 
-## 📋 Description
+## Description
 
 Un site portfolio construit avec React et Next.js. Entièrement codé avec TypeScript, stylisé avec Tailwind CSS, et optimisé pour les écran mobiles avec un rendu côté serveur pour de meilleurs performances.
 
 
-## 📦 Technologies utilisées
+## Technologies utilisées
 
 - **React** - Bibliothèque UI
 - **Next.js** - Framework React pour la production
@@ -16,7 +16,7 @@ Un site portfolio construit avec React et Next.js. Entièrement codé avec TypeS
 - **GraphQL** - Requêtes de données (pour GitHub)
 - **EmailJS** - Gestion des emails pour le formulaire de contact
 
-## 📄 Licence
+## Licence
 
 Tous droits réservés. Ce code et ce contenu ne peuvent pas être utilisés, reproduits ou distribués sans autorisation explicite.
 
