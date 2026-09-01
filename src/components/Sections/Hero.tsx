@@ -37,20 +37,20 @@ const Hero: FC = memo(() => {
       <div className="absolute inset-0 z-[5] bg-black/30"></div>
 
         {/* Contenu principal */}
-        <div className="z-10 w-full max-w-screen-xl px-4 lg:px-0 mt-0 sm:mt-12 lg:mt-20">
-          <div className="flex flex-col gap-y-2 sm:gap-y-6 rounded-xl p-4 sm:p-8 text-center items-center">
-            <h1 className="text-4xl font-medium text-white  sm:text-5xl lg:text-6xl animate-fadeIn" style={{fontFamily: '"Noto SD 500", Arial, sans-serif'}}>{name}</h1>
-            <div className="mt-4 sm:mt-8 animate-fadeIn" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
+        <div className="z-10 w-full max-w-screen-xl px-4 lg:px-0 mt-0 2xl:mt-20">
+          <div className="flex flex-col gap-y-2 sm:gap-y-4 lg:gap-y-6 2xl:gap-y-8 rounded-xl p-4 text-center items-center">
+            <h1 className="text-4xl font-medium text-white sm:text-4xl md:text-5xl 2xl:text-6xl animate-fadeIn" style={{fontFamily: '"Noto SD 500", Arial, sans-serif'}}>{name}</h1>
+            <div className="mt-2 sm:mt-4 2xl:mt-8 animate-fadeIn" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
             {description}
             </div>
            { /*<div className="flex gap-x-4 text-neutral-100">
               <Socials />
             </div>*/}
             {/* Boutons "CV" et "Contact" - générés depuis heroData.actions */}
-            <div className="flex w-full justify-center gap-x-4 flex-wrap">
+            <div className="flex w-full justify-center gap-x-4 flex-wrap mt-2 sm:mt-4 2xl:mt-8">
               {actions.map(({href, text, Icon, color}, index) => (
                 <a className={classNames(
-                    'flex mt-4 gap-x-2 sm:gap-x-4 rounded-full ' + color + ' px-6 py-2 sm:px-24 sm:py-3 text-sm sm:text-base font-medium text-white sm:text-lg btn-interactive ripple-container animate-fadeIn'
+                    'flex mt-2 sm:mt-4 gap-x-2 sm:gap-x-4 rounded-full ' + color + ' px-6 py-2 sm:px-16 sm:py-3 2xl:px-24 text-sm font-medium text-white sm:text-base 2xl:text-lg btn-interactive ripple-container animate-fadeIn'
                   )}
                   href={href}
                   key={text}
@@ -65,14 +65,14 @@ const Hero: FC = memo(() => {
             </div>
           </div>
           {/* Icones des compétences - EN DESSOUS DE TOUT */}
-        <div className="flex flex-col gap-y-2 lg:gap-y-4 w-full animate-fadeInUp mt-4 pb-12 lg:pb-0" style={{animationDelay: '0.6s', animationFillMode: 'both'}}>
+        <div className="flex flex-col gap-y-2 2xl:gap-y-4 w-full animate-fadeInUp mt-2 2xl:mt-4 pb-12 lg:pb-8 2xl:pb-0" style={{animationDelay: '0.6s', animationFillMode: 'both'}}>
           <SkillsIcon skills={skillsIcons} />
         </div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-6 z-20 flex justify-center ">
+        <div className="absolute inset-x-0 bottom-2 lg:bottom-6 2xl:bottom-12 z-20 flex justify-center ">
           <a
-            className="rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-neutral-900  sm:p-2 sm:mr-14 z-10 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-white/20 active:scale-95 "
+            className="rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-neutral-900  sm:p-1 lg:p-2 2xl:p-3 sm:mr-14 z-10 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-white/20 active:scale-95 "
             href={`/#${SectionId.About}`}>
             <ChevronDownIcon className="h-5 w-5 bg-transparent sm:h-6 sm:w-6" />
           </a>
