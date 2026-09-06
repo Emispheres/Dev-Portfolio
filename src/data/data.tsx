@@ -284,7 +284,7 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: `Web Meteo`,
+    title: `API Meteo`,
     shortDescription: 'Site web fait pour consulter la météo partout en france. Ainsi que la fête et les Saints du jour.',
     stack: ['2026 | Formation','HTML', 'CSS', 'JavaScript', ],
     description: `- Intégration de l'API Open-Meteo pour récupérer les données météorologiques en temps réel. 
