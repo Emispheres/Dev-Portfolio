@@ -70,8 +70,8 @@ export interface Stat {
 
 export interface Skill {
   name: string;
-  level: number;
-  max?: number;
+  /** URL du logo officiel (optionnel) affiché dans le badge */
+  logo?: string;
 }
 
 export interface SkillGroup {

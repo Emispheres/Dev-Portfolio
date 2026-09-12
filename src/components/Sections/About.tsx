@@ -49,7 +49,7 @@ const About: FC = memo(() => {
         {softSkills && softSkills.length > 0 && (
           <div ref={skillsRef} className={`grid grid-cols-2 sm:grid-cols-4 gap-4 ${skillsAnim}`}>
             {softSkills.map((skill, idx) => (
-              <div key={idx} className="bg-gray-100 border border-gray-300 rounded-md py-4 text-center cursor-default">
+              <div key={idx} className="bg-gray-100/50 border border-gray-200 rounded-sm py-4 text-center cursor-default">
                 <span className="text-sm font-semibold text-black" style={{fontFamily: 'Noto SD 500, sans-serif'}}>{skill.title}</span>
               </div>
             ))}

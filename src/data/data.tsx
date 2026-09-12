@@ -98,7 +98,7 @@ export const heroData: Hero = {
  * Skills Icons section
  */
 export const skillsIcons = [
-  { icon: BookOpenIcon, label: 'Langages', hoverColor: 'hover:text-red-400/75' },
+  { icon: BookOpenIcon, label: 'Langages', hoverColor: 'hover:text-red-500/75' },
   { icon: CodeBracketIcon, label: 'Front-end', hoverColor: 'hover:text-blue-500/75' },
   { icon: CircleStackIcon, label: 'Back-end & BDD', hoverColor: 'hover:text-green-500/75' },
   { icon: WrenchScrewdriverIcon, label: 'Outils & Technologies', hoverColor: 'hover:text-pink-400/75' },
@@ -134,39 +134,24 @@ D'un naturel curieux, persévérant et autonome, je sais m'adapter rapidement à
 /**
  * Skills section
  */
+/** URL de base des logos officiels Devicon (CDN jsDelivr) */
+const devicon = (path: string): string => `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${path}`;
+
 export const skills: SkillGroup[] = [
 
   {
     name: 'Langages de programmation',
     description: 'Langages étudiés et pratiqués, utilisables aussi bien côté front que back (JavaScript, TypeScript) ou pour la programmation système et applicative.',
     Icon: BookOpenIcon,
-    iconColor: 'text-red-400',
+    iconColor: 'text-red-500',
     iconPosition: 'right',
     skills: [
-      {
-        name: 'C',
-        level: 6,
-      },
-      {
-        name: 'C++',
-        level: 6,
-      },
-      {
-        name: 'Java',
-        level: 6,
-      },
-      {
-        name: 'Python',
-        level: 4,
-      },
-      {
-        name: 'JavaScript',
-        level: 8,
-      },
-      {
-        name: 'TypeScript',
-        level: 5,
-      },
+      {name: 'C', logo: devicon('c/c-original.svg')},
+      {name: 'C++', logo: devicon('cplusplus/cplusplus-original.svg')},
+      {name: 'Java', logo: devicon('java/java-original.svg')},
+      {name: 'Python', logo: devicon('python/python-original.svg')},
+      {name: 'JavaScript', logo: devicon('javascript/javascript-original.svg')},
+      {name: 'TypeScript', logo: devicon('typescript/typescript-original.svg')},
     ],
   },
   {
@@ -176,43 +161,23 @@ export const skills: SkillGroup[] = [
     iconColor: 'text-blue-500',
     iconPosition: 'left',
     skills: [
-      {
-        name: 'HTML',
-        level: 9,
-      },
-      {
-        name: 'CSS',
-        level: 10,
-      },
-      {
-        name: 'React',
-        level: 6,
-      },
-      {
-        name: 'Android',
-        level: 4,
-      },
+      {name: 'HTML', logo: devicon('html5/html5-original.svg')},
+      {name: 'CSS', logo: devicon('css3/css3-original.svg')},
+      {name: 'React', logo: devicon('react/react-original.svg')},
+      {name: 'Android', logo: devicon('android/android-original.svg')},
+      {name: 'Angular', logo: devicon('angularjs/angularjs-original.svg')},
     ],
   },
   {
     name: 'Développement backend & Bases de données',
     description: 'Conception de serveurs et gestion de bases de données relationnelles (MySQL) et non relationnelles (MongoDB).',
     Icon: CircleStackIcon,
-    iconColor: 'text-green-400',
+    iconColor: 'text-green-500',
     iconPosition: 'right',
     skills: [
-      {
-        name: 'Node.js',
-        level: 3,
-      },
-      {
-        name: 'MySQL',
-        level: 6,
-      },
-      {
-        name: 'MongoDB',
-        level: 6,
-      },
+      {name: 'Node.js', logo: devicon('nodejs/nodejs-original.svg')},
+      {name: 'MySQL', logo: devicon('mysql/mysql-original.svg')},
+      {name: 'MongoDB', logo: devicon('mongodb/mongodb-original.svg')},
     ],
   },
   {
@@ -222,54 +187,18 @@ export const skills: SkillGroup[] = [
     description: "Outils de développement, gestion de version et méthodologies de gestion de projet.",
     iconColor: 'text-pink-400',
     skills: [
-      {
-        name: 'Git',
-        level: 6,
-      },
-      {
-        name: 'VS Code',
-        level: 8,
-      },
-      {
-        name: 'Linux',
-        level: 8,
-      },
-      {
-        name: 'Windows',
-        level: 10,
-      },
-      {
-        name: 'Méthode Agile',
-        level: 7,
-      },
-      {
-        name: 'Scrum',
-        level: 7,
-      },
-      {
-        name: 'Analyse des besoins',
-        level: 7,
-      },
-      {
-        name: 'UML',
-        level: 6,
-      },
-      {
-        name: 'Diagramme de PERT',
-        level: 6,
-      },
-      {
-        name: 'Gantt',
-        level: 6,
-      },
-      {
-        name: 'TimePerformance',
-        level: 6,
-      },
-      {
-        name: 'Sécurité informatique',
-        level: 5,
-      },
+      {name: 'Git', logo: devicon('git/git-original.svg')},
+      {name: 'VS Code', logo: devicon('vscode/vscode-original.svg')},
+      {name: 'Linux', logo: devicon('linux/linux-original.svg')},
+      {name: 'Windows', logo: devicon('windows11/windows11-original.svg')},
+      {name: 'Méthode Agile'},
+      {name: 'Scrum'},
+      {name: 'Analyse des besoins'},
+      {name: 'UML'},
+      {name: 'Diagramme de PERT'},
+      {name: 'Gantt'},
+      {name: 'TimePerformance'},
+      {name: 'Sécurité informatique'},
     ],
   },
 ];

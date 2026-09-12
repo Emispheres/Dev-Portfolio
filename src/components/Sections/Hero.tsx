@@ -50,7 +50,7 @@ const Hero: FC = memo(() => {
             <div className="flex w-full justify-center gap-x-4 flex-wrap mt-2 sm:mt-4 2xl:mt-8">
               {actions.map(({href, text, Icon, color}, index) => (
                 <a className={classNames(
-                    'flex mt-2 sm:mt-4 gap-x-2 sm:gap-x-4 rounded-full ' + color + ' px-6 py-2 sm:px-16 sm:py-3 2xl:px-24 text-sm font-medium text-white sm:text-base 2xl:text-lg btn-interactive ripple-container animate-fadeIn'
+                    'flex mt-2 sm:mt-4 gap-x-2 sm:gap-x-4 rounded-full ' + color + ' px-6 py-2 sm:px-16 sm:py-3 2xl:px-16 text-sm font-medium text-white sm:text-base 2xl:text-lg btn-interactive ripple-container animate-fadeIn'
                   )}
                   href={href}
                   key={text}

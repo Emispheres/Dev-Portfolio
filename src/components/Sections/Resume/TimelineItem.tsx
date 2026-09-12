@@ -6,6 +6,7 @@ const TimelineItem: FC<{item: TimelineItem; index?: number}> = memo(({item, inde
   const {title, date, location, content} = item;
   
   return (
+    /* Container principal du timeline item */
     <div 
       className="relative bg-gray-100 rounded-md mb-4 py-4 pl-4 shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out"
       style={{animationDelay: `${index * 0.9}s`}}
