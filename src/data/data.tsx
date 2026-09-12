@@ -1,5 +1,5 @@
 import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon} from '@heroicons/react/24/outline';
-import { BookOpenIcon, CircleStackIcon, CodeBracketIcon, EnvelopeIcon, ServerStackIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
+import { BookOpenIcon, CircleStackIcon, CodeBracketIcon, EnvelopeIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
 import heroImage from '../images/notbad.jpg';
 import porfolioImage1 from '../images/portfolio/FabLabV2.PNG';
 import porfolioImage2 from '../images/portfolio/WhatSonV2.PNG';
@@ -98,11 +98,10 @@ export const heroData: Hero = {
  * Skills Icons section
  */
 export const skillsIcons = [
+  { icon: BookOpenIcon, label: 'Langages', hoverColor: 'hover:text-red-400/75' },
   { icon: CodeBracketIcon, label: 'Front-end', hoverColor: 'hover:text-blue-500/75' },
-  { icon: CircleStackIcon, label: 'Back-end', hoverColor: 'hover:text-green-500/75' },
-  { icon: BookOpenIcon, label: 'Apprentissage', hoverColor: 'hover:text-red-400/75' },
+  { icon: CircleStackIcon, label: 'Back-end & BDD', hoverColor: 'hover:text-green-500/75' },
   { icon: WrenchScrewdriverIcon, label: 'Outils & Technologies', hoverColor: 'hover:text-pink-400/75' },
-  { icon: ServerStackIcon, label: 'Réseaux', hoverColor: 'hover:text-amber-400/75' },
 ];
 
 /**
@@ -138,52 +137,69 @@ D'un naturel curieux, persévérant et autonome, je sais m'adapter rapidement à
 export const skills: SkillGroup[] = [
 
   {
-    name: 'Développement frontend',
-    description: 'Compétences en développement frontend avec divers frameworks et bibliothèques.',
-    Icon: CodeBracketIcon,
-    iconColor: 'text-blue-500',
+    name: 'Langages de programmation',
+    description: 'Langages étudiés et pratiqués, utilisables aussi bien côté front que back (JavaScript, TypeScript) ou pour la programmation système et applicative.',
+    Icon: BookOpenIcon,
+    iconColor: 'text-red-400',
     iconPosition: 'right',
     skills: [
-            {
-        name: 'HTML',
-        level: 9,
-      },
-            {
-        name: 'CSS',
-        level: 10,
+      {
+        name: 'C',
+        level: 6,
       },
       {
-        name: 'Javascript',
+        name: 'C++',
+        level: 6,
+      },
+      {
+        name: 'Java',
+        level: 6,
+      },
+      {
+        name: 'Python',
+        level: 4,
+      },
+      {
+        name: 'JavaScript',
         level: 8,
       },
       {
-        name: 'JQuery',
-        level: 7,
+        name: 'TypeScript',
+        level: 5,
+      },
+    ],
+  },
+  {
+    name: 'Développement frontend',
+    description: 'Création d\'interfaces web et mobiles : intégration, frameworks et développement Android.',
+    Icon: CodeBracketIcon,
+    iconColor: 'text-blue-500',
+    iconPosition: 'left',
+    skills: [
+      {
+        name: 'HTML',
+        level: 9,
       },
       {
-        name: 'Ajax',
-        level: 6,
+        name: 'CSS',
+        level: 10,
       },
       {
         name: 'React',
         level: 6,
       },
       {
-        name: 'Typescript',
-        level: 5,
-      },
-      {
-        name: 'ChartJS',
-        level: 5,
+        name: 'Android',
+        level: 4,
       },
     ],
   },
   {
-    name: 'Développement backend',
-    description: 'Compétences en développement backend avec plusieurs technologies.',
+    name: 'Développement backend & Bases de données',
+    description: 'Conception de serveurs et gestion de bases de données relationnelles (MySQL) et non relationnelles (MongoDB).',
     Icon: CircleStackIcon,
     iconColor: 'text-green-400',
-    iconPosition: 'left',
+    iconPosition: 'right',
     skills: [
       {
         name: 'Node.js',
@@ -194,74 +210,25 @@ export const skills: SkillGroup[] = [
         level: 6,
       },
       {
-        name: 'PHP',
-        level: 4,
-      },
-      {
-        name: 'C++',
-        level: 6,
-      },
-      {
-        name: 'Java',
+        name: 'MongoDB',
         level: 6,
       },
     ],
   },
-  /* {
-    Icon: ServerStackIcon,
-    iconPosition: 'right',
-    iconColor: 'text-amber-400',
-    name: 'Réseaux',
-    description: 'Compétences en réseaux informatiques.',
-    skills: [
-      {
-        name: 'VLAN',
-        level: 3,
-      },
-      {
-        name: 'TCP/IP',
-        level: 2,
-      },
-      {
-        name: 'DNS',
-        level: 1,
-      },
-      {
-        name: 'DHCP',
-        level: 1,
-      },
-      {
-        name: 'Table de routage',
-        level: 6,
-      },
-      {
-        name: 'HTTP/HTTPS',
-        level: 3,
-      },  
-    ],
-  }, */
   {
     Icon: WrenchScrewdriverIcon,
-    iconPosition: 'right',
+    iconPosition: 'left',
     name: 'Outils & Technologies',
-    description: "Compétences avec divers outils et technologies de développement.",
+    description: "Outils de développement, gestion de version et méthodologies de gestion de projet.",
     iconColor: 'text-pink-400',
     skills: [
       {
         name: 'Git',
-        level: 5,
+        level: 6,
       },
       {
         name: 'VS Code',
         level: 8,
-      },
-      {
-        name: 'WordPress',
-        level: 8,
-      },
-      {
-        name: 'JSON',
-        level: 2,
       },
       {
         name: 'Linux',
@@ -272,8 +239,36 @@ export const skills: SkillGroup[] = [
         level: 10,
       },
       {
-        name: 'NetBeans',
+        name: 'Méthode Agile',
+        level: 7,
+      },
+      {
+        name: 'Scrum',
+        level: 7,
+      },
+      {
+        name: 'Analyse des besoins',
+        level: 7,
+      },
+      {
+        name: 'UML',
         level: 6,
+      },
+      {
+        name: 'Diagramme de PERT',
+        level: 6,
+      },
+      {
+        name: 'Gantt',
+        level: 6,
+      },
+      {
+        name: 'TimePerformance',
+        level: 6,
+      },
+      {
+        name: 'Sécurité informatique',
+        level: 5,
       },
     ],
   },
