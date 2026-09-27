@@ -408,11 +408,11 @@ export const contact: ContactSection = {
       text: 'DzawaEmile@gmail.com',
       href: 'mailto:DzawaEmile@gmail.com',
     },
-    {
+    /*{
       type: ContactType.Github,
       text: 'Emispheres',
       href: 'https://github.com/Emispheres',
-    },
+    },*/
   ],
 };
 
