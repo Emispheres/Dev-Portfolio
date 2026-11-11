@@ -14,9 +14,21 @@ module.exports = {
         yellow: '#efc603',
       },
       keyframes: {
+        wiggle: {
+          '0%': {
+            transform: 'rotate(3deg)',
+          },
+          '100%': {
+            transform: 'rotate(-3deg)',
+          },
+          '50%': {
+            transform: 'rotate(3deg)',
+          },
+
+        },
         typing: {
-          '0%, 100%': {width: '0%'},
-          '30%, 70%': {width: '100%'},
+          '0%, 100%': { width: '0%' },
+          '30%, 70%': { width: '100%' },
         },
         blink: {
           '0%': {
@@ -82,21 +94,21 @@ module.exports = {
           },
         },
         slideFromLeft: {
-          '0%' : {
+          '0%': {
             opacity: 0,
             transform: 'translateX(-50px)',
           },
-          '100%' : {
+          '100%': {
             opacity: 1,
             transform: 'translateX(0)',
           },
         },
         slideFromRight: {
-          '0%' : {
+          '0%': {
             opacity: 0,
             transform: 'translateX(50px)',
           },
-          '100%' : {
+          '100%': {
             opacity: 1,
             transform: 'translateX(0)',
           },
@@ -173,6 +185,7 @@ module.exports = {
         },
       },
       animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
         slideInRight: 'slideInRight 1.1s ease-in-out',
         slideOutRight: 'slideOutRight 1.1s ease-in-out',
         slideOutLeft: 'slideOutLeft 1.1s ease-in-out',
@@ -191,7 +204,7 @@ module.exports = {
         ripple: 'ripple 0.6s ease-out',
       },
       screens: {
-        touch: {raw: 'only screen and (pointer: coarse)'},
+        touch: { raw: 'only screen and (pointer: coarse)' },
       },
     },
   },

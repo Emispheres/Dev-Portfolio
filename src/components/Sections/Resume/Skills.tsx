@@ -17,7 +17,8 @@ export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = m
     <div ref={ref} className={`flex items-stretch gap-4 md:gap-6 mb-3 ${animationClass} ${iconPosition === 'right' ? 'flex-row-reverse' : 'flex-row'}`}>
       {/* Icône en dehors de la boite */}
       <div className="flex items-center justify-center flex-shrink-0">
-        {Icon && <Icon className={`h-16 w-16 md:h-20 md:w-20 flex-shrink-0 hover:animate-bounce ${iconColor}`} />}
+        {Icon && <Icon className={`absolute h-16 w-16 md:h-20 md:w-20 flex-shrink-0 opacity-75 hover:animate-ping ${iconColor}`} />}
+        {Icon && <Icon className={`h-16 w-16 md:h-20 md:w-20 flex-shrink-0 ${iconColor}`} />}
       </div>
       {/* Boite blanche du contenu */}
       <div className="flex flex-col bg-white rounded-md p-4 md:p-6 shadow-sm flex-1 border border-gray-100  hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out">

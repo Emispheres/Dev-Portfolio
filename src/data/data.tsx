@@ -1,4 +1,4 @@
-import {ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon} from '@heroicons/react/24/outline';
+import { ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon } from '@heroicons/react/24/outline';
 import { BookOpenIcon, CircleStackIcon, CodeBracketIcon, EnvelopeIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
 import heroImage from '../images/notbad.jpg';
 import porfolioImage1 from '../images/portfolio/FabLabV2.PNG';
@@ -38,7 +38,7 @@ import {
 export const homePageMeta: HomepageMeta = {
   title: "Portfolio d'Émile Dzawa - Développeur Web Junior",
   description: "Portfolio d'Émile Dzawa - Développeur Web Junior",
-}; 
+};
 
 /**
  * Section definition
@@ -63,13 +63,13 @@ export const heroData: Hero = {
   name: `Bienvenue sur mon Portfolio !`,
   description: (
     <>
-      <div className="space-y-2" style={{fontFamily: 'Robotto, sans-serif'}}>
+      <div className="space-y-2" style={{ fontFamily: 'Robotto, sans-serif' }}>
         <p className="text-stone-100 prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
           Je suis un <strong className="text-stone-100">développeur web junior</strong>, passionné par la création
           d'interfaces modernes, claires et efficaces. Je développe des applications web en utilisant
           <strong className="text-stone-100"> HTML, TailwindCSS, JavaScript , React et Next.js</strong>.
         </p>
-        
+
         {/*<p className="prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
           Actuellement en montée en compétences, je travaille sur des
           <strong className="text-stone-100"> projets concrets</strong> pour renforcer mes bases techniques,
@@ -83,13 +83,13 @@ export const heroData: Hero = {
       href: '/assets/resume.pdf',
       text: 'Télécharger mon CV',
       Icon: ArrowDownTrayIcon,
-      color:'bg-blue-600/75',
+      color: 'bg-blue-600/75',
     },
     {
       href: `#${SectionId.Contact}`,
       text: 'Formulaire de Contact',
       Icon: EnvelopeIcon,
-      color:'bg-green-700/75',
+      color: 'bg-green-700/75',
     },
   ],
 };
@@ -108,7 +108,7 @@ export const skillsIcons = [
  * About section
  */
 export const aboutData: About = {
-  
+
   description: `Actuellement en formation de Concepteur Développeur d'Application, je suis passionné par la création de solutions logicielles et l'ingénierie informatique. 
 Fort d'un BTS Systèmes Numériques (option Informatique et Réseaux), j'ai récemment renforcé mes compétences web à travers la réalisation de projets modernes utilisant Next.js, React et TailwindCSS.
 
@@ -118,15 +118,15 @@ J'approfondis activement l'algorithmie, la gestion des bases de données et la p
 D'un naturel curieux, persévérant et autonome, je sais m'adapter rapidement à des environnements techniques que je découvre. Que ce soit pour travailler en totale autonomie ou collaborer en équipe, j'aime relever de nouveaux défis, apprendre continuellement et m'appuyer sur les retours constructifs pour faire évoluer mes pratiques de développement.`,
 
   aboutItems: [
-    {label: 'Localisation', text: 'France, Lespinasse', Icon: MapIcon},
-    {label: 'Âge', text: '25', Icon: CalendarIcon},
-    {label: 'Nationalité', text: 'Français', Icon: FlagIcon},
+    { label: 'Localisation', text: 'France, Lespinasse', Icon: MapIcon },
+    { label: 'Âge', text: '25', Icon: CalendarIcon },
+    { label: 'Nationalité', text: 'Français', Icon: FlagIcon },
   ],
   softSkills: [
-    {title: 'Apprentissage continu'},
-    {title: 'Collaboration'},
-    {title: 'Esprit d\'équipe & réactif'},
-    {title: 'Autonomie'},
+    { title: 'Apprentissage continu' },
+    { title: 'Collaboration' },
+    { title: 'Esprit d\'équipe & réactif' },
+    { title: 'Autonomie' },
 
   ],
 };
@@ -146,12 +146,13 @@ export const skills: SkillGroup[] = [
     iconColor: 'text-red-500',
     iconPosition: 'right',
     skills: [
-      {name: 'C', logo: devicon('c/c-original.svg')},
-      {name: 'C++', logo: devicon('cplusplus/cplusplus-original.svg')},
-      {name: 'Java', logo: devicon('java/java-original.svg')},
-      {name: 'Python', logo: devicon('python/python-original.svg')},
-      {name: 'JavaScript', logo: devicon('javascript/javascript-original.svg')},
-      {name: 'TypeScript', logo: devicon('typescript/typescript-original.svg')},
+      { name: 'C', logo: devicon('c/c-original.svg') },
+      { name: 'C++', logo: devicon('cplusplus/cplusplus-original.svg') },
+      { name: 'Java', logo: devicon('java/java-original.svg') },
+      { name: 'Python', logo: devicon('python/python-original.svg') },
+      { name: 'JavaScript', logo: devicon('javascript/javascript-original.svg') },
+      { name: 'TypeScript', logo: devicon('typescript/typescript-original.svg') },
+      { name: 'Kotlin', logo: devicon('kotlin/kotlin-original.svg') },
     ],
   },
   {
@@ -161,11 +162,14 @@ export const skills: SkillGroup[] = [
     iconColor: 'text-blue-500',
     iconPosition: 'left',
     skills: [
-      {name: 'HTML', logo: devicon('html5/html5-original.svg')},
-      {name: 'CSS', logo: devicon('css3/css3-original.svg')},
-      {name: 'React', logo: devicon('react/react-original.svg')},
-      {name: 'Android', logo: devicon('android/android-original.svg')},
-      {name: 'Angular', logo: devicon('angularjs/angularjs-original.svg')},
+      { name: 'HTML', logo: devicon('html5/html5-original.svg') },
+      { name: 'CSS', logo: devicon('css3/css3-original.svg') },
+      { name: 'TailwindCSS', logo: devicon('tailwindcss/tailwindcss-original.svg') },
+      { name: 'React', logo: devicon('react/react-original.svg') },
+      { name: 'Next.js', logo: devicon('nextjs/nextjs-original.svg') },
+      { name: 'Android', logo: devicon('android/android-original.svg') },
+      { name: 'Angular', logo: devicon('angularjs/angularjs-original.svg') },
+      { name: 'javascript', logo: devicon('javascript/javascript-original.svg') },
     ],
   },
   {
@@ -175,9 +179,9 @@ export const skills: SkillGroup[] = [
     iconColor: 'text-green-500',
     iconPosition: 'right',
     skills: [
-      {name: 'Node.js', logo: devicon('nodejs/nodejs-original.svg')},
-      {name: 'MySQL', logo: devicon('mysql/mysql-original.svg')},
-      {name: 'MongoDB', logo: devicon('mongodb/mongodb-original.svg')},
+      { name: 'Node.js', logo: devicon('nodejs/nodejs-original.svg') },
+      { name: 'MySQL', logo: devicon('mysql/mysql-original.svg') },
+      { name: 'MariaDB', logo: devicon('mariadb/mariadb-original.svg') },
     ],
   },
   {
@@ -187,18 +191,21 @@ export const skills: SkillGroup[] = [
     description: "Outils de développement, gestion de version et méthodologies de gestion de projet.",
     iconColor: 'text-pink-400',
     skills: [
-      {name: 'Git', logo: devicon('git/git-original.svg')},
-      {name: 'VS Code', logo: devicon('vscode/vscode-original.svg')},
-      {name: 'Linux', logo: devicon('linux/linux-original.svg')},
-      {name: 'Windows', logo: devicon('windows11/windows11-original.svg')},
-      {name: 'Méthode Agile'},
-      {name: 'Scrum'},
-      {name: 'Analyse des besoins'},
-      {name: 'UML'},
-      {name: 'Diagramme de PERT'},
-      {name: 'Gantt'},
-      {name: 'TimePerformance'},
-      {name: 'Sécurité informatique'},
+      { name: 'Git', logo: devicon('git/git-original.svg') },
+      { name: 'Docker', logo: devicon('docker/docker-original.svg') },
+      { name: 'VS Code', logo: devicon('vscode/vscode-original.svg') },
+      { name: 'Linux', logo: devicon('linux/linux-original.svg') },
+      { name: 'Windows', logo: devicon('windows11/windows11-original.svg') },
+      { name: 'Netbeans', logo: devicon('netbeans/netbeans-original.svg') },
+      { name: 'Yarn', logo: devicon('yarn/yarn-original.svg') },
+      { name: 'NPM', logo: devicon('npm/npm-original-wordmark.svg') },
+      { name: 'Vercel', logo: devicon('vercel/vercel-original.svg') },
+      { name: 'Figma', logo: devicon('figma/figma-original.svg') },
+      { name: 'Diagrammes UML' },
+      { name: 'Jakarta EE' },
+      { name: 'Arduino', logo: devicon('arduino/arduino-original.svg') },
+      { name: 'Raspberry Pi', logo: devicon('raspberrypi/raspberrypi-original.svg') },
+      { name: 'Chart.js', logo: devicon('chartjs/chartjs-original.svg') },
     ],
   },
 ];
@@ -210,7 +217,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: `API Meteo`,
     shortDescription: 'Site web fait pour consulter la météo partout en france. Ainsi que la fête et les Saints du jour.',
-    stack: ['2026 | Formation','HTML', 'CSS', 'JavaScript', ],
+    stack: ['2026 | Formation', 'HTML', 'CSS', 'JavaScript',],
     description: `- Intégration de l'API Open-Meteo pour récupérer les données météorologiques en temps réel. 
     Intégration de l'API Calendrier pour récupérer les fêtes et saints du jour.
 - Projet individuel 
@@ -222,7 +229,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: 'TRS FabLab',
     shortDescription: "Application web de suivi et d'analyse de la production d'imprimantes 3D. Le projet n'a jamais été terminé mais une version fonctionnelle est disponible en ligne.",
-    stack: ['2022 | Formation','HTML', 'CSS', 'JavaScript', 'GraphQL', 'Chart.js', 'PHP', 'MySQL'],
+    stack: ['2022 | Formation', 'HTML', 'CSS', 'JavaScript', 'GraphQL', 'Chart.js', 'PHP', 'MySQL'],
     description: `- Suivi en temps réel des conditions de production (température, hygrométrie) avec alertes.
 - Visualisation de la production par ordre de fabrication et estimation des coûts.
 - Affichage du TRS (Taux de Rendement Synthétique) par imprimante.
@@ -237,7 +244,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: `What's On`,
     shortDescription: 'Application mobile centralisant des informations utiles pour étudiants du DUT de Blagnac.',
-    stack: ['2019 | Formation','HTML', 'CSS', 'JavaScript', 'Font Awesome', 'API REST', ],
+    stack: ['2019 | Formation', 'HTML', 'CSS', 'JavaScript', 'Font Awesome', 'API REST',],
     description: `- Météo, horaires tram T1, agenda événements
 - Projet collaboratif en gestion de projet
 - Mode sombre avec détection préférences système (variables CSS)
@@ -250,7 +257,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: 'Mon Portfolio',
     shortDescription: 'Site sur lequel vous êtes actuellement ! 😊',
-    stack: ['2025 | Personnel','Next.js', 'React', 'TypeScript', 'TailwindCSS', 'GraphQL'],
+    stack: ['2025 | Personnel', 'Next.js', 'React', 'TypeScript', 'TailwindCSS', 'GraphQL'],
     description: `- Portfolio personnel présentant mon parcours, mes compétences et mes projets
 - Présentation de mes projets, formations et expériences professionnelles
 - Design avec TailwindCSS
@@ -263,7 +270,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: 'Robot Fouineur',
     shortDescription: 'Robot autonome de récupération de données environnementales. Le but de ce projet était de concevoir un robot contrôler par application mobile, capable de se déplacer de manière autonome dans des environnements inaccessible tout en collectant des données sur la température et l\'humidité ambiantes à l\'aide de capteurs et d\'une caméra intégrés.',
-    stack: ['2018 | Formation','Arduino', 'C++', 'Capteurs Température/Humidité', 'Communication Bluetooth', 'Mit App inventor'],
+    stack: ['2018 | Formation', 'Arduino', 'C++', 'Capteurs Température/Humidité', 'Communication Bluetooth', 'Mit App inventor'],
     description: `- Projet Arduino de récupération et traitement de données environnementales
 - Robot autonome équipé de capteurs de température et d'humidité
 - Transmission des données du robot Arduino vers application mobile
@@ -283,12 +290,12 @@ export const portfolioItems: PortfolioItem[] = [
  * Resume section -- TODO: Standardize resume contact format or offer MDX
  */
 export const education: TimelineItem[] = [
-    {
+  {
     date: '2025 - 2026',
     location: 'LDNR',
     title: 'Concepteur Développeur d\'Application',
     content: (
-      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+      <ul style={{ fontFamily: '"Roboto", sans-serif' }}>
         <li>Solidification de bases acquises en programmation</li>
         <li>Mise en pratique des compétences acquises dans divers projets informatique en équipe</li>
         <li>Conception d’applications natives Android</li>
@@ -301,7 +308,7 @@ export const education: TimelineItem[] = [
     location: 'Lycée International Victor Hugo',
     title: 'BTS Système numérique - informatique et réseaux ',
     content: (
-      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+      <ul style={{ fontFamily: '"Roboto", sans-serif' }}>
         <li> Mise en place, configuration et maintenance de systèmes informatiques et réseaux.</li>
         <li> Compétences en administration de réseaux (LAN, routage, VLAN).</li>
         <li> Gestion de systèmes Windows et Linux. </li>
@@ -314,7 +321,7 @@ export const education: TimelineItem[] = [
     location: 'IUT - Blagnac',
     title: 'DUT Informatique ',
     content: (
-      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+      <ul style={{ fontFamily: '"Roboto", sans-serif' }}>
         <li>Conception, développement et maintenance d’applications informatiques.</li>
         <li>Compétences en algorithmique, bases de données, réseaux et systèmes.</li>
         <li>Programmation en Java, Python, C, SQL, HTML/CSS et JavaScript.</li>
@@ -327,7 +334,7 @@ export const education: TimelineItem[] = [
     location: 'Lycée Polyvalent Déodat de Séverac',
     title: "Bac STI2D spécialité Système d'information et numérique ",
     content: (
-      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+      <ul style={{ fontFamily: '"Roboto", sans-serif' }}>
         <li>Découverte et mise en œuvre de systèmes informatiques et électroniques.</li>
         <li>Apprentissage des bases de la programmation et des réseaux.</li>
         <li>Réalisation de projets intégrant matériel, capteurs et interfaces logicielles.</li>
@@ -338,12 +345,12 @@ export const education: TimelineItem[] = [
 ];
 
 export const experience: TimelineItem[] = [
-    {
+  {
     date: '2022 - 2025',
     location: 'Aldi',
     title: "Agent de rayon",
     content: (
-      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+      <ul style={{ fontFamily: '"Roboto", sans-serif' }}>
         <li>Création de divers projets informatique en parallèle afin de préserver mes compétences en numérique</li>
         <li>Assistance technique aux collègues sur les outils informatiques.</li>
         <li>Mise en rayon des produits et gestion des stocks.</li>
@@ -372,7 +379,7 @@ export const experience: TimelineItem[] = [
     location: 'Maintronic',
     title: "Stagiaire en maintenance d'appareil électronique",
     content: (
-      <ul style={{fontFamily: '"Roboto", sans-serif'}}>
+      <ul style={{ fontFamily: '"Roboto", sans-serif' }}>
         <li>Prise en charge et réparation d'imprimante à jet d'encre EPSON pour clients particulier et professionnel.</li>
         <li>Accueil des clients en agence.</li>
         <li>Changement d'OS de Windows à Linux.</li>
@@ -389,18 +396,18 @@ export const experience: TimelineItem[] = [
 export const contact: ContactSection = {
   headerText: 'Entrez en contact.',
   description: (
-  <div>
-    {/*Actuellement à la recherche d'un nouvel emploi, je suis intéressée par les métiers support, de réseaux et de développement web.*/}
-    <p>Dans le cadre de ma formation de Concepteur Développeur d'Application, je suis activement à la recherche d'un stage (non rémunéré) de 300 heures débutant en février.</p>
-    <p>La date de commencement exacte est flexible et s'adaptera aux disponibilités de votre entreprise.</p>
-    <p>Je souhaite mettre en pratique mes connaissances et m'investir dans des projets liés à :</p>
-    <ul >
-      <li>Développeur concepteur d'application</li>
-      <li>Conception et architecture d'applications</li>
-      <li>Développeur Web Junior Front/Back-end</li>
-    </ul> 
-    <br/> N'hésitez pas à me contacter via le formulaire ou par mail.
-  </div>
+    <div>
+      {/*Actuellement à la recherche d'un nouvel emploi, je suis intéressée par les métiers support, de réseaux et de développement web.*/}
+      <p>Dans le cadre de ma formation de Concepteur Développeur d'Application, je suis activement à la recherche d'un stage (non rémunéré) de 300 heures débutant en février.</p>
+      <p>La date de commencement exacte est flexible et s'adaptera aux disponibilités de votre entreprise.</p>
+      <p>Je souhaite mettre en pratique mes connaissances et m'investir dans des projets liés à :</p>
+      <ul >
+        <li>Développeur concepteur d'application</li>
+        <li>Conception et architecture d'applications</li>
+        <li>Développeur Web Junior Front/Back-end</li>
+      </ul>
+      <br /> N'hésitez pas à me contacter via le formulaire ou par mail.
+    </div>
   ),
   items: [
     {
