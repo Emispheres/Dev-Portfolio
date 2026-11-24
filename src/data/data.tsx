@@ -193,6 +193,7 @@ export const skills: SkillGroup[] = [
     skills: [
       { name: 'Git', logo: devicon('git/git-original.svg') },
       { name: 'Docker', logo: devicon('docker/docker-original.svg') },
+      { name: 'Spring Boot', logo: devicon('spring/spring-original.svg') },
       { name: 'VS Code', logo: devicon('vscode/vscode-original.svg') },
       { name: 'Linux', logo: devicon('linux/linux-original.svg') },
       { name: 'Windows', logo: devicon('windows11/windows11-original.svg') },
