@@ -53,6 +53,7 @@ export interface AboutItem {
 export interface SoftSkill {
   title: string;
   description?: string;
+  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
 }
 
 /**

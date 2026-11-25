@@ -7,7 +7,15 @@ import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver'
 export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = memo(({skillGroup}) => {
   const {name, skills, description, Icon, iconPosition = 'left', iconColor} = skillGroup;
   const { ref, isVisible } = useIntersectionObserver();
-  
+  const items: React.ReactNode[] = [];
+
+  // items = liste des compétences individuelles (Skill) à afficher dans la grille
+  for (let i = 0; i < skills.length; i++) {
+    const skill = skills[i];
+    const cleUnique = skill.name + '-' + i;
+
+    items.push(<Skill key={cleUnique} skill={skill} />);
+  }
   // Choisir l'animation selon la position de l'icône
   const animationClass = isVisible 
     ? (iconPosition === 'right' ? 'animate-slideFromLeft' : 'animate-slideFromRight')
@@ -30,9 +38,8 @@ export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = m
         
         {/* Grille : 2 colonnes mobile, 3 colonnes desktop */}
         <div className="grid grid-cols-2 gap-2 md:grid-cols-3 text-sm">
-          {skills.map((skill, index) => (
-            <Skill key={`${skill.name}-${index}`} skill={skill} />
-          ))}
+          {/* mes compétences individuelles (Skill) sont affichées ici */}
+          {items}
         </div>
       </div>
     </div>
@@ -40,6 +47,7 @@ export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = m
 });
 
 SkillGroup.displayName = 'SkillGroup';
+
 
 // Composant d'une compétence individuelle affichée sous forme de badge (logo officiel + nom)
 export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {

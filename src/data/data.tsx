@@ -124,7 +124,7 @@ D'un naturel curieux, persévérant et autonome, je sais m'adapter rapidement à
   ],
   softSkills: [
     { title: 'Apprentissage continu' },
-    { title: 'Collaboration' },
+    { title: 'Collaboration',},
     { title: 'Esprit d\'équipe & réactif' },
     { title: 'Autonomie' },
 
@@ -134,6 +134,7 @@ D'un naturel curieux, persévérant et autonome, je sais m'adapter rapidement à
 /**
  * Skills section
  */
+
 /** URL de base des logos officiels Devicon (CDN jsDelivr) */
 const devicon = (path: string): string => `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${path}`;
 
@@ -167,9 +168,10 @@ export const skills: SkillGroup[] = [
       { name: 'TailwindCSS', logo: devicon('tailwindcss/tailwindcss-original.svg') },
       { name: 'React', logo: devicon('react/react-original.svg') },
       { name: 'Next.js', logo: devicon('nextjs/nextjs-original.svg') },
-      { name: 'Android', logo: devicon('android/android-original.svg') },
       { name: 'Angular', logo: devicon('angularjs/angularjs-original.svg') },
-      { name: 'javascript', logo: devicon('javascript/javascript-original.svg') },
+      { name: 'JavaScript', logo: devicon('javascript/javascript-original.svg') },
+      { name: 'Chart.js', logo: devicon('chartjs/chartjs-original.svg') },
+      { name: 'TypeScript', logo: devicon('typescript/typescript-original.svg') },
     ],
   },
   {
@@ -182,6 +184,9 @@ export const skills: SkillGroup[] = [
       { name: 'Node.js', logo: devicon('nodejs/nodejs-original.svg') },
       { name: 'MySQL', logo: devicon('mysql/mysql-original.svg') },
       { name: 'MariaDB', logo: devicon('mariadb/mariadb-original.svg') },
+      { name: 'MongoDB', logo: devicon('mongodb/mongodb-original.svg') },
+      { name: 'Jakarta EE', logo: devicon('java/java-original.svg') },
+      { name: 'Spring Boot', logo: devicon('spring/spring-original.svg') },
     ],
   },
   {
@@ -193,7 +198,7 @@ export const skills: SkillGroup[] = [
     skills: [
       { name: 'Git', logo: devicon('git/git-original.svg') },
       { name: 'Docker', logo: devicon('docker/docker-original.svg') },
-      { name: 'Spring Boot', logo: devicon('spring/spring-original.svg') },
+      
       { name: 'VS Code', logo: devicon('vscode/vscode-original.svg') },
       { name: 'Linux', logo: devicon('linux/linux-original.svg') },
       { name: 'Windows', logo: devicon('windows11/windows11-original.svg') },
@@ -203,10 +208,9 @@ export const skills: SkillGroup[] = [
       { name: 'Vercel', logo: devicon('vercel/vercel-original.svg') },
       { name: 'Figma', logo: devicon('figma/figma-original.svg') },
       { name: 'Diagrammes UML' },
-      { name: 'Jakarta EE' },
       { name: 'Arduino', logo: devicon('arduino/arduino-original.svg') },
       { name: 'Raspberry Pi', logo: devicon('raspberrypi/raspberrypi-original.svg') },
-      { name: 'Chart.js', logo: devicon('chartjs/chartjs-original.svg') },
+      
     ],
   },
 ];
@@ -416,11 +420,11 @@ export const contact: ContactSection = {
       text: 'DzawaEmile@gmail.com',
       href: 'mailto:DzawaEmile@gmail.com',
     },
-    /*{
-      type: ContactType.Github,
-      text: 'Emispheres',
-      href: 'https://github.com/Emispheres',
-    },*/
+    {
+      type: ContactType.LinkedIn,
+      text: 'Mon LinkedIn',
+      href: 'https://www.linkedin.com/in/emiledzawa/',
+    },
   ],
 };
 

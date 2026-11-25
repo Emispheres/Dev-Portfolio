@@ -26,15 +26,15 @@ module.exports = {
           },
 
         },
+        blink: {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0 },
+        },
         typing: {
           '0%, 100%': { width: '0%' },
           '30%, 70%': { width: '100%' },
         },
-        blink: {
-          '0%': {
-            opacity: 0,
-          },
-        },
+        
         'rotate-loader': {
           '0%': {
             transform: 'rotate(0deg)',
@@ -183,6 +183,7 @@ module.exports = {
             opacity: 0,
           },
         },
+        
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
@@ -202,6 +203,7 @@ module.exports = {
         scrollScale: 'scrollScale 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         buttonPulse: 'buttonPulse 2s ease-in-out infinite',
         ripple: 'ripple 0.6s ease-out',
+        blink: 'blink 1.4s steps(1) infinite',
       },
       screens: {
         touch: { raw: 'only screen and (pointer: coarse)' },
