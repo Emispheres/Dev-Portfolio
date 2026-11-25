@@ -64,9 +64,9 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
             className={classNames(
               "absolute inset-0 z-0",
               // Glisser depuis la droite quand le menu s'ouvre
-              isOpen && "bg-neutral-900/80 animate-slideInRight",
+              isOpen && "bg-neutral-900 animate-slideInRight",
               // Glisser vers la droite quand le menu se ferme (après que les éléments de nav disparaissent)
-              !isOpen && hasBeenOpened && "bg-neutral-900/80 animate-slideOutLeft",
+              !isOpen && hasBeenOpened && "bg-neutral-900 animate-slideOutLeft",
             )}
             // Retarder la sortie du fond de 0.6s pour permettre aux éléments de nav de s'estomper d'abord, puis persister l'état caché
             style={!isOpen && hasBeenOpened ? {animationDelay: '0.6s', animationFillMode: 'forwards'} : {}}
@@ -90,7 +90,7 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
           </nav>
           
           {/* Bouton de basculement du menu - côté droit */}
-          <button className="relative rounded-full z-10 p-3 bg-white/90 ml-auto mr-4 duration-300 hover:scale-110 hover:shadow-lg hover:shadow-white/20 active:scale-95" aria-label="Menu" onClick={handleClick}>
+          <button className="relative rounded-full z-10 p-3 bg-white/90 ml-auto mr-4 duration-50 hover:scale-105 active:scale-95" aria-label="Menu" onClick={handleClick}>
             <Bars2Icon className="h-6 w-6 text-neutral-900" />
           </button>
         </div>

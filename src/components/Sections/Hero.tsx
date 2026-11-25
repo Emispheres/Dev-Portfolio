@@ -37,10 +37,10 @@ const Hero: FC = memo(() => {
       <div className="absolute inset-0 z-[5] bg-black/30"></div>
 
         {/* Contenu principal */}
-        <div className="z-10 w-full max-w-screen-xl px-4 lg:px-0 mt-0 2xl:mt-20">
-          <div className="flex flex-col gap-y-2 sm:gap-y-4 lg:gap-y-6 2xl:gap-y-8 rounded-xl p-4 text-center items-center">
-            <h1 className="text-4xl font-medium text-white sm:text-4xl md:text-5xl 2xl:text-6xl animate-fadeIn" style={{fontFamily: '"Noto SD 500", Arial, sans-serif'}}>{name}</h1>
-            <div className="mt-2 sm:mt-4 2xl:mt-8 animate-fadeIn" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
+        <div className="z-10 w-full max-w-screen-xl px-4 lg:px-2 mt-2 2xl:mt-20 ">
+          <div className="flex flex-col gap-y-2 sm:gap-y-4 lg:gap-y-6 2xl:gap-y-10 rounded-xl p-4 text-center items-center ">
+            <h1 className="whitespace-pre-line text-3xl font-medium text-white sm:text-3xl md:text-4xl 2xl:text-5xl animate-fadeIn " style={{fontFamily: '"Noto SD 500", Arial, sans-serif'}}>{name}</h1>
+            <div className="mt-1 sm:mt-2 2xl:mt-2  animate-fadeIn" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
             {description}
             </div>
            { /*<div className="flex gap-x-4 text-neutral-100">
@@ -70,9 +70,9 @@ const Hero: FC = memo(() => {
         </div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-2 lg:bottom-6 2xl:bottom-12 z-20 flex justify-center ">
+        <div className="absolute inset-x-0 bottom-2 lg:bottom-6 2xl:bottom-12 z-20 flex justify-center active:scale-95 transition-transform duration-300 hover:scale-105">
           <a
-            className=" animate-bounce rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-neutral-900  sm:p-1 lg:p-2 2xl:p-3 sm:mr-14 z-10 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-white/20 active:scale-95 "
+            className=" animate-bounce rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-neutral-900  sm:p-1 lg:p-2 2xl:p-3 sm:mr-14 z-10 transition-all duration-50 hover:scale-110 active:scale-90  "
             href={`/#${SectionId.About}`}>
             <ChevronDownIcon className="h-5 w-5 bg-transparent sm:h-6 sm:w-6 " />
           </a>

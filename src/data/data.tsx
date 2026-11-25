@@ -60,36 +60,28 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `Bienvenue sur mon Portfolio !`,
+  name: ( "Bienvenue sur mon Portfolio !"),
   description: (
-    <>
-      <div className="space-y-2" style={{ fontFamily: 'Robotto, sans-serif' }}>
-        <p className="text-stone-100 prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
-          Je suis un <strong className="text-stone-100">développeur web junior</strong>, passionné par la création
-          d'interfaces modernes, claires et efficaces. Je développe des applications web en utilisant
-          <strong className="text-stone-100"> HTML, TailwindCSS, JavaScript , React et Next.js</strong>.
+    <div className="space-y-3" style={{fontFamily: 'Roboto, sans-serif'}}>
+        <p className="mx-auto 2xl:text-2xl max-w-5xl text-base leading-relaxed text-stone-100 sm:text-lg lg:text-xl">
+          Je suis <strong className="font-semibold text-white">Émile Dzawa-Pathas</strong>, <strong className="font-semibold text-white">concepteur et développeur d'applications</strong>.
+          <br></br>Je conçois, développe et maintiens des applications web et logicielles, du back-end <strong className="font-semibold text-white">Java / Spring Boot</strong> au front-end <strong className="font-semibold text-white">Angular, React et Next.js</strong>.
+          À la recherche d'un <strong className="font-semibold text-white">stage</strong> à Toulouse et ses environs.
         </p>
-
-        {/*<p className="prose-base text-stone-200 sm:prose-lg lg:prose-2xl">
-          Actuellement en montée en compétences, je travaille sur des
-          <strong className="text-stone-100"> projets concrets</strong> pour renforcer mes bases techniques,
-          améliorer la qualité de mon code.
-        </p>*/}
-      </div>
-    </>
+    </div>
   ),
   actions: [
     {
       href: '/assets/resume.pdf',
       text: 'Télécharger mon CV',
       Icon: ArrowDownTrayIcon,
-      color: 'bg-blue-600/75',
+      color: 'bg-blue-600/80 border border-blue-400',
     },
     {
       href: `#${SectionId.Contact}`,
       text: 'Formulaire de Contact',
       Icon: EnvelopeIcon,
-      color: 'bg-green-700/75',
+      color: 'bg-green-600/80 border border-green-500',
     },
   ],
 };
