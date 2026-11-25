@@ -84,7 +84,7 @@ const About: FC = memo(() => {
               <p className="text-sm text-slate-500">Des qualités que je cultive dans chaque projet.</p>
             </div>
             <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {softSkills.map((skill, index, Icon) => (
+              {softSkills.map((skill) => (
                 <li className="group flex min-h-20 items-center justify-center gap-x-3 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-950/5" key={skill.title}>
                   {skill.Icon && <skill.Icon aria-hidden="true" className="h-5 w-5 shrink-0 text-orange-300" />}
 
