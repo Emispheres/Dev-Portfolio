@@ -75,13 +75,11 @@ export const heroData: Hero = {
       href: '/assets/resume.pdf',
       text: 'Télécharger mon CV',
       Icon: ArrowDownTrayIcon,
-      color: 'bg-blue-600/80 border border-blue-400',
     },
     {
       href: `#${SectionId.Contact}`,
       text: 'Formulaire de Contact',
       Icon: EnvelopeIcon,
-      color: 'bg-green-600/80 border border-green-500',
     },
   ],
 };
@@ -395,15 +393,9 @@ export const contact: ContactSection = {
   description: (
     <div>
       {/*Actuellement à la recherche d'un nouvel emploi, je suis intéressée par les métiers support, de réseaux et de développement web.*/}
-      <p>Dans le cadre de ma formation de Concepteur Développeur d'Application, je suis activement à la recherche d'un stage (non rémunéré) de 300 heures débutant en février.</p>
+      <p>Dans le cadre de ma formation de Concepteur Développeur d'Application, je suis activement à la recherche d'un stage (non rémunéré) de 300 heures débutant le 2 février.</p>
       <p>La date de commencement exacte est flexible et s'adaptera aux disponibilités de votre entreprise.</p>
-      <p>Je souhaite mettre en pratique mes connaissances et m'investir dans des projets liés à :</p>
-      <ul >
-        <li>Développeur concepteur d'application</li>
-        <li>Conception et architecture d'applications</li>
-        <li>Développeur Web Junior Front/Back-end</li>
-      </ul>
-      <br /> N'hésitez pas à me contacter via le formulaire ou par mail.
+      <p>N'hésitez pas à me contacter via le formulaire ou par mail. Je vous répondrai dans les plus brefs délais. Merci pour votre intérêt et votre temps.</p>
     </div>
   ),
   items: [
