@@ -50,11 +50,11 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
       // Aucune logique supplémentaire nécessaire puisque hasBeenOpened est déjà true
     };
     
-    const baseClass = '-m-1.5 p-1.5 rounded-md font-semibold uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 text-neutral-100';
+    const baseClass = '-m-1.5 p-1.5 rounded-md font-semibold uppercase focus:outline-none ' ;
     // Classes de base pour l'élément de navigation actif (surligné en orange)
     const activeClass = classNames(baseClass, 'text-orange-400/90');
     // Classes de base pour les éléments de navigation inactifs
-    const inactiveClass = classNames(baseClass, 'text-neutral-100 hover:text-orange-200/90');
+    const inactiveClass = classNames(baseClass, 'text-neutral-100 hover:text-orange-200/90 ');
     
     return (
       <header className="fixed top-0 z-50 w-full hidden sm:block" id={headerID}>
@@ -90,8 +90,8 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
           </nav>
           
           {/* Bouton de basculement du menu - côté droit */}
-          <button className="relative rounded-full z-10 p-3 bg-white/90 ml-auto mr-4 duration-50 hover:scale-105 active:scale-95" aria-label="Menu" onClick={handleClick}>
-            <Bars2Icon className="h-6 w-6 text-neutral-900" />
+          <button className="relative rounded-full z-10 p-3 bg-white bg-clip-padding backdrop-filter backdrop-blur-sm  ml-auto mr-4 duration-50 hover:scale-105 active:scale-95" aria-label="Menu" onClick={handleClick}>
+            <Bars2Icon className="h-6 w-6 text-neutral-900 " />
           </button>
         </div>
       </header>
@@ -99,6 +99,7 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
   }
 );
 
+// Composant de navigation mobile - utilise un menu latéral coulissant avec un fond semi-transparent
 const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
   ({navSections, currentSection}) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -163,6 +164,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
   },
 );
 
+// Composant d'élément de navigation réutilisable pour le bureau et le mobile
 const NavItem: FC<{
   section: string;
   current: boolean;

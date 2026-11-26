@@ -1,6 +1,6 @@
 import { ArrowDownTrayIcon, CalendarIcon, FlagIcon, MapIcon } from '@heroicons/react/24/outline';
 import { BookOpenIcon, CircleStackIcon, CodeBracketIcon, EnvelopeIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
-import heroImage from '../images/notbad.jpg';
+import heroImage from '../images/brandon.jpg';
 import porfolioImage1 from '../images/portfolio/FabLabV2.PNG';
 import porfolioImage2 from '../images/portfolio/WhatSonV2.PNG';
 /*import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';*/
@@ -63,7 +63,7 @@ export const heroData: Hero = {
   name: ( "Bienvenue sur mon Portfolio !"),
   description: (
     <div className="space-y-3" style={{fontFamily: 'Roboto, sans-serif'}}>
-        <p className="mx-auto 2xl:text-2xl max-w-5xl text-base leading-relaxed text-stone-100 sm:text-lg lg:text-xl">
+        <p className="mx-auto 2xl:text-2xl max-w-6xl text-base leading-relaxed text-stone-100 sm:text-lg lg:text-xl">
           Je suis <strong className="font-semibold text-white">Émile Dzawa-Pathas</strong>, <strong className="font-semibold text-white">concepteur et développeur d'applications</strong>.
           <br></br>Je conçois, développe et maintiens des applications web et logicielles, du back-end <strong className="font-semibold text-white">Java / Spring Boot</strong> au front-end <strong className="font-semibold text-white">Angular, React et Next.js</strong>.
           À la recherche d'un <strong className="font-semibold text-white">stage</strong> à Toulouse et ses environs.
@@ -75,11 +75,13 @@ export const heroData: Hero = {
       href: '/assets/resume.pdf',
       text: 'Télécharger mon CV',
       Icon: ArrowDownTrayIcon,
+      color: 'bg-blue-700/75 border border-blue-500',
     },
     {
       href: `#${SectionId.Contact}`,
       text: 'Formulaire de Contact',
       Icon: EnvelopeIcon,
+      color: 'bg-orange-600/75 border border-orange-500/75',
     },
   ],
 };
