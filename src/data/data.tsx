@@ -105,7 +105,7 @@ export const aboutData: About = {
 Fort d'un BTS Systèmes Numériques (option Informatique et Réseaux), j'ai récemment renforcé mes compétences web à travers la réalisation de projets modernes utilisant Next.js, React et TailwindCSS.
 
 Aujourd'hui, je me concentre sur l'acquisition de compétences techniques avancées pour concevoir des applications robustes. 
-J'approfondis activement l'algorithmie, la gestion des bases de données et la programmation orientée objet, notamment à travers l'étude approfondie de langages exigeants tels que C et C++. Mon but est de comprendre la structure profonde des programmes et les interactions systèmes.
+J'approfondis activement l'algorithmie, la gestion des bases de données et la programmation orientée objet, notamment à travers l'étude approfondie de langages exigeants tels que Java, C et C++. Mon but est de comprendre la structure profonde des programmes et les interactions systèmes.
 
 D'un naturel curieux, persévérant et autonome, je sais m'adapter rapidement à des environnements techniques que je découvre. Que ce soit pour travailler en totale autonomie ou collaborer en équipe, j'aime relever de nouveaux défis, apprendre continuellement et m'appuyer sur les retours constructifs pour faire évoluer mes pratiques de développement.`,
 
@@ -188,9 +188,9 @@ export const skills: SkillGroup[] = [
     description: "Outils de développement, gestion de version et méthodologies de gestion de projet.",
     iconColor: 'text-pink-400',
     skills: [
-      { name: 'Git', logo: devicon('git/git-original.svg') },
+      { name: 'Git / GitHub', logo: devicon('git/git-original.svg') },
+      { name: 'GitLab', logo: devicon('gitlab/gitlab-original.svg') },
       { name: 'Docker', logo: devicon('docker/docker-original.svg') },
-      
       { name: 'VS Code', logo: devicon('vscode/vscode-original.svg') },
       { name: 'Linux', logo: devicon('linux/linux-original.svg') },
       { name: 'Windows', logo: devicon('windows11/windows11-original.svg') },
@@ -198,8 +198,10 @@ export const skills: SkillGroup[] = [
       { name: 'Yarn', logo: devicon('yarn/yarn-original.svg') },
       { name: 'NPM', logo: devicon('npm/npm-original-wordmark.svg') },
       { name: 'Vercel', logo: devicon('vercel/vercel-original.svg') },
+      { name: 'GitHub Copilot', logo: devicon('github/github-original.svg') },
       { name: 'Figma', logo: devicon('figma/figma-original.svg') },
-      { name: 'Diagrammes UML' },
+      { name: 'Modélisation (UML, Merise)'},
+      { name: 'Méthodologie Agile (Scrum)'},
       { name: 'Arduino', logo: devicon('arduino/arduino-original.svg') },
       { name: 'Raspberry Pi', logo: devicon('raspberrypi/raspberrypi-original.svg') },
       
