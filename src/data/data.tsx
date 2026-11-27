@@ -75,13 +75,13 @@ export const heroData: Hero = {
       href: '/assets/resume.pdf',
       text: 'Télécharger mon CV',
       Icon: ArrowDownTrayIcon,
-      color: 'bg-blue-700/75 border border-blue-500/60',
+      color: 'bg-blue-700/60 border border-blue-500/50',
     },
     {
       href: `#${SectionId.Contact}`,
       text: 'Formulaire de Contact',
       Icon: EnvelopeIcon,
-      color: 'bg-orange-600/75 border border-orange-500/75',
+      color: 'bg-orange-600/60 border border-orange-500/75',
     },
   ],
 };
