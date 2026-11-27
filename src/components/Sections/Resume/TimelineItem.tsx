@@ -13,7 +13,7 @@ const TimelineItem: FC<{item: TimelineItem; index?: number}> = memo(({item, inde
     >
       {/* Date et Lieu - Positionnés absolument pour dépasser de la ligne gauche border-b border-l border-gray-400*/}
       <div className="absolute -left-2 top-3 flex items-center space-x-2 md:-left-4">
-        <span className="whitespace-nowrap rounded-full border border-orange-400 bg-white px-2 py-1 text-xs font-bold text-orange-700 transition-all duration-300 hover:bg-orange-50 ">
+        <span className="whitespace-nowrap rounded-full border border-neutral-200 bg-white px-2 py-1 text-xs font-bold text-blue-600 shadow-sm transition-all duration-300 hover:bg-orange-50 ">
           {date}
         </span>
         <span className="text-xs font-medium text-neutral-700">{location}</span>

@@ -40,7 +40,7 @@ const Hero: FC = memo(() => {
         <div className="z-10 w-full max-w-screen-xl px-4 lg:px-2 mt-2 2xl:mt-20 ">
           <div className="flex flex-col gap-y-2 sm:gap-y-4 lg:gap-y-6 2xl:gap-y-12 rounded-xl p-4 text-center items-center ">
             {/* Titre et description */}
-            <h1 className="whitespace-pre-line text-3xl font-medium tracking-[0.12em] text-white sm:text-3xl md:text-4xl 2xl:text-5xl animate-fadeIn " style={{fontFamily: '"Noto SD 500", Arial, sans-serif '}}>{name}</h1>
+            <h1 className="whitespace-pre-line text-3xl font-medium tracking-[0.05em] text-white sm:text-3xl md:text-4xl 2xl:text-5xl animate-fadeIn " style={{fontFamily: '"Noto SD 500", Arial, sans-serif '}}>{name}</h1>
             <div className="mt-1 sm:mt-2 2xl:mt-2  animate-fadeIn" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
             {description}
             </div>

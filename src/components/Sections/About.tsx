@@ -20,8 +20,8 @@ const About: FC = memo(() => {
       <div className="relative flex flex-col gap-y-10">
         {/* En-tête : badge de profil et titre principal */}
         <header className={`text-center ${titleAnim}`} ref={titleRef}>
-           <div className="mb-3 inline-flex items-center gap-x-2 rounded-full border border-white-200 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-blue-700 shadow-sm">
-            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-700 animate-blink"  />
+           <div className="mb-3 inline-flex items-center text-xs font-bold uppercase tracking-[0.18em] text-blue-600 gap-x-2 rounded-full border border-white-200 bg-white px-4 py-1.5 shadow-sm">
+            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-600 animate-blink"  />
             Mon profil
           </div> 
           <h2 className="text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl" style={{fontFamily: '"Noto SD 500", Arial, sans-serif'}}>
@@ -35,7 +35,7 @@ const About: FC = memo(() => {
             <div className="mb-6 flex items-center gap-x-3">
               {/** Décoration : <span aria-hidden="true" className="h-10 w-1.5 rounded-full bg-orange-500" />*/}
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">Mon parcours</p>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-600">Mon parcours</p>
                 <h3 className="mt-1 text-xl font-bold text-slate-900 sm:text-2xl">Curieux de comprendre, motivé à construire</h3>
               </div>
             </div>
@@ -50,7 +50,7 @@ const About: FC = memo(() => {
           {aboutItems && aboutItems.length > 0 && (
             <aside className={`rounded-3xl p-6 sm:p-8 ${infoAnim}`} ref={infoRef}>
               <div className="mb-6">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">En bref</p>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-600">En bref</p>
                 <h3 className="mt-1 text-2xl font-bold text-slate-900">Quelques repères</h3>
               </div>
               <ul className="space-y-3">
@@ -78,7 +78,7 @@ const About: FC = memo(() => {
           <section className={skillsAnim} ref={skillsRef}>
             <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">Ma façon de travailler</p>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-600">Ma façon de travailler</p>
                 <h3 className="mt-1 text-2xl font-bold text-slate-900">Ce qui me caractérise</h3>
               </div>
               <p className="text-sm text-slate-500">Des qualités que je cultive dans chaque projet.</p>

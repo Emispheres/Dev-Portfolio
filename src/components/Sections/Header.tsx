@@ -50,11 +50,11 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
       // Aucune logique supplémentaire nécessaire puisque hasBeenOpened est déjà true
     };
     
-    const baseClass = '-m-1.5 p-1.5 rounded-md font-semibold uppercase focus:outline-none ' ;
+    const baseClass = '-m-1.5 p-1.5 rounded-md font-semibold uppercase  ' ;
     // Classes de base pour l'élément de navigation actif (surligné en orange)
-    const activeClass = classNames(baseClass, 'text-orange-400/90');
+    const activeClass = classNames(baseClass, 'text-orange-400 tracking-[0.10em] transition-all duration-50 active:scale-90');
     // Classes de base pour les éléments de navigation inactifs
-    const inactiveClass = classNames(baseClass, 'text-neutral-100 hover:text-orange-200/90 ');
+    const inactiveClass = classNames(baseClass, 'text-neutral-100 tracking-[0.10em] hover:text-orange-200 transition-all duration-50 active:scale-90');
     
     return (
       <header className="fixed top-0 z-50 w-full hidden sm:block" id={headerID}>
@@ -90,8 +90,8 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
           </nav>
           
           {/* Bouton de basculement du menu - côté droit */}
-          <button className="relative rounded-md z-10 p-3 bg-white bg-clip-padding backdrop-filter backdrop-blur-sm  ml-auto mr-4 duration-50 hover:scale-105 active:scale-95" aria-label="Menu" onClick={handleClick}>
-            <Bars2Icon className="h-6 w-6 text-neutral-900 " />
+          <button className="relative rounded-md z-10 p-3 bg-black/30 border  border-white/20 bg-clip-padding backdrop-filter backdrop-blur-sm ml-auto mr-4 duration-50 hover:scale-105 active:scale-95" aria-label="Menu" onClick={handleClick}>
+            <Bars2Icon className="h-6 w-6 text-white " />
           </button>
         </div>
       </header>
