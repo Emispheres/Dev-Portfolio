@@ -13,7 +13,7 @@ interface SkillsIconProps {
 const SkillsIcon: FC<SkillsIconProps> = ({skills}) => {
   return (
     // Conteneur qui prend toute la largeur avec icones espacées et margin top
-    <div className="flex flex-row flex-wrap gap-x-4 gap-y-2 sm:gap-x-16 lg:gap-x-24 xl:gap-x-32 sm:gap-y-6 justify-center 2xl:justify-between items-start w-full mt-2 lg:mt-8 2xl:mt-16 px-4 sm:px-12 md:px-24 2xl:px-0">
+    <div className="grid w-full grid-cols-2 items-start gap-x-4 gap-y-2 px-4 sm:grid-cols-4 sm:gap-x-8 sm:gap-y-6 sm:px-8 md:px-12 lg:gap-x-12 xl:gap-x-16 2xl:mt-16 mt-2 lg:mt-8">
       {skills.map((skill, index) => {
         const Icon = skill.icon;
         return (

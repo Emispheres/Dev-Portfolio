@@ -31,7 +31,7 @@ export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = m
       {/* Boite blanche du contenu */}
       <div className="flex flex-col bg-white rounded-md p-4 md:p-6 shadow-sm flex-1 border border-gray-100  hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out">
         {/* Titre du groupe */}
-        <span className={`text-start text-base md:text-lg font-bold ${iconColor}`} style={{fontFamily: '"Montserrat", Arial, sans-serif'}}>{name}</span>
+        <span className={`text-start text-base md:text-lg font-bold  ${iconColor}`} style={{fontFamily: '"Montserrat", Arial, sans-serif'}}>{name}</span>
         
         {/* Description du groupe */}
         <div className="text-sm text-neutral-600 max-w-none mt-1 mb-3">{description}</div>

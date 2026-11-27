@@ -31,16 +31,16 @@ const Hero: FC = memo(() => {
   return (
     <Section noPadding sectionId={SectionId.Hero}>
       {/* Conteneur principal background avec effet parallax */}
-      <div className="relative flex h-screen w-screen items-center justify-center overflow-hidden bg-gray-900 bg-cover bg-center bg-fixed"
+      <div className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-gray-900 bg-cover bg-center bg-fixed"
         style={{backgroundImage: `url('${(imageSrc as any).src}')`}}
       >
-      <div className="absolute inset-0 z-[5] bg-black/40"></div>
+      <div className="absolute inset-0 z-[5] bg-black/40 backdrop-blur-[2px]"></div>
 
         {/* Contenu principal */}
         <div className="z-10 w-full max-w-screen-xl px-4 lg:px-2 mt-2 2xl:mt-20 ">
           <div className="flex flex-col gap-y-2 sm:gap-y-4 lg:gap-y-6 2xl:gap-y-12 rounded-xl p-4 text-center items-center ">
             {/* Titre et description */}
-            <h1 className="whitespace-pre-line text-3xl font-medium text-white sm:text-3xl md:text-4xl 2xl:text-5xl animate-fadeIn " style={{fontFamily: '"Noto SD 500", Arial, sans-serif'}}>{name}</h1>
+            <h1 className="whitespace-pre-line text-3xl font-medium tracking-[0.12em] text-white sm:text-3xl md:text-4xl 2xl:text-5xl animate-fadeIn " style={{fontFamily: '"Noto SD 500", Arial, sans-serif '}}>{name}</h1>
             <div className="mt-1 sm:mt-2 2xl:mt-2  animate-fadeIn" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
             {description}
             </div>

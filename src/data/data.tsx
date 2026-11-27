@@ -75,7 +75,7 @@ export const heroData: Hero = {
       href: '/assets/resume.pdf',
       text: 'Télécharger mon CV',
       Icon: ArrowDownTrayIcon,
-      color: 'bg-blue-700/75 border border-blue-500',
+      color: 'bg-blue-700/75 border border-blue-500/60',
     },
     {
       href: `#${SectionId.Contact}`,
@@ -220,7 +220,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: `- Intégration de l'API Open-Meteo pour récupérer les données météorologiques en temps réel. 
     Intégration de l'API Calendrier pour récupérer les fêtes et saints du jour.
 - Projet individuel 
-- Page de contact avec formulaire de contact (non fonctionnel)
+- Page de contact avec formulaire de contact 
 - JavaScript vanilla`,
     url: 'https://emispheres.github.io/SiteMeteo/',
     image: porfolioImage6,
@@ -242,7 +242,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     title: `What's On`,
-    shortDescription: 'Application mobile centralisant des informations utiles pour étudiants du DUT de Blagnac.',
+    shortDescription: 'Application web mobile centralisant des informations utiles pour étudiants du DUT de Blagnac.',
     stack: ['2019 | Formation', 'HTML', 'CSS', 'JavaScript', 'Font Awesome', 'API REST',],
     description: `- Météo, horaires tram T1, agenda événements
 - Projet collaboratif en gestion de projet
@@ -290,22 +290,23 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: '2025 - 2026',
+    date: '2026 - 2027',
     location: 'LDNR',
-    title: 'Concepteur Développeur d\'Application',
+    title: 'Concepteur Développeur d\'Applications',
     content: (
       <ul style={{ fontFamily: '"Roboto", sans-serif' }}>
-        <li>Solidification de bases acquises en programmation</li>
-        <li>Mise en pratique des compétences acquises dans divers projets informatique en équipe</li>
-        <li>Conception d’applications natives Android</li>
-        <li>Acquisition de connaissance en sécurité informatique</li>
+        <li>Titre RNCP de niveau 6 (Bac+3), formation par projets fil rouge</li>
+        <li>Solidification des différents langages de programmation acquis les années précédentes</li>
+        <li>Java en couches : Jakarta EE (servlets, JSP), puis Spring Boot</li>
+        <li>Analyse du besoin, UML, Merise et design patterns avant de coder</li>
+        <li>Projets en équipe avec Git et GitLab ; Android (Kotlin) et sécurité au programme</li>
       </ul>
     ),
   },
   {
     date: '2020 - 2022',
     location: 'Lycée International Victor Hugo',
-    title: 'BTS Système numérique - informatique et réseaux ',
+    title: 'BTS Système numériques - informatique et réseaux ',
     content: (
       <ul style={{ fontFamily: '"Roboto", sans-serif' }}>
         <li> Mise en place, configuration et maintenance de systèmes informatiques et réseaux.</li>
@@ -345,16 +346,13 @@ export const education: TimelineItem[] = [
 
 export const experience: TimelineItem[] = [
   {
-    date: '2022 - 2025',
-    location: 'Aldi',
-    title: "Agent de rayon",
+    date: '2022 - 2024',
+    title: "Recherche d'alternance et projets personnels",
     content: (
       <ul style={{ fontFamily: '"Roboto", sans-serif' }}>
-        <li>Création de divers projets informatique en parallèle afin de préserver mes compétences en numérique</li>
-        <li>Assistance technique aux collègues sur les outils informatiques.</li>
-        <li>Mise en rayon des produits et gestion des stocks.</li>
-        <li>Service client et assistance aux clients en magasin.</li>
-        <li>Encaissement des produits et gestion de la caisse.</li>
+        <li>Recherche d'alternance et création de divers projets informatiques en parallèle afin de préserver mes compétences en numérique</li>
+        <li>Création d'un portfolio personnel pour présenter mes compétences et projets</li>
+        <li>Révision des projets existants des années précédentes</li>
       </ul>
     ),
   },
@@ -379,7 +377,7 @@ export const experience: TimelineItem[] = [
     title: "Stagiaire en maintenance d'appareil électronique",
     content: (
       <ul style={{ fontFamily: '"Roboto", sans-serif' }}>
-        <li>Prise en charge et réparation d'imprimante à jet d'encre EPSON pour clients particulier et professionnel.</li>
+        <li>Prise en charge et réparation d'imprimante à jet d'encre EPSON pour clients particulier et professionnels.</li>
         <li>Accueil des clients en agence.</li>
         <li>Changement d'OS de Windows à Linux.</li>
         <li>Remplacement de composant de PC portable.</li>

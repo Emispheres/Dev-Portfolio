@@ -64,9 +64,9 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
             className={classNames(
               "absolute inset-0 z-0",
               // Glisser depuis la droite quand le menu s'ouvre
-              isOpen && "bg-neutral-900 animate-slideInRight",
+              isOpen && " bg-black/70 border-b  border-white/20 bg-clip-padding backdrop-filter backdrop-blur-sm  animate-slideInRight",
               // Glisser vers la droite quand le menu se ferme (après que les éléments de nav disparaissent)
-              !isOpen && hasBeenOpened && "bg-neutral-900 animate-slideOutLeft",
+              !isOpen && hasBeenOpened && " bg-black/70 border-b  border-white/20 bg-clip-padding backdrop-filter backdrop-blur-sm  animate-slideOutLeft",
             )}
             // Retarder la sortie du fond de 0.6s pour permettre aux éléments de nav de s'estomper d'abord, puis persister l'état caché
             style={!isOpen && hasBeenOpened ? {animationDelay: '0.6s', animationFillMode: 'forwards'} : {}}
@@ -90,7 +90,7 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
           </nav>
           
           {/* Bouton de basculement du menu - côté droit */}
-          <button className="relative rounded-full z-10 p-3 bg-white bg-clip-padding backdrop-filter backdrop-blur-sm  ml-auto mr-4 duration-50 hover:scale-105 active:scale-95" aria-label="Menu" onClick={handleClick}>
+          <button className="relative rounded-md z-10 p-3 bg-white bg-clip-padding backdrop-filter backdrop-blur-sm  ml-auto mr-4 duration-50 hover:scale-105 active:scale-95" aria-label="Menu" onClick={handleClick}>
             <Bars2Icon className="h-6 w-6 text-neutral-900 " />
           </button>
         </div>
@@ -107,7 +107,6 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
     const toggleOpen = useCallback(() => {
       setIsOpen(!isOpen);
     }, [isOpen]);
-
     const baseClass =
       'p-2 rounded-md first-letter:uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500';
     const activeClass = classNames(baseClass, 'bg-neutral-900 text-white font-bold');
@@ -116,7 +115,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
       <>
         <button
           aria-label="Menu Button"
-          className="fixed right-2 top-2 z-40 rounded-md bg-orange-500 p-2 ring-offset-gray-800/60 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 sm:hidden"
+          className="fixed right-2 top-2 z-40 rounded-md bg-orange-600/75 border border-orange-500/75 p-2 ring-offset-gray-800/60 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 sm:hidden"
           onClick={toggleOpen}>
           <Bars3BottomRightIcon className="h-8 w-8 text-white" />
           <span className="sr-only">Open sidebar</span>

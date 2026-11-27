@@ -8,7 +8,7 @@ const TimelineItem: FC<{item: TimelineItem; index?: number}> = memo(({item, inde
   return (
     /* Container principal du timeline item */
     <div 
-      className="relative bg-gray-100 rounded-md mb-4 py-4 pl-4 shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out"
+      className="relative bg-white rounded-md mb-4 py-4 pl-4 shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-in-out"
       style={{animationDelay: `${index * 0.9}s`}}
     >
       {/* Date et Lieu - Positionnés absolument pour dépasser de la ligne gauche border-b border-l border-gray-400*/}
