@@ -36,8 +36,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: "Portfolio d'Émile Dzawa - Développeur Web Junior",
-  description: "Portfolio d'Émile Dzawa - Développeur Web Junior",
+  title: "Portfolio Concepteur Développeur d'Applications",
+  description: "Portfolio - Concepteur Développeur d'Applications - Émile Dzawa",
 };
 
 /**
